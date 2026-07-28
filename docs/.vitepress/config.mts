@@ -6,6 +6,7 @@ export default defineConfig({
   description: '图解消息队列、MySQL、Redis 等后端核心技术',
   lastUpdated: true,
   cleanUrls: true,
+  base: '/intern/',
 
   head: [
     ['meta', { name: 'theme-color', content: '#3c8772' }],
