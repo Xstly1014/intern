@@ -2,7 +2,7 @@
 layout: home
 
 hero:
-  name: 图解技术 <span class="intern-tag">intern</span>
+  name: 图解技术
   text: 让后端核心技术不再难懂
   tagline: 用图解 + 通俗讲解，拆解消息队列、MySQL、Redis 等核心技术原理
   image:

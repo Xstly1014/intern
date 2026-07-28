@@ -37,20 +37,22 @@ img {
   padding: 2px 6px;
 }
 
-/* intern 标签 */
-.intern-tag {
+/* intern 标签 - 通过 CSS 伪元素添加 */
+.VPHomeHero .name::after {
+  content: "intern";
   display: inline-block;
-  font-size: 0.35em;
+  font-size: 0.32em;
   font-weight: 600;
-  padding: 4px 12px;
-  margin-left: 12px;
+  padding: 5px 14px;
+  margin-left: 14px;
   border-radius: 20px;
   background: var(--vp-c-brand-1);
   color: #fff;
   vertical-align: middle;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
   position: relative;
-  top: -4px;
+  top: -6px;
+  line-height: 1;
 }
 
 /* 头像样式 - 圆形 */
