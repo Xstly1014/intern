@@ -46,8 +46,12 @@ img {
   padding: 5px 14px;
   margin-left: 14px;
   border-radius: 20px;
-  background: var(--vp-c-brand-1);
-  color: #fff;
+  background: var(--vp-c-brand-1) !important;
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  -webkit-background-clip: border-box !important;
+  background-clip: border-box !important;
+  background-image: none !important;
   vertical-align: middle;
   letter-spacing: 1.5px;
   position: relative;
