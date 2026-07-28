@@ -2,9 +2,12 @@
 layout: home
 
 hero:
-  name: 图解技术
+  name: 图解技术 <span class="intern-tag">intern</span>
   text: 让后端核心技术不再难懂
   tagline: 用图解 + 通俗讲解，拆解消息队列、MySQL、Redis 等核心技术原理
+  image:
+    src: /avatar.png
+    alt: intern
   actions:
     - theme: brand
       text: 开始阅读
