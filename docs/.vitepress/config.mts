@@ -97,9 +97,9 @@ export default defineConfig({
           items: [
             { text: 'Q29 生产者确认机制', link: '/mq/rabbitmq-advanced/q29' },
             { text: 'Q30 消费者 ACK 机制', link: '/mq/rabbitmq-advanced/q30' },
-            { text: 'Q31 prefetch 控制流控', link: '/mq/rabbitmq-advanced/q31' },
-            { text: 'Q32 消息拒绝与 requeue', link: '/mq/rabbitmq-advanced/q32' },
-            { text: 'Q33 QoS prefetch 调优', link: '/mq/rabbitmq-advanced/q33' },
+            { text: 'Q31 prefetch 预取机制', link: '/mq/rabbitmq-advanced/q31' },
+            { text: 'Q32 消息重试与死信', link: '/mq/rabbitmq-advanced/q32' },
+            { text: 'Q33 背压与流控', link: '/mq/rabbitmq-advanced/q33' },
             { text: 'Q34 RabbitMQ 集群架构', link: '/mq/rabbitmq-advanced/q34' },
             { text: 'Q35 节点类型 disk/ram', link: '/mq/rabbitmq-advanced/q35' },
             { text: 'Q36 Quorum Queue 仲裁队列', link: '/mq/rabbitmq-advanced/q36' },
