@@ -88,7 +88,7 @@ export default defineConfig({
             { text: 'Q25 优先级队列', link: '/mq/rabbitmq-core/q25' },
             { text: 'Q26 TTL 消息过期', link: '/mq/rabbitmq-core/q26' },
             { text: 'Q27 持久化机制', link: '/mq/rabbitmq-core/q27' },
-            { text: 'Q28 镜像队列', link: '/mq/rabbitmq-core/q28' },
+            { text: 'Q28 镜像队列 vs Quorum', link: '/mq/rabbitmq-core/q28' },
           ],
         },
         {
