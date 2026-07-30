@@ -406,6 +406,13 @@ export default defineConfig({
             { text: '287. 寻找重复数', link: '/leetcode/tricks/287' },
           ],
         },
+        {
+          text: 'Hot100 外高频扩展',
+          collapsed: false,
+          items: [
+            { text: '88. 合并两个有序数组', link: '/leetcode/hot100-extension/88' },
+          ],
+        },
       ],
     },
 
