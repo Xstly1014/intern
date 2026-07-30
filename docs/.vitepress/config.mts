@@ -46,6 +46,7 @@ export default defineConfig({
       { text: '消息队列', link: '/mq/', activeMatch: '/mq/' },
       { text: 'MySQL', link: '/mysql/', activeMatch: '/mysql/' },
       { text: 'Redis', link: '/redis/', activeMatch: '/redis/' },
+      { text: 'LeetCode', link: '/leetcode/', activeMatch: '/leetcode/' },
     ],
 
     sidebar: {
@@ -219,6 +220,190 @@ export default defineConfig({
           collapsed: false,
           items: [
             { text: '敬请期待', link: '/redis/' },
+          ],
+        },
+      ],
+
+      // ==================== LeetCode Hot 100 ====================
+      '/leetcode/': [
+        {
+          text: '哈希',
+          items: [
+            { text: '1. 两数之和', link: '/leetcode/hash/1' },
+            { text: '49. 字母异位词分组', link: '/leetcode/hash/49' },
+            { text: '128. 最长连续序列', link: '/leetcode/hash/128' },
+          ],
+        },
+        {
+          text: '双指针',
+          items: [
+            { text: '11. 盛最多水的容器', link: '/leetcode/two-pointers/11' },
+            { text: '15. 三数之和', link: '/leetcode/two-pointers/15' },
+            { text: '42. 接雨水', link: '/leetcode/two-pointers/42' },
+            { text: '283. 移动零', link: '/leetcode/two-pointers/283' },
+          ],
+        },
+        {
+          text: '滑动窗口',
+          items: [
+            { text: '3. 无重复字符的最长子串', link: '/leetcode/sliding-window/3' },
+            { text: '438. 找到字符串中所有字母异位词', link: '/leetcode/sliding-window/438' },
+          ],
+        },
+        {
+          text: '子串',
+          items: [
+            { text: '560. 和为K的子数组', link: '/leetcode/substring/560' },
+            { text: '239. 滑动窗口最大值', link: '/leetcode/substring/239' },
+            { text: '76. 最小覆盖子串', link: '/leetcode/substring/76' },
+          ],
+        },
+        {
+          text: '普通数组',
+          items: [
+            { text: '53. 最大子数组和', link: '/leetcode/array/53' },
+            { text: '56. 合并区间', link: '/leetcode/array/56' },
+            { text: '189. 轮转数组', link: '/leetcode/array/189' },
+            { text: '238. 除自身以外数组的乘积', link: '/leetcode/array/238' },
+            { text: '41. 缺失的第一个正数', link: '/leetcode/array/41' },
+          ],
+        },
+        {
+          text: '矩阵',
+          items: [
+            { text: '73. 矩阵置零', link: '/leetcode/matrix/73' },
+            { text: '54. 螺旋矩阵', link: '/leetcode/matrix/54' },
+            { text: '48. 旋转图像', link: '/leetcode/matrix/48' },
+            { text: '240. 搜索二维矩阵II', link: '/leetcode/matrix/240' },
+          ],
+        },
+        {
+          text: '链表',
+          items: [
+            { text: '160. 相交链表', link: '/leetcode/linked-list/160' },
+            { text: '206. 反转链表', link: '/leetcode/linked-list/206' },
+            { text: '234. 回文链表', link: '/leetcode/linked-list/234' },
+            { text: '141. 环形链表', link: '/leetcode/linked-list/141' },
+            { text: '142. 环形链表II', link: '/leetcode/linked-list/142' },
+            { text: '21. 合并两个有序链表', link: '/leetcode/linked-list/21' },
+            { text: '2. 两数相加', link: '/leetcode/linked-list/2' },
+            { text: '19. 删除链表的倒数第N个结点', link: '/leetcode/linked-list/19' },
+            { text: '24. 两两交换链表中的节点', link: '/leetcode/linked-list/24' },
+            { text: '25. K个一组翻转链表', link: '/leetcode/linked-list/25' },
+            { text: '138. 随机链表的复制', link: '/leetcode/linked-list/138' },
+            { text: '23. 合并K个升序链表', link: '/leetcode/linked-list/23' },
+            { text: '146. LRU缓存', link: '/leetcode/linked-list/146' },
+            { text: '148. 排序链表', link: '/leetcode/linked-list/148' },
+          ],
+        },
+        {
+          text: '二叉树',
+          items: [
+            { text: '94. 二叉树的中序遍历', link: '/leetcode/binary-tree/94' },
+            { text: '104. 二叉树的最大深度', link: '/leetcode/binary-tree/104' },
+            { text: '226. 翻转二叉树', link: '/leetcode/binary-tree/226' },
+            { text: '101. 对称二叉树', link: '/leetcode/binary-tree/101' },
+            { text: '543. 二叉树的直径', link: '/leetcode/binary-tree/543' },
+            { text: '102. 二叉树的层序遍历', link: '/leetcode/binary-tree/102' },
+            { text: '108. 将有序数组转换为二叉搜索树', link: '/leetcode/binary-tree/108' },
+            { text: '98. 验证二叉搜索树', link: '/leetcode/binary-tree/98' },
+            { text: '230. 二叉搜索树中第K小的元素', link: '/leetcode/binary-tree/230' },
+            { text: '199. 二叉树的右视图', link: '/leetcode/binary-tree/199' },
+            { text: '114. 二叉树展开为链表', link: '/leetcode/binary-tree/114' },
+            { text: '105. 从前序与中序遍历序列构造二叉树', link: '/leetcode/binary-tree/105' },
+            { text: '437. 路径总和III', link: '/leetcode/binary-tree/437' },
+            { text: '236. 二叉树的最近公共祖先', link: '/leetcode/binary-tree/236' },
+            { text: '124. 二叉树中的最大路径和', link: '/leetcode/binary-tree/124' },
+          ],
+        },
+        {
+          text: '图论',
+          items: [
+            { text: '200. 岛屿数量', link: '/leetcode/graph/200' },
+            { text: '994. 腐烂的橘子', link: '/leetcode/graph/994' },
+            { text: '207. 课程表', link: '/leetcode/graph/207' },
+            { text: '208. 实现Trie前缀树', link: '/leetcode/graph/208' },
+          ],
+        },
+        {
+          text: '回溯',
+          items: [
+            { text: '46. 全排列', link: '/leetcode/backtracking/46' },
+            { text: '78. 子集', link: '/leetcode/backtracking/78' },
+            { text: '17. 电话号码的字母组合', link: '/leetcode/backtracking/17' },
+            { text: '39. 组合总和', link: '/leetcode/backtracking/39' },
+            { text: '22. 括号生成', link: '/leetcode/backtracking/22' },
+            { text: '79. 单词搜索', link: '/leetcode/backtracking/79' },
+            { text: '131. 分割回文串', link: '/leetcode/backtracking/131' },
+            { text: '51. N皇后', link: '/leetcode/backtracking/51' },
+          ],
+        },
+        {
+          text: '二分查找',
+          items: [
+            { text: '35. 搜索插入位置', link: '/leetcode/binary-search/35' },
+            { text: '74. 搜索二维矩阵', link: '/leetcode/binary-search/74' },
+            { text: '34. 在排序数组中查找元素的第一和最后位置', link: '/leetcode/binary-search/34' },
+            { text: '33. 搜索旋转排序数组', link: '/leetcode/binary-search/33' },
+            { text: '153. 寻找旋转排序数组中的最小值', link: '/leetcode/binary-search/153' },
+            { text: '4. 寻找两个正序数组的中位数', link: '/leetcode/binary-search/4' },
+          ],
+        },
+        {
+          text: '栈',
+          items: [
+            { text: '20. 有效的括号', link: '/leetcode/stack/20' },
+            { text: '155. 最小栈', link: '/leetcode/stack/155' },
+            { text: '394. 字符串解码', link: '/leetcode/stack/394' },
+            { text: '84. 柱状图中最大的矩形', link: '/leetcode/stack/84' },
+            { text: '739. 每日温度', link: '/leetcode/stack/739' },
+          ],
+        },
+        {
+          text: '堆',
+          items: [
+            { text: '215. 数组中的第K个最大元素', link: '/leetcode/heap/215' },
+            { text: '347. 前K个高频元素', link: '/leetcode/heap/347' },
+            { text: '295. 数据流的中位数', link: '/leetcode/heap/295' },
+          ],
+        },
+        {
+          text: '贪心',
+          items: [
+            { text: '121. 买卖股票的最佳时机', link: '/leetcode/greedy/121' },
+            { text: '55. 跳跃游戏', link: '/leetcode/greedy/55' },
+            { text: '45. 跳跃游戏II', link: '/leetcode/greedy/45' },
+            { text: '763. 划分字母区间', link: '/leetcode/greedy/763' },
+          ],
+        },
+        {
+          text: '动态规划',
+          items: [
+            { text: '70. 爬楼梯', link: '/leetcode/dp/70' },
+            { text: '118. 杨辉三角', link: '/leetcode/dp/118' },
+            { text: '198. 打家劫舍', link: '/leetcode/dp/198' },
+            { text: '279. 完全平方数', link: '/leetcode/dp/279' },
+            { text: '322. 零钱兑换', link: '/leetcode/dp/322' },
+            { text: '139. 单词拆分', link: '/leetcode/dp/139' },
+            { text: '300. 最长递增子序列', link: '/leetcode/dp/300' },
+            { text: '152. 乘积最大子数组', link: '/leetcode/dp/152' },
+            { text: '416. 分割等和子集', link: '/leetcode/dp/416' },
+            { text: '32. 最长有效括号', link: '/leetcode/dp/32' },
+            { text: '62. 不同路径', link: '/leetcode/dp/62' },
+            { text: '64. 最小路径和', link: '/leetcode/dp/64' },
+            { text: '5. 最长回文子串', link: '/leetcode/dp/5' },
+            { text: '1143. 最长公共子序列', link: '/leetcode/dp/1143' },
+            { text: '72. 编辑距离', link: '/leetcode/dp/72' },
+          ],
+        },
+        {
+          text: '技巧',
+          items: [
+            { text: '136. 只出现一次的数字', link: '/leetcode/tricks/136' },
+            { text: '169. 多数元素', link: '/leetcode/tricks/169' },
+            { text: '75. 颜色分类', link: '/leetcode/tricks/75' },
+            { text: '31. 下一个排列', link: '/leetcode/tricks/31' },
+            { text: '287. 寻找重复数', link: '/leetcode/tricks/287' },
           ],
         },
       ],
