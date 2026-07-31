@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 500" role="img" aria-labelledby="title desc">
+<title id="title">IaC 从代码到调和与漂移检测</title>
+<desc id="desc">展示基础设施代码经检查、Plan、审批、Apply、状态写入与持续漂移检测的闭环。</desc>
+<defs>
+<style>
+text{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",Arial,sans-serif;letter-spacing:0}.heading{font-size:25px;font-weight:700;fill:#1f2d33}.caption{font-size:14px;fill:#607078}.node-title{font-size:16px;font-weight:700;fill:#1f2d33}.node-sub{font-size:13px;fill:#45565e}.edge{fill:none;stroke:#607078;stroke-width:2}.note{font-size:12px;fill:#6a777d}
+</style>
+<marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#607078"/></marker>
+</defs>
+<rect width="960" height="500" fill="#ffffff"/>
+<text x="30" y="38" class="heading">IaC 从代码到调和与漂移检测</text>
+<text x="30" y="63" class="caption">展示基础设施代码经检查、Plan、审批、Apply、状态写入与持续漂移检测的闭环。</text>
+<path d="M 160 161 L 185 161" class="edge" marker-end="url(#arrow)"/>
+<path d="M 315 161 L 340 161" class="edge" marker-end="url(#arrow)"/>
+<path d="M 470 161 L 495 161" class="edge" marker-end="url(#arrow)"/>
+<path d="M 625 161 L 650 161" class="edge" marker-end="url(#arrow)"/>
+<path d="M 780 161 L 805 161" class="edge" marker-end="url(#arrow)"/>
+<path d="M 715 202 L 660 305" class="edge" marker-end="url(#arrow)"/>
+<path d="M 465 344 L 565 344" class="edge" marker-end="url(#arrow)"/>
+<path d="M 660 305 L 870 202" class="edge" marker-end="url(#arrow)"/>
+<g aria-label="IaC 代码"><rect x="30" y="120" width="130" height="82" rx="8" fill="#e8f1ff" stroke="#2766b0" stroke-width="2"/><text x="95" y="148" class="node-title" text-anchor="middle">IaC 代码</text><text x="95" y="172" class="node-sub" text-anchor="middle">模块 · 版本</text><text x="95" y="191" class="node-sub" text-anchor="middle">环境参数</text></g>
+<g aria-label="静态检查"><rect x="185" y="120" width="130" height="82" rx="8" fill="#e8f7ef" stroke="#2f7d57" stroke-width="2"/><text x="250" y="148" class="node-title" text-anchor="middle">静态检查</text><text x="250" y="172" class="node-sub" text-anchor="middle">fmt · validate</text><text x="250" y="191" class="node-sub" text-anchor="middle">安全与成本策略</text></g>
+<g aria-label="Plan"><rect x="340" y="120" width="130" height="82" rx="8" fill="#fff3df" stroke="#b66a18" stroke-width="2"/><text x="405" y="148" class="node-title" text-anchor="middle">Plan</text><text x="405" y="172" class="node-sub" text-anchor="middle">预览 create</text><text x="405" y="191" class="node-sub" text-anchor="middle">update / destroy</text></g>
+<g aria-label="审批"><rect x="495" y="120" width="130" height="82" rx="8" fill="#f3edff" stroke="#7651a8" stroke-width="2"/><text x="560" y="148" class="node-title" text-anchor="middle">审批</text><text x="560" y="172" class="node-sub" text-anchor="middle">高风险变更</text><text x="560" y="191" class="node-sub" text-anchor="middle">职责分离</text></g>
+<g aria-label="Apply"><rect x="650" y="120" width="130" height="82" rx="8" fill="#e8f1ff" stroke="#2766b0" stroke-width="2"/><text x="715" y="148" class="node-title" text-anchor="middle">Apply</text><text x="715" y="172" class="node-sub" text-anchor="middle">锁定 State</text><text x="715" y="191" class="node-sub" text-anchor="middle">调用云 API</text></g>
+<g aria-label="目标环境"><rect x="805" y="120" width="130" height="82" rx="8" fill="#e8f7ef" stroke="#2f7d57" stroke-width="2"/><text x="870" y="148" class="node-title" text-anchor="middle">目标环境</text><text x="870" y="172" class="node-sub" text-anchor="middle">账户/VPC/集群</text><text x="870" y="191" class="node-sub" text-anchor="middle">真实资源</text></g>
+<g aria-label="远端 State"><rect x="275" y="305" width="190" height="78" rx="8" fill="#eef2f4" stroke="#34444d" stroke-width="2"/><text x="370" y="333" class="node-title" text-anchor="middle">远端 State</text><text x="370" y="357" class="node-sub" text-anchor="middle">加密 · 锁 · 版本</text><text x="370" y="376" class="node-sub" text-anchor="middle">敏感读取受控</text></g>
+<g aria-label="Drift 检测"><rect x="565" y="305" width="190" height="78" rx="8" fill="#fff0ef" stroke="#b94b45" stroke-width="2"/><text x="660" y="333" class="node-title" text-anchor="middle">Drift 检测</text><text x="660" y="357" class="node-sub" text-anchor="middle">计划任务比对</text><text x="660" y="376" class="node-sub" text-anchor="middle">告警或受控调和</text></g>
+<text x="930" y="480" class="note" text-anchor="end">系统架构 · 基础设施与交付层</text>
+</svg>

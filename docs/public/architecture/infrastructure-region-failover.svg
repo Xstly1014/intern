@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 500" role="img" aria-labelledby="title desc">
+<title id="title">地域故障切流与受控回切</title>
+<desc id="desc">展示主地域故障后的确认、写入隔离、数据追平、流量切换、稳定观察和受控回切流程。</desc>
+<defs>
+<style>
+text{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",Arial,sans-serif;letter-spacing:0}.heading{font-size:25px;font-weight:700;fill:#1f2d33}.caption{font-size:14px;fill:#607078}.node-title{font-size:16px;font-weight:700;fill:#1f2d33}.node-sub{font-size:13px;fill:#45565e}.edge{fill:none;stroke:#607078;stroke-width:2}.note{font-size:12px;fill:#6a777d}
+</style>
+<marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#607078"/></marker>
+</defs>
+<rect width="960" height="500" fill="#ffffff"/>
+<text x="30" y="38" class="heading">地域故障切流与受控回切</text>
+<text x="30" y="63" class="caption">展示主地域故障后的确认、写入隔离、数据追平、流量切换、稳定观察和受控回切流程。</text>
+<path d="M 145 156 L 170 156" class="edge" marker-end="url(#arrow)"/>
+<path d="M 290 156 L 315 156" class="edge" marker-end="url(#arrow)"/>
+<path d="M 435 156 L 460 156" class="edge" marker-end="url(#arrow)"/>
+<path d="M 580 156 L 605 156" class="edge" marker-end="url(#arrow)"/>
+<path d="M 725 156 L 750 156" class="edge" marker-end="url(#arrow)"/>
+<path d="M 810 197 L 570 305" class="edge" marker-end="url(#arrow)"/>
+<path d="M 625 346 L 700 346" class="edge" marker-end="url(#arrow)"/>
+<g aria-label="故障信号"><rect x="25" y="115" width="120" height="82" rx="8" fill="#fff0ef" stroke="#b94b45" stroke-width="2"/><text x="85" y="143" class="node-title" text-anchor="middle">故障信号</text><text x="85" y="167" class="node-sub" text-anchor="middle">多源探测</text><text x="85" y="186" class="node-sub" text-anchor="middle">排除单点误报</text></g>
+<g aria-label="宣布事件"><rect x="170" y="115" width="120" height="82" rx="8" fill="#fff3df" stroke="#b66a18" stroke-width="2"/><text x="230" y="143" class="node-title" text-anchor="middle">宣布事件</text><text x="230" y="167" class="node-sub" text-anchor="middle">指挥官</text><text x="230" y="186" class="node-sub" text-anchor="middle">冻结发布</text></g>
+<g aria-label="Fencing"><rect x="315" y="115" width="120" height="82" rx="8" fill="#f3edff" stroke="#7651a8" stroke-width="2"/><text x="375" y="143" class="node-title" text-anchor="middle">Fencing</text><text x="375" y="167" class="node-sub" text-anchor="middle">隔离旧主写入</text><text x="375" y="186" class="node-sub" text-anchor="middle">防止双主</text></g>
+<g aria-label="数据判断"><rect x="460" y="115" width="120" height="82" rx="8" fill="#e8f1ff" stroke="#2766b0" stroke-width="2"/><text x="520" y="143" class="node-title" text-anchor="middle">数据判断</text><text x="520" y="167" class="node-sub" text-anchor="middle">复制位点</text><text x="520" y="186" class="node-sub" text-anchor="middle">确认可接受 RPO</text></g>
+<g aria-label="切换 Region B"><rect x="605" y="115" width="120" height="82" rx="8" fill="#e8f7ef" stroke="#2f7d57" stroke-width="2"/><text x="665" y="143" class="node-title" text-anchor="middle">切换 Region B</text><text x="665" y="167" class="node-sub" text-anchor="middle">提升写主</text><text x="665" y="186" class="node-sub" text-anchor="middle">DNS/GSLB 切流</text></g>
+<g aria-label="稳定观察"><rect x="750" y="115" width="120" height="82" rx="8" fill="#e8f1ff" stroke="#2766b0" stroke-width="2"/><text x="810" y="143" class="node-title" text-anchor="middle">稳定观察</text><text x="810" y="167" class="node-sub" text-anchor="middle">SLO/业务/队列</text><text x="810" y="186" class="node-sub" text-anchor="middle">完整性校验</text></g>
+<g aria-label="受控回切"><rect x="375" y="305" width="250" height="82" rx="8" fill="#eef2f4" stroke="#34444d" stroke-width="2"/><text x="500" y="333" class="node-title" text-anchor="middle">受控回切</text><text x="500" y="357" class="node-sub" text-anchor="middle">修复 A → 增量同步 → 演练验证</text><text x="500" y="376" class="node-sub" text-anchor="middle">小流量回切，保持 B 可退回</text></g>
+<g aria-label="恢复证据"><rect x="700" y="305" width="200" height="82" rx="8" fill="#fff3df" stroke="#b66a18" stroke-width="2"/><text x="800" y="333" class="node-title" text-anchor="middle">恢复证据</text><text x="800" y="357" class="node-sub" text-anchor="middle">时间线 · 数据差异</text><text x="800" y="376" class="node-sub" text-anchor="middle">实际 RTO/RPO · 改进项</text></g>
+<text x="930" y="480" class="note" text-anchor="end">系统架构 · 基础设施与交付层</text>
+</svg>

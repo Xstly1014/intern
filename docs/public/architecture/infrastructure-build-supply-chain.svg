@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 500" role="img" aria-labelledby="title desc">
+<title id="title">从源码到签名制品的供应链</title>
+<desc id="desc">展示受保护源码、隔离构建器、依赖验证、测试扫描、SBOM 与来源证明、签名制品及部署准入。</desc>
+<defs>
+<style>
+text{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",Arial,sans-serif;letter-spacing:0}.heading{font-size:25px;font-weight:700;fill:#1f2d33}.caption{font-size:14px;fill:#607078}.node-title{font-size:16px;font-weight:700;fill:#1f2d33}.node-sub{font-size:13px;fill:#45565e}.edge{fill:none;stroke:#607078;stroke-width:2}.note{font-size:12px;fill:#6a777d}
+</style>
+<marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#607078"/></marker>
+</defs>
+<rect width="960" height="500" fill="#ffffff"/>
+<text x="30" y="38" class="heading">从源码到签名制品的供应链</text>
+<text x="30" y="63" class="caption">展示受保护源码、隔离构建器、依赖验证、测试扫描、SBOM 与来源证明、签名制品及部署准入。</text>
+<path d="M 155 154 L 175 154" class="edge" marker-end="url(#arrow)"/>
+<path d="M 305 154 L 325 154" class="edge" marker-end="url(#arrow)"/>
+<path d="M 455 154 L 475 154" class="edge" marker-end="url(#arrow)"/>
+<path d="M 605 154 L 625 154" class="edge" marker-end="url(#arrow)"/>
+<path d="M 755 154 L 775 154" class="edge" marker-end="url(#arrow)"/>
+<path d="M 365 305 L 690 198" class="edge" marker-end="url(#arrow)"/>
+<path d="M 635 305 L 850 198" class="edge" marker-end="url(#arrow)"/>
+<g aria-label="受保护源码"><rect x="25" y="110" width="130" height="88" rx="8" fill="#e8f1ff" stroke="#2766b0" stroke-width="2"/><text x="90" y="138" class="node-title" text-anchor="middle">受保护源码</text><text x="90" y="162" class="node-sub" text-anchor="middle">PR 评审</text><text x="90" y="181" class="node-sub" text-anchor="middle">签名提交</text></g>
+<g aria-label="隔离 Runner"><rect x="175" y="110" width="130" height="88" rx="8" fill="#e8f7ef" stroke="#2f7d57" stroke-width="2"/><text x="240" y="138" class="node-title" text-anchor="middle">隔离 Runner</text><text x="240" y="162" class="node-sub" text-anchor="middle">短生命周期</text><text x="240" y="181" class="node-sub" text-anchor="middle">OIDC 无静态密钥</text></g>
+<g aria-label="依赖解析"><rect x="325" y="110" width="130" height="88" rx="8" fill="#fff3df" stroke="#b66a18" stroke-width="2"/><text x="390" y="138" class="node-title" text-anchor="middle">依赖解析</text><text x="390" y="162" class="node-sub" text-anchor="middle">锁版本/校验和</text><text x="390" y="181" class="node-sub" text-anchor="middle">可信仓库</text></g>
+<g aria-label="构建与测试"><rect x="475" y="110" width="130" height="88" rx="8" fill="#f3edff" stroke="#7651a8" stroke-width="2"/><text x="540" y="138" class="node-title" text-anchor="middle">构建与测试</text><text x="540" y="162" class="node-sub" text-anchor="middle">单测 · 集成</text><text x="540" y="181" class="node-sub" text-anchor="middle">SAST · SCA</text></g>
+<g aria-label="证据生成"><rect x="625" y="110" width="130" height="88" rx="8" fill="#e8f1ff" stroke="#2766b0" stroke-width="2"/><text x="690" y="138" class="node-title" text-anchor="middle">证据生成</text><text x="690" y="162" class="node-sub" text-anchor="middle">SBOM</text><text x="690" y="181" class="node-sub" text-anchor="middle">provenance</text></g>
+<g aria-label="签名制品"><rect x="775" y="110" width="155" height="88" rx="8" fill="#e8f7ef" stroke="#2f7d57" stroke-width="2"/><text x="852.5" y="138" class="node-title" text-anchor="middle">签名制品</text><text x="852.5" y="162" class="node-sub" text-anchor="middle">镜像 digest</text><text x="852.5" y="181" class="node-sub" text-anchor="middle">Registry immutable</text></g>
+<g aria-label="策略门禁"><rect x="265" y="305" width="200" height="78" rx="8" fill="#fff0ef" stroke="#b94b45" stroke-width="2"/><text x="365" y="333" class="node-title" text-anchor="middle">策略门禁</text><text x="365" y="357" class="node-sub" text-anchor="middle">漏洞阈值 · 许可证</text><text x="365" y="376" class="node-sub" text-anchor="middle">构建来源 · 签名</text></g>
+<g aria-label="部署准入"><rect x="535" y="305" width="200" height="78" rx="8" fill="#eef2f4" stroke="#34444d" stroke-width="2"/><text x="635" y="333" class="node-title" text-anchor="middle">部署准入</text><text x="635" y="357" class="node-sub" text-anchor="middle">Admission 验签</text><text x="635" y="376" class="node-sub" text-anchor="middle">只允可信仓库</text></g>
+<text x="930" y="480" class="note" text-anchor="end">系统架构 · 基础设施与交付层</text>
+</svg>

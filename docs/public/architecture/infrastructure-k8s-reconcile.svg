@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 500" role="img" aria-labelledby="title desc">
+<title id="title">Kubernetes 声明式调和回路</title>
+<desc id="desc">展示期望状态经 API Server 持久化后由控制器、调度器和节点代理持续调和为实际状态。</desc>
+<defs>
+<style>
+text{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",Arial,sans-serif;letter-spacing:0}.heading{font-size:25px;font-weight:700;fill:#1f2d33}.caption{font-size:14px;fill:#607078}.node-title{font-size:16px;font-weight:700;fill:#1f2d33}.node-sub{font-size:13px;fill:#45565e}.edge{fill:none;stroke:#607078;stroke-width:2}.note{font-size:12px;fill:#6a777d}
+</style>
+<marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#607078"/></marker>
+</defs>
+<rect width="960" height="500" fill="#ffffff"/>
+<text x="30" y="38" class="heading">Kubernetes 声明式调和回路</text>
+<text x="30" y="63" class="caption">展示期望状态经 API Server 持久化后由控制器、调度器和节点代理持续调和为实际状态。</text>
+<path d="M 195 157 L 240 157" class="edge" marker-end="url(#arrow)"/>
+<path d="M 395 140 L 440 112" class="edge" marker-end="url(#arrow)"/>
+<path d="M 395 175 L 440 277" class="edge" marker-end="url(#arrow)"/>
+<path d="M 610 112 L 660 145" class="edge" marker-end="url(#arrow)"/>
+<path d="M 610 277 L 685 200" class="edge" marker-end="url(#arrow)"/>
+<path d="M 805 157 L 835 157" class="edge" marker-end="url(#arrow)"/>
+<path d="M 885 200 L 620 390" class="edge" marker-end="url(#arrow)"/>
+<path d="M 480 390 L 315 200" class="edge" marker-end="url(#arrow)"/>
+<g aria-label="声明期望状态"><rect x="40" y="115" width="155" height="85" rx="8" fill="#e8f1ff" stroke="#2766b0" stroke-width="2"/><text x="117.5" y="143" class="node-title" text-anchor="middle">声明期望状态</text><text x="117.5" y="167" class="node-sub" text-anchor="middle">Deployment</text><text x="117.5" y="186" class="node-sub" text-anchor="middle">Service · HPA</text></g>
+<g aria-label="API Server"><rect x="240" y="115" width="155" height="85" rx="8" fill="#e8f7ef" stroke="#2f7d57" stroke-width="2"/><text x="317.5" y="143" class="node-title" text-anchor="middle">API Server</text><text x="317.5" y="167" class="node-sub" text-anchor="middle">鉴权 · 准入</text><text x="317.5" y="186" class="node-sub" text-anchor="middle">写入 etcd</text></g>
+<g aria-label="Controller"><rect x="440" y="70" width="170" height="85" rx="8" fill="#fff3df" stroke="#b66a18" stroke-width="2"/><text x="525" y="98" class="node-title" text-anchor="middle">Controller</text><text x="525" y="122" class="node-sub" text-anchor="middle">比较 desired / actual</text><text x="525" y="141" class="node-sub" text-anchor="middle">创建或替换 Pod</text></g>
+<g aria-label="Scheduler"><rect x="440" y="235" width="170" height="85" rx="8" fill="#f3edff" stroke="#7651a8" stroke-width="2"/><text x="525" y="263" class="node-title" text-anchor="middle">Scheduler</text><text x="525" y="287" class="node-sub" text-anchor="middle">过滤与打分</text><text x="525" y="306" class="node-sub" text-anchor="middle">绑定 Node</text></g>
+<g aria-label="Kubelet"><rect x="660" y="115" width="145" height="85" rx="8" fill="#e8f1ff" stroke="#2766b0" stroke-width="2"/><text x="732.5" y="143" class="node-title" text-anchor="middle">Kubelet</text><text x="732.5" y="167" class="node-sub" text-anchor="middle">拉取镜像</text><text x="732.5" y="186" class="node-sub" text-anchor="middle">启动与探针</text></g>
+<g aria-label="实际状态"><rect x="835" y="115" width="100" height="85" rx="8" fill="#e8f7ef" stroke="#2f7d57" stroke-width="2"/><text x="885" y="143" class="node-title" text-anchor="middle">实际状态</text><text x="885" y="167" class="node-sub" text-anchor="middle">Pod</text><text x="885" y="186" class="node-sub" text-anchor="middle">Ready</text></g>
+<g aria-label="持续反馈"><rect x="305" y="390" width="350" height="62" rx="8" fill="#eef2f4" stroke="#34444d" stroke-width="2"/><text x="480" y="418" class="node-title" text-anchor="middle">持续反馈</text><text x="480" y="442" class="node-sub" text-anchor="middle">状态变化重新进入调和，不保证业务数据一致性</text></g>
+<text x="930" y="480" class="note" text-anchor="end">系统架构 · 基础设施与交付层</text>
+</svg>

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 500" role="img" aria-labelledby="title desc">
+<title id="title">源码到生产的不可变交付链</title>
+<desc id="desc">展示提交经过评审测试、隔离构建、签名入库、环境晋级、灰度门禁到生产的全过程。</desc>
+<defs>
+<style>
+text{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",Arial,sans-serif;letter-spacing:0}.heading{font-size:25px;font-weight:700;fill:#1f2d33}.caption{font-size:14px;fill:#607078}.node-title{font-size:16px;font-weight:700;fill:#1f2d33}.node-sub{font-size:13px;fill:#45565e}.edge{fill:none;stroke:#607078;stroke-width:2}.note{font-size:12px;fill:#6a777d}
+</style>
+<marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#607078"/></marker>
+</defs>
+<rect width="960" height="500" fill="#ffffff"/>
+<text x="30" y="38" class="heading">源码到生产的不可变交付链</text>
+<text x="30" y="63" class="caption">展示提交经过评审测试、隔离构建、签名入库、环境晋级、灰度门禁到生产的全过程。</text>
+<path d="M 165 168 L 190 168" class="edge" marker-end="url(#arrow)"/>
+<path d="M 325 168 L 350 168" class="edge" marker-end="url(#arrow)"/>
+<path d="M 485 168 L 510 168" class="edge" marker-end="url(#arrow)"/>
+<path d="M 645 168 L 670 168" class="edge" marker-end="url(#arrow)"/>
+<path d="M 790 168 L 815 168" class="edge" marker-end="url(#arrow)"/>
+<path d="M 480 300 L 565 211" class="edge" marker-end="url(#arrow)"/>
+<path d="M 780 300 L 865 211" class="edge" marker-end="url(#arrow)"/>
+<g aria-label="Commit"><rect x="30" y="125" width="135" height="86" rx="8" fill="#e8f1ff" stroke="#2766b0" stroke-width="2"/><text x="97.5" y="153" class="node-title" text-anchor="middle">Commit</text><text x="97.5" y="177" class="node-sub" text-anchor="middle">源码与 IaC</text><text x="97.5" y="196" class="node-sub" text-anchor="middle">依赖锁文件</text></g>
+<g aria-label="验证"><rect x="190" y="125" width="135" height="86" rx="8" fill="#e8f7ef" stroke="#2f7d57" stroke-width="2"/><text x="257.5" y="153" class="node-title" text-anchor="middle">验证</text><text x="257.5" y="177" class="node-sub" text-anchor="middle">评审 · 测试</text><text x="257.5" y="196" class="node-sub" text-anchor="middle">SAST · Policy</text></g>
+<g aria-label="隔离构建"><rect x="350" y="125" width="135" height="86" rx="8" fill="#fff3df" stroke="#b66a18" stroke-width="2"/><text x="417.5" y="153" class="node-title" text-anchor="middle">隔离构建</text><text x="417.5" y="177" class="node-sub" text-anchor="middle">一次构建</text><text x="417.5" y="196" class="node-sub" text-anchor="middle">生成 digest</text></g>
+<g aria-label="可信制品"><rect x="510" y="125" width="135" height="86" rx="8" fill="#f3edff" stroke="#7651a8" stroke-width="2"/><text x="577.5" y="153" class="node-title" text-anchor="middle">可信制品</text><text x="577.5" y="177" class="node-sub" text-anchor="middle">镜像 + SBOM</text><text x="577.5" y="196" class="node-sub" text-anchor="middle">provenance + 签名</text></g>
+<g aria-label="晋级"><rect x="670" y="125" width="120" height="86" rx="8" fill="#e8f1ff" stroke="#2766b0" stroke-width="2"/><text x="730" y="153" class="node-title" text-anchor="middle">晋级</text><text x="730" y="177" class="node-sub" text-anchor="middle">Dev → Stage</text><text x="730" y="196" class="node-sub" text-anchor="middle">同一 digest</text></g>
+<g aria-label="生产"><rect x="815" y="125" width="115" height="86" rx="8" fill="#e8f7ef" stroke="#2f7d57" stroke-width="2"/><text x="872.5" y="153" class="node-title" text-anchor="middle">生产</text><text x="872.5" y="177" class="node-sub" text-anchor="middle">Canary 门禁</text><text x="872.5" y="196" class="node-sub" text-anchor="middle">审计与回滚</text></g>
+<g aria-label="运行时注入"><rect x="350" y="300" width="260" height="88" rx="8" fill="#eef2f4" stroke="#34444d" stroke-width="2"/><text x="480" y="328" class="node-title" text-anchor="middle">运行时注入</text><text x="480" y="352" class="node-sub" text-anchor="middle">配置 · Secret · Workload Identity</text><text x="480" y="371" class="node-sub" text-anchor="middle">不进入镜像</text></g>
+<g aria-label="发布证据链"><rect x="650" y="300" width="260" height="88" rx="8" fill="#fff3df" stroke="#b66a18" stroke-width="2"/><text x="780" y="328" class="node-title" text-anchor="middle">发布证据链</text><text x="780" y="352" class="node-sub" text-anchor="middle">commit → digest → 配置 → 迁移</text><text x="780" y="371" class="node-sub" text-anchor="middle">→ 审批 → 操作者</text></g>
+<text x="930" y="480" class="note" text-anchor="end">系统架构 · 基础设施与交付层</text>
+</svg>

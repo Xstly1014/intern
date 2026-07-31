@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 500" role="img" aria-labelledby="title desc">
+<title id="title">平台、服务与安全团队责任分工</title>
+<desc id="desc">展示平台团队提供铺好的道路，服务团队对工作负载结果负责，安全团队定义与验证守护规则。</desc>
+<defs>
+<style>
+text{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",Arial,sans-serif;letter-spacing:0}.heading{font-size:25px;font-weight:700;fill:#1f2d33}.caption{font-size:14px;fill:#607078}.node-title{font-size:16px;font-weight:700;fill:#1f2d33}.node-sub{font-size:13px;fill:#45565e}.edge{fill:none;stroke:#607078;stroke-width:2}.note{font-size:12px;fill:#6a777d}
+</style>
+<marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#607078"/></marker>
+</defs>
+<rect width="960" height="500" fill="#ffffff"/>
+<text x="30" y="38" class="heading">平台、服务与安全团队责任分工</text>
+<text x="30" y="63" class="caption">展示平台团队提供铺好的道路，服务团队对工作负载结果负责，安全团队定义与验证守护规则。</text>
+<path d="M 165 310 L 340 370" class="edge" marker-end="url(#arrow)"/>
+<path d="M 480 310 L 480 370" class="edge" marker-end="url(#arrow)"/>
+<path d="M 795 310 L 620 370" class="edge" marker-end="url(#arrow)"/>
+<g aria-label="平台团队"><rect x="40" y="100" width="250" height="210" rx="8" fill="#e8f1ff" stroke="#2766b0" stroke-width="2"/><text x="165" y="128" class="node-title" text-anchor="middle">平台团队</text><text x="165" y="152" class="node-sub" text-anchor="middle">集群与网络基线</text><text x="165" y="171" class="node-sub" text-anchor="middle">CI/CD 与制品仓库</text><text x="165" y="190" class="node-sub" text-anchor="middle">身份、Secret、观测平台</text><text x="165" y="209" class="node-sub" text-anchor="middle">默认模板与自助能力</text></g>
+<g aria-label="服务团队"><rect x="355" y="100" width="250" height="210" rx="8" fill="#e8f7ef" stroke="#2f7d57" stroke-width="2"/><text x="480" y="128" class="node-title" text-anchor="middle">服务团队</text><text x="480" y="152" class="node-sub" text-anchor="middle">资源与探针声明</text><text x="480" y="171" class="node-sub" text-anchor="middle">SLO、容量与扩缩容语义</text><text x="480" y="190" class="node-sub" text-anchor="middle">迁移、回滚与 Runbook</text><text x="480" y="209" class="node-sub" text-anchor="middle">业务连续性结果</text></g>
+<g aria-label="安全团队"><rect x="670" y="100" width="250" height="210" rx="8" fill="#fff3df" stroke="#b66a18" stroke-width="2"/><text x="795" y="128" class="node-title" text-anchor="middle">安全团队</text><text x="795" y="152" class="node-sub" text-anchor="middle">IAM 与网络策略</text><text x="795" y="171" class="node-sub" text-anchor="middle">供应链和准入规则</text><text x="795" y="190" class="node-sub" text-anchor="middle">风险例外与审计</text><text x="795" y="209" class="node-sub" text-anchor="middle">事件响应协同</text></g>
+<g aria-label="共同负责的生产结果"><rect x="235" y="370" width="490" height="76" rx="8" fill="#eef2f4" stroke="#34444d" stroke-width="2"/><text x="480" y="398" class="node-title" text-anchor="middle">共同负责的生产结果</text><text x="480" y="422" class="node-sub" text-anchor="middle">变更可追溯 · 权限最小化 · 故障可恢复 · 演练有证据</text></g>
+<text x="930" y="480" class="note" text-anchor="end">系统架构 · 基础设施与交付层</text>
+</svg>

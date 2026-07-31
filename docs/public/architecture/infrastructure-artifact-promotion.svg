@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 500" role="img" aria-labelledby="title desc">
+<title id="title">同一不可变制品跨环境晋级</title>
+<desc id="desc">展示镜像只构建一次并以 digest 从开发环境晋级到预发和生产，环境差异由受控配置注入。</desc>
+<defs>
+<style>
+text{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",Arial,sans-serif;letter-spacing:0}.heading{font-size:25px;font-weight:700;fill:#1f2d33}.caption{font-size:14px;fill:#607078}.node-title{font-size:16px;font-weight:700;fill:#1f2d33}.node-sub{font-size:13px;fill:#45565e}.edge{fill:none;stroke:#607078;stroke-width:2}.note{font-size:12px;fill:#6a777d}
+</style>
+<marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#607078"/></marker>
+</defs>
+<rect width="960" height="500" fill="#ffffff"/>
+<text x="30" y="38" class="heading">同一不可变制品跨环境晋级</text>
+<text x="30" y="63" class="caption">展示镜像只构建一次并以 digest 从开发环境晋级到预发和生产，环境差异由受控配置注入。</text>
+<path d="M 215 170 L 275 170" class="edge" marker-end="url(#arrow)"/>
+<path d="M 425 170 L 485 170" class="edge" marker-end="url(#arrow)"/>
+<path d="M 635 170 L 695 170" class="edge" marker-end="url(#arrow)"/>
+<path d="M 350 310 L 350 215" class="edge" marker-end="url(#arrow)"/>
+<path d="M 560 310 L 560 215" class="edge" marker-end="url(#arrow)"/>
+<path d="M 770 310 L 770 215" class="edge" marker-end="url(#arrow)"/>
+<g aria-label="Build once"><rect x="45" y="125" width="170" height="90" rx="8" fill="#fff3df" stroke="#b66a18" stroke-width="2"/><text x="130" y="153" class="node-title" text-anchor="middle">Build once</text><text x="130" y="177" class="node-sub" text-anchor="middle">image@sha256:abc</text><text x="130" y="196" class="node-sub" text-anchor="middle">签名 + SBOM</text></g>
+<g aria-label="Dev"><rect x="275" y="125" width="150" height="90" rx="8" fill="#e8f1ff" stroke="#2766b0" stroke-width="2"/><text x="350" y="153" class="node-title" text-anchor="middle">Dev</text><text x="350" y="177" class="node-sub" text-anchor="middle">功能验证</text><text x="350" y="196" class="node-sub" text-anchor="middle">临时配置</text></g>
+<g aria-label="Stage"><rect x="485" y="125" width="150" height="90" rx="8" fill="#e8f7ef" stroke="#2f7d57" stroke-width="2"/><text x="560" y="153" class="node-title" text-anchor="middle">Stage</text><text x="560" y="177" class="node-sub" text-anchor="middle">集成/容量验证</text><text x="560" y="196" class="node-sub" text-anchor="middle">生产等价拓扑</text></g>
+<g aria-label="Production"><rect x="695" y="125" width="150" height="90" rx="8" fill="#f3edff" stroke="#7651a8" stroke-width="2"/><text x="770" y="153" class="node-title" text-anchor="middle">Production</text><text x="770" y="177" class="node-sub" text-anchor="middle">Canary → 全量</text><text x="770" y="196" class="node-sub" text-anchor="middle">同一 digest</text></g>
+<g aria-label="环境配置面"><rect x="275" y="310" width="570" height="76" rx="8" fill="#eef2f4" stroke="#34444d" stroke-width="2"/><text x="560" y="338" class="node-title" text-anchor="middle">环境配置面</text><text x="560" y="362" class="node-sub" text-anchor="middle">版本化非敏感配置 + Secret Manager + Workload Identity；配置也要关联发布记录</text></g>
+<text x="930" y="480" class="note" text-anchor="end">系统架构 · 基础设施与交付层</text>
+</svg>

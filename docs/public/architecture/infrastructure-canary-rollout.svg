@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 500" role="img" aria-labelledby="title desc">
+<title id="title">Canary 分阶段放量与指标门禁</title>
+<desc id="desc">展示候选版本按 1%、5%、25%、50%、100% 放量并在每个阶段依据技术和业务指标自动判断。</desc>
+<defs>
+<style>
+text{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",Arial,sans-serif;letter-spacing:0}.heading{font-size:25px;font-weight:700;fill:#1f2d33}.caption{font-size:14px;fill:#607078}.node-title{font-size:16px;font-weight:700;fill:#1f2d33}.node-sub{font-size:13px;fill:#45565e}.edge{fill:none;stroke:#607078;stroke-width:2}.note{font-size:12px;fill:#6a777d}
+</style>
+<marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#607078"/></marker>
+</defs>
+<rect width="960" height="500" fill="#ffffff"/>
+<text x="30" y="38" class="heading">Canary 分阶段放量与指标门禁</text>
+<text x="30" y="63" class="caption">展示候选版本按 1%、5%、25%、50%、100% 放量并在每个阶段依据技术和业务指标自动判断。</text>
+<path d="M 140 142 L 170 142" class="edge" marker-end="url(#arrow)"/>
+<path d="M 275 142 L 305 142" class="edge" marker-end="url(#arrow)"/>
+<path d="M 410 142 L 440 142" class="edge" marker-end="url(#arrow)"/>
+<path d="M 545 142 L 575 142" class="edge" marker-end="url(#arrow)"/>
+<path d="M 680 142 L 710 142" class="edge" marker-end="url(#arrow)"/>
+<path d="M 815 142 L 845 142" class="edge" marker-end="url(#arrow)"/>
+<path d="M 225 180 L 225 270" class="edge" marker-end="url(#arrow)"/>
+<path d="M 492 180 L 492 270" class="edge" marker-end="url(#arrow)"/>
+<path d="M 762 180 L 815 285" class="edge" marker-end="url(#arrow)"/>
+<g aria-label="候选版本"><rect x="25" y="105" width="115" height="75" rx="8" fill="#e8f1ff" stroke="#2766b0" stroke-width="2"/><text x="82.5" y="133" class="node-title" text-anchor="middle">候选版本</text><text x="82.5" y="157" class="node-sub" text-anchor="middle">新 digest</text><text x="82.5" y="176" class="node-sub" text-anchor="middle">兼容迁移</text></g>
+<g aria-label="1%"><rect x="170" y="105" width="105" height="75" rx="8" fill="#e8f7ef" stroke="#2f7d57" stroke-width="2"/><text x="222.5" y="133" class="node-title" text-anchor="middle">1%</text><text x="222.5" y="157" class="node-sub" text-anchor="middle">冒烟</text><text x="222.5" y="176" class="node-sub" text-anchor="middle">5-10 min</text></g>
+<g aria-label="5%"><rect x="305" y="105" width="105" height="75" rx="8" fill="#e8f7ef" stroke="#2f7d57" stroke-width="2"/><text x="357.5" y="133" class="node-title" text-anchor="middle">5%</text><text x="357.5" y="157" class="node-sub" text-anchor="middle">错误与延迟</text><text x="357.5" y="176" class="node-sub" text-anchor="middle">10-20 min</text></g>
+<g aria-label="25%"><rect x="440" y="105" width="105" height="75" rx="8" fill="#fff3df" stroke="#b66a18" stroke-width="2"/><text x="492.5" y="133" class="node-title" text-anchor="middle">25%</text><text x="492.5" y="157" class="node-sub" text-anchor="middle">业务指标</text><text x="492.5" y="176" class="node-sub" text-anchor="middle">20-30 min</text></g>
+<g aria-label="50%"><rect x="575" y="105" width="105" height="75" rx="8" fill="#fff3df" stroke="#b66a18" stroke-width="2"/><text x="627.5" y="133" class="node-title" text-anchor="middle">50%</text><text x="627.5" y="157" class="node-sub" text-anchor="middle">容量趋势</text><text x="627.5" y="176" class="node-sub" text-anchor="middle">稳定窗口</text></g>
+<g aria-label="100%"><rect x="710" y="105" width="105" height="75" rx="8" fill="#f3edff" stroke="#7651a8" stroke-width="2"/><text x="762.5" y="133" class="node-title" text-anchor="middle">100%</text><text x="762.5" y="157" class="node-sub" text-anchor="middle">完成发布</text><text x="762.5" y="176" class="node-sub" text-anchor="middle">持续观察</text></g>
+<g aria-label="Bake"><rect x="845" y="105" width="90" height="75" rx="8" fill="#e8f1ff" stroke="#2766b0" stroke-width="2"/><text x="890" y="133" class="node-title" text-anchor="middle">Bake</text><text x="890" y="157" class="node-sub" text-anchor="middle">确认无</text><text x="890" y="176" class="node-sub" text-anchor="middle">慢性回归</text></g>
+<g aria-label="自动门禁"><rect x="170" y="270" width="510" height="88" rx="8" fill="#eef2f4" stroke="#34444d" stroke-width="2"/><text x="425" y="298" class="node-title" text-anchor="middle">自动门禁</text><text x="425" y="322" class="node-sub" text-anchor="middle">错误率 · p95/p99 · 饱和度 · 依赖失败 · 转化/支付成功率</text><text x="425" y="341" class="node-sub" text-anchor="middle">与稳定版本及历史基线比较</text></g>
+<g aria-label="失败动作"><rect x="710" y="285" width="210" height="65" rx="8" fill="#fff0ef" stroke="#b94b45" stroke-width="2"/><text x="815" y="313" class="node-title" text-anchor="middle">失败动作</text><text x="815" y="337" class="node-sub" text-anchor="middle">立即停流 → 回滚流量</text><text x="815" y="356" class="node-sub" text-anchor="middle">保留证据，禁止继续放量</text></g>
+<text x="930" y="480" class="note" text-anchor="end">系统架构 · 基础设施与交付层</text>
+</svg>

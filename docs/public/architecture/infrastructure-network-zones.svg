@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 500" role="img" aria-labelledby="title desc">
+<title id="title">公网、应用、数据与管理网络分区</title>
+<desc id="desc">展示互联网入口、应用命名空间、数据服务区与独立管理面的默认拒绝和显式放行关系。</desc>
+<defs>
+<style>
+text{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",Arial,sans-serif;letter-spacing:0}.heading{font-size:25px;font-weight:700;fill:#1f2d33}.caption{font-size:14px;fill:#607078}.node-title{font-size:16px;font-weight:700;fill:#1f2d33}.node-sub{font-size:13px;fill:#45565e}.edge{fill:none;stroke:#607078;stroke-width:2}.note{font-size:12px;fill:#6a777d}
+</style>
+<marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#607078"/></marker>
+</defs>
+<rect width="960" height="500" fill="#ffffff"/>
+<text x="30" y="38" class="heading">公网、应用、数据与管理网络分区</text>
+<text x="30" y="63" class="caption">展示互联网入口、应用命名空间、数据服务区与独立管理面的默认拒绝和显式放行关系。</text>
+<path d="M 205 142 L 260 142" class="edge" marker-end="url(#arrow)"/>
+<path d="M 460 142 L 515 110" class="edge" marker-end="url(#arrow)"/>
+<path d="M 615 160 L 615 215" class="edge" marker-end="url(#arrow)"/>
+<path d="M 770 195 L 715 110" class="edge" marker-end="url(#arrow)"/>
+<path d="M 770 220 L 715 267" class="edge" marker-end="url(#arrow)"/>
+<path d="M 615 320 L 615 370" class="edge" marker-end="url(#arrow)"/>
+<g aria-label="公网区"><rect x="25" y="90" width="180" height="105" rx="8" fill="#fff0ef" stroke="#b94b45" stroke-width="2"/><text x="115" y="118" class="node-title" text-anchor="middle">公网区</text><text x="115" y="142" class="node-sub" text-anchor="middle">Internet → CDN/WAF</text><text x="115" y="161" class="node-sub" text-anchor="middle">Public Load Balancer</text></g>
+<g aria-label="入口区"><rect x="260" y="90" width="200" height="105" rx="8" fill="#fff3df" stroke="#b66a18" stroke-width="2"/><text x="360" y="118" class="node-title" text-anchor="middle">入口区</text><text x="360" y="142" class="node-sub" text-anchor="middle">Ingress / Gateway</text><text x="360" y="161" class="node-sub" text-anchor="middle">仅开放 443</text></g>
+<g aria-label="应用区"><rect x="515" y="55" width="200" height="105" rx="8" fill="#e8f1ff" stroke="#2766b0" stroke-width="2"/><text x="615" y="83" class="node-title" text-anchor="middle">应用区</text><text x="615" y="107" class="node-sub" text-anchor="middle">Namespace / ServiceAccount</text><text x="615" y="126" class="node-sub" text-anchor="middle">East-West 默认拒绝</text></g>
+<g aria-label="数据区"><rect x="515" y="215" width="200" height="105" rx="8" fill="#e8f7ef" stroke="#2f7d57" stroke-width="2"/><text x="615" y="243" class="node-title" text-anchor="middle">数据区</text><text x="615" y="267" class="node-sub" text-anchor="middle">DB · Cache · MQ</text><text x="615" y="286" class="node-sub" text-anchor="middle">仅允许指定工作负载</text></g>
+<g aria-label="管理区"><rect x="770" y="130" width="165" height="130" rx="8" fill="#f3edff" stroke="#7651a8" stroke-width="2"/><text x="852.5" y="158" class="node-title" text-anchor="middle">管理区</text><text x="852.5" y="182" class="node-sub" text-anchor="middle">Bastion · CI Runner</text><text x="852.5" y="201" class="node-sub" text-anchor="middle">Control Plane</text><text x="852.5" y="220" class="node-sub" text-anchor="middle">独立身份与审计</text></g>
+<g aria-label="Egress 控制"><rect x="260" y="370" width="455" height="70" rx="8" fill="#eef2f4" stroke="#34444d" stroke-width="2"/><text x="487.5" y="398" class="node-title" text-anchor="middle">Egress 控制</text><text x="487.5" y="422" class="node-sub" text-anchor="middle">DNS / Proxy / NAT / Allowlist；外联目的地与凭证同时约束</text></g>
+<text x="930" y="480" class="note" text-anchor="end">系统架构 · 基础设施与交付层</text>
+</svg>

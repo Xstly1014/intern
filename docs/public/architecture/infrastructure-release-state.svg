@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 500" role="img" aria-labelledby="title desc">
+<title id="title">制品、配置、Schema 与流量的发布状态机</title>
+<desc id="desc">展示发布不是单一镜像替换，而是制品、配置、数据库模式与流量四类状态协调演进。</desc>
+<defs>
+<style>
+text{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",Arial,sans-serif;letter-spacing:0}.heading{font-size:25px;font-weight:700;fill:#1f2d33}.caption{font-size:14px;fill:#607078}.node-title{font-size:16px;font-weight:700;fill:#1f2d33}.node-sub{font-size:13px;fill:#45565e}.edge{fill:none;stroke:#607078;stroke-width:2}.note{font-size:12px;fill:#6a777d}
+</style>
+<marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#607078"/></marker>
+</defs>
+<rect width="960" height="500" fill="#ffffff"/>
+<text x="30" y="38" class="heading">制品、配置、Schema 与流量的发布状态机</text>
+<text x="30" y="63" class="caption">展示发布不是单一镜像替换，而是制品、配置、数据库模式与流量四类状态协调演进。</text>
+<path d="M 240 140 L 270 140" class="edge" marker-end="url(#arrow)"/>
+<path d="M 480 140 L 510 140" class="edge" marker-end="url(#arrow)"/>
+<path d="M 720 140 L 750 140" class="edge" marker-end="url(#arrow)"/>
+<path d="M 615 205 L 670 300" class="edge" marker-end="url(#arrow)"/>
+<path d="M 330 300 L 375 205" class="edge" marker-end="url(#arrow)"/>
+<g aria-label="1. Expand Schema"><rect x="30" y="75" width="210" height="130" rx="8" fill="#e8f1ff" stroke="#2766b0" stroke-width="2"/><text x="135" y="103" class="node-title" text-anchor="middle">1. Expand Schema</text><text x="135" y="127" class="node-sub" text-anchor="middle">先增加兼容字段/表</text><text x="135" y="146" class="node-sub" text-anchor="middle">旧代码仍可读写</text><text x="135" y="165" class="node-sub" text-anchor="middle">迁移可重入</text></g>
+<g aria-label="2. 部署兼容版本"><rect x="270" y="75" width="210" height="130" rx="8" fill="#e8f7ef" stroke="#2f7d57" stroke-width="2"/><text x="375" y="103" class="node-title" text-anchor="middle">2. 部署兼容版本</text><text x="375" y="127" class="node-sub" text-anchor="middle">同一签名 digest</text><text x="375" y="146" class="node-sub" text-anchor="middle">配置版本已就绪</text><text x="375" y="165" class="node-sub" text-anchor="middle">新旧实例可共存</text></g>
+<g aria-label="3. 渐进切流"><rect x="510" y="75" width="210" height="130" rx="8" fill="#fff3df" stroke="#b66a18" stroke-width="2"/><text x="615" y="103" class="node-title" text-anchor="middle">3. 渐进切流</text><text x="615" y="127" class="node-sub" text-anchor="middle">1% → 5% → 25% → 100%</text><text x="615" y="146" class="node-sub" text-anchor="middle">指标门禁与暂停</text><text x="615" y="165" class="node-sub" text-anchor="middle">Feature Flag 控制能力</text></g>
+<g aria-label="4. Contract"><rect x="750" y="75" width="180" height="130" rx="8" fill="#f3edff" stroke="#7651a8" stroke-width="2"/><text x="840" y="103" class="node-title" text-anchor="middle">4. Contract</text><text x="840" y="127" class="node-sub" text-anchor="middle">确认旧版本已退场</text><text x="840" y="146" class="node-sub" text-anchor="middle">清理旧字段/逻辑</text><text x="840" y="165" class="node-sub" text-anchor="middle">独立发布窗口</text></g>
+<g aria-label="回滚边界"><rect x="150" y="300" width="280" height="92" rx="8" fill="#fff0ef" stroke="#b94b45" stroke-width="2"/><text x="290" y="328" class="node-title" text-anchor="middle">回滚边界</text><text x="290" y="352" class="node-sub" text-anchor="middle">流量/应用通常可快速回滚</text><text x="290" y="371" class="node-sub" text-anchor="middle">破坏性 Schema 和外部副作用不可假设回滚</text></g>
+<g aria-label="完整发布状态"><rect x="530" y="300" width="280" height="92" rx="8" fill="#eef2f4" stroke="#34444d" stroke-width="2"/><text x="670" y="328" class="node-title" text-anchor="middle">完整发布状态</text><text x="670" y="352" class="node-sub" text-anchor="middle">artifact digest + config version + schema phase</text><text x="670" y="371" class="node-sub" text-anchor="middle">+ traffic weight + flag state + migration checkpoint</text></g>
+<text x="930" y="480" class="note" text-anchor="end">系统架构 · 基础设施与交付层</text>
+</svg>

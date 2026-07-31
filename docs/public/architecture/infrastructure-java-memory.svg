@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 500" role="img" aria-labelledby="title desc">
+<title id="title">Java 容器内存组成与余量</title>
+<desc id="desc">展示容器内存限制内堆、元空间、线程栈、直接内存、代码缓存与系统余量之间的关系。</desc>
+<defs>
+<style>
+text{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",Arial,sans-serif;letter-spacing:0}.heading{font-size:25px;font-weight:700;fill:#1f2d33}.caption{font-size:14px;fill:#607078}.node-title{font-size:16px;font-weight:700;fill:#1f2d33}.node-sub{font-size:13px;fill:#45565e}.edge{fill:none;stroke:#607078;stroke-width:2}.note{font-size:12px;fill:#6a777d}
+</style>
+<marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#607078"/></marker>
+</defs>
+<rect width="960" height="500" fill="#ffffff"/>
+<text x="30" y="38" class="heading">Java 容器内存组成与余量</text>
+<text x="30" y="63" class="caption">展示容器内存限制内堆、元空间、线程栈、直接内存、代码缓存与系统余量之间的关系。</text>
+
+<g aria-label="Container memory limit"><rect x="40" y="90" width="880" height="330" rx="8" fill="#eef2f4" stroke="#34444d" stroke-width="2"/><text x="480" y="118" class="node-title" text-anchor="middle">Container memory limit</text><text x="480" y="142" class="node-sub" text-anchor="middle">必须覆盖 JVM 全部原生与堆内存；接近 limit 会触发 cgroup OOM</text></g>
+<g aria-label="Java Heap"><rect x="75" y="155" width="300" height="145" rx="8" fill="#e8f1ff" stroke="#2766b0" stroke-width="2"/><text x="225" y="183" class="node-title" text-anchor="middle">Java Heap</text><text x="225" y="207" class="node-sub" text-anchor="middle">-Xmx / MaxRAMPercentage</text><text x="225" y="226" class="node-sub" text-anchor="middle">对象、年轻代、老年代</text><text x="225" y="245" class="node-sub" text-anchor="middle">不能把 limit 全给堆</text></g>
+<g aria-label="Metaspace"><rect x="400" y="155" width="145" height="145" rx="8" fill="#e8f7ef" stroke="#2f7d57" stroke-width="2"/><text x="472.5" y="183" class="node-title" text-anchor="middle">Metaspace</text><text x="472.5" y="207" class="node-sub" text-anchor="middle">类元数据</text><text x="472.5" y="226" class="node-sub" text-anchor="middle">动态代理与类加载</text></g>
+<g aria-label="Thread stacks"><rect x="570" y="155" width="145" height="145" rx="8" fill="#fff3df" stroke="#b66a18" stroke-width="2"/><text x="642.5" y="183" class="node-title" text-anchor="middle">Thread stacks</text><text x="642.5" y="207" class="node-sub" text-anchor="middle">线程数 × -Xss</text><text x="642.5" y="226" class="node-sub" text-anchor="middle">线程池会放大</text></g>
+<g aria-label="Direct / Native"><rect x="740" y="155" width="145" height="145" rx="8" fill="#f3edff" stroke="#7651a8" stroke-width="2"/><text x="812.5" y="183" class="node-title" text-anchor="middle">Direct / Native</text><text x="812.5" y="207" class="node-sub" text-anchor="middle">Netty buffer · mmap</text><text x="812.5" y="226" class="node-sub" text-anchor="middle">JIT code cache · JNI</text></g>
+<g aria-label="Headroom"><rect x="75" y="335" width="810" height="62" rx="8" fill="#fff0ef" stroke="#b94b45" stroke-width="2"/><text x="480" y="363" class="node-title" text-anchor="middle">Headroom</text><text x="480" y="387" class="node-sub" text-anchor="middle">GC 峰值 · libc · agent · page cache；用压测与 NMT 校准</text></g>
+<text x="930" y="480" class="note" text-anchor="end">系统架构 · 基础设施与交付层</text>
+</svg>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 500" role="img" aria-labelledby="title desc">
+<title id="title">业务影响到灾备策略选择</title>
+<desc id="desc">展示依据最大可容忍数据丢失 RPO 和恢复时长 RTO 选择备份恢复、冷备、温备或多地域热备。</desc>
+<defs>
+<style>
+text{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",Arial,sans-serif;letter-spacing:0}.heading{font-size:25px;font-weight:700;fill:#1f2d33}.caption{font-size:14px;fill:#607078}.node-title{font-size:16px;font-weight:700;fill:#1f2d33}.node-sub{font-size:13px;fill:#45565e}.edge{fill:none;stroke:#607078;stroke-width:2}.note{font-size:12px;fill:#6a777d}
+</style>
+<marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#607078"/></marker>
+</defs>
+<rect width="960" height="500" fill="#ffffff"/>
+<text x="30" y="38" class="heading">业务影响到灾备策略选择</text>
+<text x="30" y="63" class="caption">展示依据最大可容忍数据丢失 RPO 和恢复时长 RTO 选择备份恢复、冷备、温备或多地域热备。</text>
+<path d="M 240 145 L 285 112" class="edge" marker-end="url(#arrow)"/>
+<path d="M 240 145 L 285 247" class="edge" marker-end="url(#arrow)"/>
+<path d="M 450 112 L 500 92" class="edge" marker-end="url(#arrow)"/>
+<path d="M 450 130 L 500 187" class="edge" marker-end="url(#arrow)"/>
+<path d="M 450 247 L 500 282" class="edge" marker-end="url(#arrow)"/>
+<path d="M 450 270 L 500 377" class="edge" marker-end="url(#arrow)"/>
+<path d="M 690 187 L 740 190" class="edge" marker-end="url(#arrow)"/>
+<path d="M 690 377 L 780 295" class="edge" marker-end="url(#arrow)"/>
+<g aria-label="业务影响分析"><rect x="40" y="95" width="200" height="100" rx="8" fill="#e8f1ff" stroke="#2766b0" stroke-width="2"/><text x="140" y="123" class="node-title" text-anchor="middle">业务影响分析</text><text x="140" y="147" class="node-sub" text-anchor="middle">关键旅程与依赖</text><text x="140" y="166" class="node-sub" text-anchor="middle">停机损失 · 合规</text><text x="140" y="185" class="node-sub" text-anchor="middle">最大可容忍中断</text></g>
+<g aria-label="RPO"><rect x="285" y="70" width="165" height="85" rx="8" fill="#e8f7ef" stroke="#2f7d57" stroke-width="2"/><text x="367.5" y="98" class="node-title" text-anchor="middle">RPO</text><text x="367.5" y="122" class="node-sub" text-anchor="middle">最多允许丢失</text><text x="367.5" y="141" class="node-sub" text-anchor="middle">多少数据？</text></g>
+<g aria-label="RTO"><rect x="285" y="205" width="165" height="85" rx="8" fill="#fff3df" stroke="#b66a18" stroke-width="2"/><text x="367.5" y="233" class="node-title" text-anchor="middle">RTO</text><text x="367.5" y="257" class="node-sub" text-anchor="middle">必须在多久内</text><text x="367.5" y="276" class="node-sub" text-anchor="middle">恢复服务？</text></g>
+<g aria-label="备份恢复"><rect x="500" y="55" width="190" height="75" rx="8" fill="#f3edff" stroke="#7651a8" stroke-width="2"/><text x="595" y="83" class="node-title" text-anchor="middle">备份恢复</text><text x="595" y="107" class="node-sub" text-anchor="middle">小时/天级 RTO</text><text x="595" y="126" class="node-sub" text-anchor="middle">成本最低</text></g>
+<g aria-label="冷备 / Pilot"><rect x="500" y="150" width="190" height="75" rx="8" fill="#e8f1ff" stroke="#2766b0" stroke-width="2"/><text x="595" y="178" class="node-title" text-anchor="middle">冷备 / Pilot</text><text x="595" y="202" class="node-sub" text-anchor="middle">分钟/小时级</text><text x="595" y="221" class="node-sub" text-anchor="middle">预置核心资源</text></g>
+<g aria-label="温备"><rect x="500" y="245" width="190" height="75" rx="8" fill="#e8f7ef" stroke="#2f7d57" stroke-width="2"/><text x="595" y="273" class="node-title" text-anchor="middle">温备</text><text x="595" y="297" class="node-sub" text-anchor="middle">分钟级</text><text x="595" y="316" class="node-sub" text-anchor="middle">持续复制与小容量</text></g>
+<g aria-label="多地域热备"><rect x="500" y="340" width="190" height="75" rx="8" fill="#fff0ef" stroke="#b94b45" stroke-width="2"/><text x="595" y="368" class="node-title" text-anchor="middle">多地域热备</text><text x="595" y="392" class="node-sub" text-anchor="middle">秒/分钟级</text><text x="595" y="411" class="node-sub" text-anchor="middle">复杂度和成本最高</text></g>
+<g aria-label="验证闭环"><rect x="740" y="145" width="180" height="150" rx="8" fill="#eef2f4" stroke="#34444d" stroke-width="2"/><text x="830" y="173" class="node-title" text-anchor="middle">验证闭环</text><text x="830" y="197" class="node-sub" text-anchor="middle">备份可恢复</text><text x="830" y="216" class="node-sub" text-anchor="middle">依赖与权限可用</text><text x="830" y="235" class="node-sub" text-anchor="middle">切流与 fencing</text><text x="830" y="254" class="node-sub" text-anchor="middle">回切不二次伤害</text></g>
+<text x="930" y="480" class="note" text-anchor="end">系统架构 · 基础设施与交付层</text>
+</svg>

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 500" role="img" aria-labelledby="title desc">
+<title id="title">基础设施与交付层能力版图</title>
+<desc id="desc">展示运行基础、平台控制、交付供应链和可靠性治理四组能力及其共同目标。</desc>
+<defs>
+<style>
+text{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",Arial,sans-serif;letter-spacing:0}.heading{font-size:25px;font-weight:700;fill:#1f2d33}.caption{font-size:14px;fill:#607078}.node-title{font-size:16px;font-weight:700;fill:#1f2d33}.node-sub{font-size:13px;fill:#45565e}.edge{fill:none;stroke:#607078;stroke-width:2}.note{font-size:12px;fill:#6a777d}
+</style>
+<marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#607078"/></marker>
+</defs>
+<rect width="960" height="500" fill="#ffffff"/>
+<text x="30" y="38" class="heading">基础设施与交付层能力版图</text>
+<text x="30" y="63" class="caption">展示运行基础、平台控制、交付供应链和可靠性治理四组能力及其共同目标。</text>
+<path d="M 135 186 L 250 290" class="edge" marker-end="url(#arrow)"/>
+<path d="M 365 186 L 330 290" class="edge" marker-end="url(#arrow)"/>
+<path d="M 595 186 L 630 290" class="edge" marker-end="url(#arrow)"/>
+<path d="M 825 186 L 710 290" class="edge" marker-end="url(#arrow)"/>
+<path d="M 290 382 L 430 415" class="edge" marker-end="url(#arrow)"/>
+<path d="M 670 382 L 530 415" class="edge" marker-end="url(#arrow)"/>
+<g aria-label="运行基础"><rect x="40" y="90" width="190" height="96" rx="8" fill="#e8f1ff" stroke="#2766b0" stroke-width="2"/><text x="135" y="118" class="node-title" text-anchor="middle">运行基础</text><text x="135" y="142" class="node-sub" text-anchor="middle">计算 · 容器 · JVM</text><text x="135" y="161" class="node-sub" text-anchor="middle">存储 · 网络 · DNS</text></g>
+<g aria-label="平台控制"><rect x="270" y="90" width="190" height="96" rx="8" fill="#e8f7ef" stroke="#2f7d57" stroke-width="2"/><text x="365" y="118" class="node-title" text-anchor="middle">平台控制</text><text x="365" y="142" class="node-sub" text-anchor="middle">Kubernetes · 调度</text><text x="365" y="161" class="node-sub" text-anchor="middle">身份 · 策略 · Secret</text></g>
+<g aria-label="交付供应链"><rect x="500" y="90" width="190" height="96" rx="8" fill="#fff3df" stroke="#b66a18" stroke-width="2"/><text x="595" y="118" class="node-title" text-anchor="middle">交付供应链</text><text x="595" y="142" class="node-sub" text-anchor="middle">CI · 制品 · SBOM</text><text x="595" y="161" class="node-sub" text-anchor="middle">签名 · 晋级 · 发布</text></g>
+<g aria-label="可靠性治理"><rect x="730" y="90" width="190" height="96" rx="8" fill="#f3edff" stroke="#7651a8" stroke-width="2"/><text x="825" y="118" class="node-title" text-anchor="middle">可靠性治理</text><text x="825" y="142" class="node-sub" text-anchor="middle">容量 · HA · DR</text><text x="825" y="161" class="node-sub" text-anchor="middle">演练 · 审计 · 成本</text></g>
+<g aria-label="应用运行结果"><rect x="155" y="290" width="270" height="92" rx="8" fill="#e8f7ef" stroke="#2f7d57" stroke-width="2"/><text x="290" y="318" class="node-title" text-anchor="middle">应用运行结果</text><text x="290" y="342" class="node-sub" text-anchor="middle">资源可控 · 停机无损</text><text x="290" y="361" class="node-sub" text-anchor="middle">故障隔离 · 可观测</text></g>
+<g aria-label="变更交付结果"><rect x="535" y="290" width="270" height="92" rx="8" fill="#fff3df" stroke="#b66a18" stroke-width="2"/><text x="670" y="318" class="node-title" text-anchor="middle">变更交付结果</text><text x="670" y="342" class="node-sub" text-anchor="middle">一次构建 · 渐进发布</text><text x="670" y="361" class="node-sub" text-anchor="middle">可停止 · 可回滚 · 可追溯</text></g>
+<g aria-label="共同目标"><rect x="345" y="415" width="270" height="58" rx="8" fill="#eef2f4" stroke="#34444d" stroke-width="2"/><text x="480" y="443" class="node-title" text-anchor="middle">共同目标</text><text x="480" y="467" class="node-sub" text-anchor="middle">可重复、安全地运行和演进</text></g>
+<text x="930" y="480" class="note" text-anchor="end">系统架构 · 基础设施与交付层</text>
+</svg>

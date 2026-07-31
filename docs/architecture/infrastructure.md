@@ -1,58 +1,65 @@
-# 基础设施与交付层：让系统可重复地运行与演进
+# 基础设施与交付层：让系统可重复、安全地运行和演进
 
-基础设施层提供计算、网络、存储、调度和隔离；交付体系把代码安全地变成可回滚的生产版本。目标是环境可重复、变更可追溯、发布小批量、失败可恢复，而不是“用了 Kubernetes 就云原生”。
+基础设施层提供计算、网络、存储、身份、调度与故障域；交付体系把源码变成可验证、不可变、可渐进发布和可回滚的生产版本。目标不是“上 Kubernetes”，而是环境可重建、变更可追踪、容量可证明、失败可恢复。
 
-## 1. 从代码到生产
+## 1. 运行与交付版图
 
-![从代码提交到灰度生产的持续交付流水线](/architecture/cicd-pipeline.svg)
+![基础设施与交付层能力版图](/architecture/infrastructure-capability-map.svg)
 
-同一个不可变制品逐环境晋级，配置在运行时注入；镜像用 digest 固定并生成 SBOM、签名和来源证明。部署记录关联 commit、制品、配置、数据库迁移、审批与操作者。
-
-## 2. 运行单元与容器
-
-Java 容器设置 requests/limits 并验证 JVM 能识别容器内存。为堆、元空间、线程栈、直接内存和 native 库预留空间，不能把 `-Xmx` 设成容器上限。处理 SIGTERM：先 readiness 失败、停止接流量、等待在途请求与消费者完成，再退出；终止宽限期覆盖最慢合法请求。
-
-镜像使用受维护的精简基础镜像、非 root 用户、只读文件系统（按需例外），不内置 Secret 和调试凭证。临时文件有容量限制和清理策略。
-
-## 3. Kubernetes 的职责
-
-Deployment 管理无状态副本，StatefulSet 适合确需稳定身份的有状态工作负载，Service 提供发现，Ingress/Gateway 暴露入口，ConfigMap/Secret 提供配置引用。Pod 跨节点和可用区分散，使用 PodDisruptionBudget 控制维护中可用副本。
-
-HPA 不只看 CPU：网关可看并发/请求率，消费者可看 Lag，任务执行器可看队列深度。扩容有启动延迟，需提前容量和预热；缩容要排空流量与消息。集群容量必须给故障和发布预留余量。
-
-## 4. 网络与隔离
-
-划分公网入口、应用、数据和管理平面，默认拒绝的 NetworkPolicy 限制东西向访问，出站也应受控。生产/测试账户与集群隔离，IAM 最小权限。Service Mesh 适合大规模统一 mTLS、遥测和流量策略，但会增加代理资源、控制面与调试复杂度，不是小系统必选。
-
-## 5. 发布策略
-
-| 策略 | 特点 | 适用 |
+| 能力 | 负责 | 不负责 |
 |---|---|---|
-| Rolling | 简单、资源增量小 | 兼容性好、风险较低 |
-| Blue-Green | 两套环境快速切换/回切 | 需足够资源，状态外置 |
-| Canary | 少量实例/用户逐步放量 | 高风险服务、需自动指标门禁 |
-| Feature Flag | 代码部署与功能开放分离 | 业务能力灰度，需治理过期开关 |
+| 计算/容器 | 进程隔离、资源、调度 | 业务并发与事务正确性 |
+| 网络/入口 | 地址、路由、隔离、TLS 基础 | 对象级授权 |
+| Kubernetes | 声明副本、健康、滚动、调度 | 自动解决有状态一致性 |
+| IaC | 可审查地创建环境和依赖 | 应用运行时业务配置语义 |
+| CI/制品 | 构建、测试、SBOM、签名 | 用扫描替代设计评审 |
+| CD | 灰度、门禁、回滚、审计 | 数据库瞬时回滚 |
+| HA/DR | 故障域冗余、切流、恢复 | 未演练的纸面 RTO/RPO |
 
-应用回滚不代表数据库能回滚。Schema 使用 expand/contract，消息与 API 向前向后兼容。Canary 对比相同流量类别的错误率、延迟和业务成功率，达到阈值自动暂停或回滚。
+## 2. 从提交到生产
 
-## 6. 高可用与容灾
+![源码到生产的不可变交付链](/architecture/infrastructure-delivery-chain.svg)
 
-高可用处理日常实例/节点/可用区故障，容灾处理地域级灾难。先做业务影响分析，定义每项能力 RTO/RPO，再决定主备、双活或多活。多活最难的是数据写入冲突、全局唯一、会话、流量回切和运营流程，不是多部署一套应用。
+提交经评审与测试，在隔离构建环境生成一次制品、SBOM、provenance 和签名；制品以 digest 晋级各环境，配置/Secret 运行时注入；部署先兼容 Schema，再 Canary，依据 SLO 与业务指标自动暂停/回滚；每次变更关联 commit、制品、配置、迁移、审批和操作者。
 
-备份、基础设施即代码、镜像和运行手册要跨故障域保存。定期做 GameDay：节点宕机、区故障、依赖超时、证书轮换、数据库恢复和地域切流，并测量是否真的满足 RTO/RPO。
+禁止在服务器手改文件、不同环境重新编译、使用可变 `latest` 或把 Secret 烧入镜像。
 
-## 7. 平台工程与成本
+## 3. 运行责任边界
 
-平台提供“铺好的路”：服务模板、CI/CD、身份、可观测、Secret、数据库申请和安全默认值，同时允许有理由地例外。平台的用户是开发团队，衡量交付前置时间、失败率、恢复时长和开发体验。
+![平台、服务团队与安全团队责任分工](/architecture/infrastructure-responsibility.svg)
 
-成本按服务/团队/环境标记，观察计算利用率、跨区流量、日志与 Trace 量、空闲数据库和存储生命周期。成本优化不能牺牲容量余量和恢复能力，应结合 SLO 决策。
+平台团队提供 paved road、集群、交付、身份、观测和默认安全；服务团队拥有资源声明、SLO、探针、扩缩容语义、迁移和 Runbook；安全团队定义供应链、IAM、网络与制品策略。托管云服务减少操作，不转移数据、容量和恢复责任。
 
-## 8. 常见误区
+## 4. 基础原则
 
-- 把环境差异手工改在服务器上，无法重建。
-- 只做 CI 构建，不做渐进发布、指标门禁和回滚。
-- Java 堆占满容器内存，最终被 OOMKill 却误判为堆不足。
-- readiness 与 liveness 相同，依赖抖动导致重启风暴。
-- 声称异地灾备但从未恢复备份或切换流量。
+- 声明式、版本化、可审查；禁止不可追踪的控制台漂移。
+- 制品不可变，配置外置，环境差异最小且显式。
+- 最小权限、短期身份、网络默认拒绝、管理面独立。
+- 小批量渐进发布，指标门禁，快速停止与可验证回滚。
+- 资源有 requests/limits、容量余量、优先级和过载策略。
+- HA 与备份/DR 分开设计，并以演练证明。
+- 基础设施变更与应用变更进入同一观测时间线。
 
-下一篇把所有层连起来：[端到端落地与演进](/architecture/practice)。
+## 5. 本章专题
+
+| 专题 | 深入内容 |
+|---|---|
+| [计算、容器与 JVM 资源](/architecture/infrastructure/runtime) | CPU/内存、OOM、临时盘、信号、探针与优雅停机 |
+| [Kubernetes 与网络隔离](/architecture/infrastructure/kubernetes-network) | 控制器、调度、PDB、NetworkPolicy、入口与 Mesh |
+| [IaC、环境与 Secret](/architecture/infrastructure/iac-environments) | State、Plan、Drift、账户隔离和密钥生命周期 |
+| [CI、制品与供应链](/architecture/infrastructure/ci-supply-chain) | 可复现构建、SBOM、签名、来源证明和门禁 |
+| [部署、灰度与回滚](/architecture/infrastructure/deployment) | Rolling/Blue-Green/Canary、Schema 兼容和 Feature Flag |
+| [高可用、弹性与灾备](/architecture/infrastructure/resilience-dr) | 故障域、HPA、容量、RTO/RPO、切流与回切 |
+| [Java 生产参考架构](/architecture/infrastructure/reference) | K8s/CI/CD 全链路、测试、演练和检查清单 |
+
+## 6. 最小上线基线
+
+- 同一签名 digest 跨环境晋级，运行时配置和 Secret 不入镜像。
+- JVM/容器资源、探针、SIGTERM 排空和 termination grace 经压测验证。
+- 网络、IAM、Namespace/账户按最小权限和环境隔离。
+- IaC Plan 有评审，State 加密锁定，Drift 可检测。
+- 发布使用兼容变更、Canary 门禁、自动停止和人工可回滚。
+- 应用扩容与数据库/下游容量共同建模，故障时保留余量。
+- 备份恢复、节点/AZ/Region 故障和流量切换按 RTO/RPO 演练。
+
+下一篇：[计算、容器与 JVM 资源](/architecture/infrastructure/runtime)。
