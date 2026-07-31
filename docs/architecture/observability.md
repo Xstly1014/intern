@@ -1,61 +1,70 @@
-# 可观测与运维层：从“出了问题”到“知道为什么”
+# 可观测与运维层：从用户影响到证据、止损和改进
 
-可观测性让团队仅凭系统外部输出推断内部状态。它不是收集越多日志越好，而是围绕用户体验和业务目标，通过指标、日志、Trace、事件和剖析快速发现、定位、止损与复盘。
+可观测性是根据系统输出推断内部状态的能力，运维则把这些证据变成发现、分级、止损、恢复和改进。目标不是“收集所有日志”，而是快速回答：**谁受影响、从何时开始、哪个变更相关、瓶颈在哪、如何安全止损、恢复是否完整。**
 
-## 1. 遥测信号
+## 1. 运行时架构
 
-| 信号 | 最适合回答 | 注意点 |
+![可观测信号从应用到分析平台的架构](/architecture/observability-signal-architecture.svg)
+
+应用和平台产生 Metrics、Logs、Traces、Profiles、业务事件与变更事件；OpenTelemetry SDK/Agent 统一语义和上下文；Collector 接收、过滤、脱敏、批量、采样和路由；后端分别优化聚合、检索、链路和剖析；告警与事件平台将信号关联服务目录、SLO 和 Runbook。
+
+遥测链路必须异步、有界、可降级。Collector/日志后端故障不能阻塞业务线程；丢弃、积压、采样和导出失败本身要被监控。
+
+## 2. 信号分工
+
+| 信号 | 最适合回答 | 不适合替代 |
 |---|---|---|
-| Metrics | 是否异常、影响规模、趋势如何 | 低基数标签，适合告警与聚合 |
-| Logs | 某次错误的上下文和离散事件 | 结构化、脱敏、采样、保留成本 |
-| Traces | 请求经过哪里、时间花在哪 | 上下文传播、采样、跨 MQ 关联 |
-| Profiles | CPU/内存具体消耗在哪段代码 | 控制开销，和 Trace/版本关联 |
-| Deploy Events | 异常是否与变更相关 | 记录版本、配置、操作者与范围 |
+| Metrics | 是否异常、规模、趋势、告警 | 单个请求完整细节 |
+| Logs | 离散事件、错误上下文、搜索 | 高效全局聚合与因果路径 |
+| Traces | 请求经过哪里、时间花在哪 | 永久业务审计 |
+| Profiles | CPU、分配、锁具体在哪段代码 | 用户请求语义 |
+| Events | 部署、配置、扩容、故障切换 | 连续性能分布 |
+| Audit | 谁为何改变了什么 | 调试噪声和高频性能日志 |
 
-OpenTelemetry 统一埋点和传播，Collector 做接收、过滤、批量和导出；Prometheus 等保存指标，Loki/ELK 保存日志，Tempo/Jaeger 保存 Trace。工具可替换，字段和语义标准更重要。
+这些信号以 service、version、environment、region、trace/correlation 和时间关联，不能各自成为信息孤岛。
 
-## 2. 从用户目标定义 SLI/SLO
+## 3. 从用户旅程反推观测
 
-例如“创建订单”成功 SLI 是有效请求在 800 ms 内返回已受理且最终正确落单的比例，不能只看 HTTP 200。SLO 可定义 30 天 99.9%，剩余 0.1% 是错误预算。预算消耗过快时冻结高风险发布、优先可靠性工作。
+![用户旅程、业务状态和技术依赖的观测关联](/architecture/observability-user-journey.svg)
 
-告警优先使用多窗口 Burn Rate，覆盖“快速烧完预算”和“持续慢性恶化”，而不是 CPU 超过 80% 就叫醒所有人。资源指标用于诊断，用户影响指标用于分页告警。
+例如“创建订单”不是 HTTP 200 就成功：入口受理、订单落库、库存预留、支付状态和最终完成分别有业务状态。技术 RED 与业务完成率、状态停留和补偿/对账差异共同定义体验。
 
-## 3. 指标体系
+为每个关键旅程明确：有效请求分母、成功条件、延迟边界、排除项、数据来源、owner 和 SLO。没有语义定义的仪表盘只是图表集合。
 
-- 入口使用 RED：Rate、Errors、Duration。
-- 资源使用 USE：Utilization、Saturation、Errors。
-- JVM：堆/非堆、分配率、GC 暂停、线程、类、进程 CPU。
-- 依赖：连接池等待、DB 慢查询、缓存命中、MQ Lag、第三方成功率。
-- 业务：下单/支付成功率、订单状态停留、金额、补偿和对账差异。
+## 4. 观测边界
 
-标签禁止直接放 userId、orderId、URL 原始参数等高基数值；它们进入日志/Trace。指标同时标注 service、environment、region、version、route 等有限维度。
+- 业务服务负责产生有语义的命令、状态和错误信号。
+- 平台负责采集、传输、存储、查询、告警和成本治理。
+- 服务 owner 负责 SLO、Dashboard、告警、Runbook 和值班响应。
+- 安全/合规负责敏感字段、审计保留和访问策略。
+- 管理层用错误预算平衡发布与可靠性，不以单点 CPU 代替用户目标。
 
-## 4. 结构化日志
+## 5. Telemetry Schema
 
-统一字段包含时间、级别、service、version、environment、trace_id、span_id、request_id、tenant（必要时散列）、错误码和事件名。异常只在负责处理的边界记录一次，避免每层重复打印相同堆栈。Token、密码、身份证、银行卡和完整请求体默认禁止记录。
+统一 resource 字段：service.name/version、deployment.environment、region/zone、instance、team。请求字段：route（模板而非原始 URL）、operation、result、error.type、trace/span/request ID。业务字段使用受控低基数枚举。
 
-日志有分级采样、保留期和成本预算。审计日志与调试日志分开：审计强调完整和不可篡改，调试日志可采样和短期保存。
+userId、orderId、完整 URL、SQL 参数和异常 message 不做指标标签；必要时进入受控日志/Trace。字段有 owner、类型、基数预算、数据分类和版本。
 
-## 5. Trace 与上下文传播
+## 6. 本章专题
 
-HTTP/gRPC 使用 W3C `traceparent`，MQ 消息携带 trace 上下文但消费过程建立新的 consumer span。不要信任外部任意 Trace ID；入口验证格式并设置采样。ThreadLocal 上下文在线程池、`CompletableFuture`、Reactor 和虚拟线程之间不会自动完整传播，应使用 OpenTelemetry/Spring 集成并测试。
+| 专题 | 深入内容 |
+|---|---|
+| [指标、SLI、SLO 与错误预算](/architecture/observability/metrics-slo) | RED/USE、直方图、Burn Rate 与业务 SLI |
+| [结构化日志与审计](/architecture/observability/logging) | Schema、异常、脱敏、采样、保留与成本 |
+| [Trace、上下文与剖析](/architecture/observability/tracing) | W3C、异步链、采样、Exemplar 与 Profile |
+| [告警、降噪与 Runbook](/architecture/observability/alerting) | 症状告警、分级、抑制、合并和可执行性 |
+| [事件响应与复盘](/architecture/observability/incident-response) | 指挥、止损、沟通、恢复验证和行动项 |
+| [容量、健康与变更运维](/architecture/observability/operations) | 过载、健康探针、容量预测、发布与服务目录 |
+| [Java 生产参考架构](/architecture/observability/reference) | Micrometer/OTel、Collector、测试和生产检查 |
 
-采用头部采样保留固定比例，尾部采样优先保留错误、慢请求和高价值交易。Trace 不能替代业务审计。
+## 7. 最小上线基线
 
-## 6. 告警与事件响应
+- 关键用户旅程有可计算 SLI/SLO、owner 和错误预算策略。
+- 每个服务有 RED、关键依赖、业务状态、容量和变更视图。
+- 日志结构化、脱敏、有保留/采样预算；审计与调试分离。
+- HTTP、线程池、Reactor、MQ 和任务上下文可关联且不串请求。
+- Page 告警反映用户影响并附 Dashboard、Runbook 和 owner。
+- 遥测管道故障不阻塞业务，丢弃/延迟/成本可见。
+- 事件流程包含指挥、止损、沟通、恢复验证和无责复盘。
 
-每条告警包含影响、严重级别、负责人、仪表盘、Runbook 和静默条件。值班流程：确认用户影响 → 指定指挥者 → 止损（回滚、限流、降级、切流）→ 定位 → 恢复 → 沟通 → 无责复盘。复盘输出时间线、直接/系统性原因、哪些防线失效，以及有负责人和截止时间的行动项。
-
-## 7. 健康检查与过载保护
-
-- Liveness：进程是否卡死，失败会重启；不要依赖外部数据库。
-- Readiness：实例能否接新流量，可考虑关键本地资源。
-- Startup：慢启动应用尚未完成初始化，防止过早重启。
-
-当队列、线程、连接池饱和时，应用应快速拒绝低优先级流量，而非无限排队直到全站超时。观测平台自身故障不能阻塞业务线程；遥测导出异步、有界、可丢弃。
-
-## 8. 关键运维实践
-
-维护服务目录：所有者、依赖、SLO、数据级别、仪表盘、Runbook 和仓库。变更事件自动叠加到图表。定期做容量回顾、告警降噪、故障演练和恢复演练。诊断能力在开发时构建，事故中临时加日志通常来不及。
-
-下一篇是[基础设施与交付层](/architecture/infrastructure)。
+下一篇：[指标、SLI、SLO 与错误预算](/architecture/observability/metrics-slo)。
