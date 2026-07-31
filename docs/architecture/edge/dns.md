@@ -6,19 +6,7 @@ DNS 故障的典型表现是“服务和网关都健康，但用户根本到不�
 
 ## 1. 一次解析的完整过程
 
-```text
-应用
- ↓ 查询 api.example.com
-操作系统 Stub Resolver / 本机缓存
- ↓
-递归 DNS（运营商 / 公共 DNS / 企业 DNS）
- ↓ 先问根域
-Root → .com TLD → example.com 权威 DNS
-                        ↓
-               返回 A / AAAA / CNAME
-                        ↓
-递归 DNS 缓存结果 → 客户端缓存 → 连接目标 IP
-```
+![DNS 递归解析与 GSLB 调度流程](/architecture/dns-gslb-flow.svg)
 
 客户端通常不直接查询权威 DNS，而是向递归解析器询问。递归解析器代表大量用户缓存答案，因此权威记录改了，不代表所有用户立刻看到新结果。
 

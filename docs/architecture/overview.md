@@ -1,28 +1,10 @@
-# 总概览：完整 Java 系统的运行时架构
+# 总概览：完整系统的运行时架构
 
-一个完整的 Java 系统不是“Spring Boot + MySQL”，也不是固定的微服务组件清单。它是一组围绕业务目标协作的运行时能力：**流量入口负责接住请求，业务系统负责作出正确决策，数据系统负责保存事实，平台系统负责让一切持续可靠运行。**
+一个完整的系统不是“Spring Boot + MySQL”，也不是固定的微服务组件清单。它是一组围绕业务目标协作的运行时能力：**流量入口负责接住请求，业务系统负责作出正确决策，数据系统负责保存事实，平台系统负责让一切持续可靠运行。**
 
 ## 1. 全景架构图
 
-<div class="arch-map">
-  <div class="arch-map-row"><span class="arch-map-label">用户与终端</span><div>Web / App / 小程序 / 第三方系统 / 内部运营台</div></div>
-  <div class="arch-map-arrow">↓ HTTPS / WebSocket / gRPC</div>
-  <div class="arch-map-row edge"><span class="arch-map-label">边缘入口</span><div>DNS · CDN · WAF · DDoS 防护 · 四/七层负载均衡</div></div>
-  <div class="arch-map-arrow">↓ 清洗后的公网或内网流量</div>
-  <div class="arch-map-row gateway"><span class="arch-map-label">API 网关</span><div>路由 · TLS · 限流 · 黑白名单 · Token 初检 · 灰度 · 协议转换</div></div>
-  <div class="arch-map-arrow">↓ 统一请求上下文：用户、租户、Trace、来源</div>
-  <div class="arch-map-row access"><span class="arch-map-label">接入 / BFF</span><div>参数校验 · DTO 转换 · 终端适配 · 接口聚合 · 用例编排</div></div>
-  <div class="arch-map-arrow">↓ 明确的业务命令或查询</div>
-  <div class="arch-map-row business"><span class="arch-map-label">业务服务</span><div>订单 · 商品 · 库存 · 营销 · 支付 · 用户 · 履约 · 风控</div></div>
-  <div class="arch-map-arrow split"><span>↓ 同步读写</span><span>↓ 领域事件</span><span>↓ 外部调用</span></div>
-  <div class="arch-map-grid">
-    <div class="data"><b>数据层</b><br>MySQL / Redis / Elasticsearch<br>对象存储 / 数仓</div>
-    <div class="middleware"><b>异步与中间件</b><br>Kafka / RabbitMQ / RocketMQ<br>调度 / 配置 / 注册</div>
-    <div class="integration"><b>外部集成</b><br>支付 / 短信 / 地图 / ERP<br>防腐层 / 回调入口</div>
-  </div>
-  <div class="arch-map-foundation"><b>横切能力：</b>身份安全 · 日志 · 指标 · Trace · 告警 · 配置 · 审计 · 容量 · 成本</div>
-  <div class="arch-map-foundation platform"><b>运行底座：</b>云 / IDC · Kubernetes · 服务网格 · CI/CD · 发布 · 备份 · 容灾</div>
-</div>
+![完整系统运行时架构全景图](/architecture/system-landscape.svg)
 
 图是一个参考模型，不是采购清单。网关、BFF、服务和数据库之间也不是只能自上而下：消息消费者会从 MQ 反向触发业务，调度器会定时触发任务，第三方会通过回调进入系统。关键是每条入口都必须经过相同等级的认证、幂等、审计与观测。
 

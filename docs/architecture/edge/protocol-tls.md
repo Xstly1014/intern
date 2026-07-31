@@ -6,17 +6,7 @@
 
 首次访问传统 HTTPS 大致需要：
 
-```text
-Client                     Edge
-  │──── DNS query ──────────│
-  │←─── IP address ─────────│
-  │──── TCP SYN ───────────→│  1 RTT 建 TCP
-  │←─── SYN-ACK ────────────│
-  │──── ACK + TLS hello ───→│
-  │←─── TLS server flight ──│  TLS 1.3 通常 1 RTT
-  │──── finished + HTTP ───→│
-  │←─── HTTP response ──────│
-```
+![DNS、TCP、TLS 1.3 与 HTTP 首次请求时序](/architecture/tls-http-sequence.svg)
 
 高 RTT 网络中建连成本显著。连接复用、TLS 会话恢复、HTTP/2 多路复用和 HTTP/3 0/1-RTT 能减少后续成本，但也引入新的安全与实现约束。
 

@@ -1,4 +1,4 @@
-# Java 系统架构全景指南
+# 系统架构全景指南
 
 这里讨论的是一套 Java 后端系统在生产环境中的**运行时系统架构**：用户流量怎样进入系统，网关与接入层怎样分工，业务服务如何协作，数据与中间件如何支撑业务，以及系统如何部署、观测和演进。它不是 Maven 模块、Controller/Service/DAO 包结构之类的代码目录设计。
 
@@ -24,16 +24,7 @@
 
 ## 一句话理解每一层
 
-<div class="arch-stack">
-  <div class="arch-stack-row edge"><b>客户端与边缘层</b><span>把用户流量安全、快速、稳定地送到正确的入口</span></div>
-  <div class="arch-stack-row gateway"><b>API 网关层</b><span>执行与业务无关的统一流量治理策略</span></div>
-  <div class="arch-stack-row access"><b>接入层 / BFF</b><span>把终端协议翻译为业务可理解的用例请求</span></div>
-  <div class="arch-stack-row security"><b>身份与安全层</b><span>回答“你是谁、你能做什么、行为是否可信”</span></div>
-  <div class="arch-stack-row business"><b>业务服务层</b><span>承载业务规则、状态变化和领域能力</span></div>
-  <div class="arch-stack-row data"><b>数据与存储层</b><span>可靠保存事实，并提供适合场景的读写能力</span></div>
-  <div class="arch-stack-row middleware"><b>异步与中间件层</b><span>提供解耦、削峰、调度、协调和公共技术能力</span></div>
-  <div class="arch-stack-row platform"><b>可观测、基础设施与交付</b><span>让上述各层可部署、可扩缩、可诊断、可恢复</span></div>
-</div>
+![系统架构逻辑分层图](/architecture/system-layers.svg)
 
 这些层是**逻辑职责**，不是必须一层对应一个进程。例如小型系统可以让接入层和业务层部署在同一个 Spring Boot 应用中；大型系统则可能把网关、BFF、领域服务分别扩缩容。判断是否物理拆分，要看团队边界、发布节奏、流量特征、故障隔离和合规要求。
 

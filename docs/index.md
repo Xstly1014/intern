@@ -18,7 +18,7 @@ hero:
 
 features:
   - icon: 🏗️
-    title: Java 系统架构
+    title: 系统架构
     details: 从边缘、网关、接入、业务、数据和中间件，到安全、可观测、交付与容灾的完整运行时架构指南。
     link: /architecture/
   - icon: 📨

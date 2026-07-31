@@ -17,17 +17,7 @@ HTTP/2 多个请求共享一个连接。若 L4 只在连接建立时选择后端
 
 ## 2. 常见部署拓扑
 
-```text
-公网用户
-  ↓
-Global/Cloud L4 LB（跨可用区入口、固定 Anycast/VIP）
-  ↓
-Regional L7 LB / Ingress（TLS、Host/Path 路由）
-  ↓
-API Gateway Service
-  ↓
-Gateway Pod / VM
-```
+![L4 与 L7 负载均衡部署拓扑](/architecture/load-balancing-topology.svg)
 
 不必机械叠加多层代理。每增加一层都会增加延迟、超时配置、Header 信任、日志关联和故障面。只有当全球调度、网络入口、协议终止和业务网关确实需要不同生命周期时才分层。
 

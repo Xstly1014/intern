@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 760" role="img" aria-labelledby="t d">
+  <title id="t">用户访问失败的分层排障决策树</title><desc id="d">从 DNS、网络、TLS、边缘响应到 Java 服务逐层定位用户访问失败</desc>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#607d8b"/></marker><filter id="s"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity=".12"/></filter></defs>
+  <rect width="1040" height="760" rx="22" fill="#f7faf9"/>
+  <g font-family="PingFang SC,Microsoft YaHei,sans-serif" text-anchor="middle">
+    <text x="520" y="42" font-size="24" font-weight="700" fill="#17342c">用户访问失败：逐段证明，不要猜测</text>
+    <g filter="url(#s)">
+      <g transform="translate(395 70)"><rect width="250" height="64" rx="14" fill="#fbecef" stroke="#b44c5b" stroke-width="2"/><text x="125" y="39" font-size="17" font-weight="700">用户访问失败</text></g>
+      <g transform="translate(395 165)"><path d="M125 0L250 55L125 110L0 55Z" fill="#edf3fa" stroke="#4f7cac" stroke-width="2"/><text x="125" y="61" font-size="15" font-weight="700">域名能解析吗？</text></g>
+      <g transform="translate(395 305)"><path d="M125 0L250 55L125 110L0 55Z" fill="#edf3fa" stroke="#4f7cac" stroke-width="2"/><text x="125" y="61" font-size="15" font-weight="700">TCP / QUIC 能连接吗？</text></g>
+      <g transform="translate(395 445)"><path d="M125 0L250 55L125 110L0 55Z" fill="#f3eff8" stroke="#8b6fb3" stroke-width="2"/><text x="125" y="61" font-size="15" font-weight="700">TLS 能握手吗？</text></g>
+      <g transform="translate(395 585)"><rect width="250" height="72" rx="14" fill="#e8f5f0" stroke="#3c8772" stroke-width="2"/><text x="125" y="29" font-size="15" font-weight="700">检查边缘 HTTP 响应</text><text x="125" y="52" font-size="11" fill="#607d8b">WAF / CDN / LB / Gateway</text></g>
+      <g transform="translate(50 170)"><rect width="270" height="100" rx="14" fill="#fff4e8" stroke="#c07a3d" stroke-width="2"/><text x="135" y="31" font-size="15" font-weight="700">DNS 路径</text><text x="135" y="57" font-size="11" fill="#607d8b">域名 · 递归 · 负缓存</text><text x="135" y="76" font-size="11" fill="#607d8b">权威 DNS · DNSSEC</text></g>
+      <g transform="translate(720 310)"><rect width="270" height="100" rx="14" fill="#fff4e8" stroke="#c07a3d" stroke-width="2"/><text x="135" y="31" font-size="15" font-weight="700">网络与入口</text><text x="135" y="57" font-size="11" fill="#607d8b">运营商 · 路由 · 防火墙</text><text x="135" y="76" font-size="11" fill="#607d8b">DDoS · L4 LB</text></g>
+      <g transform="translate(50 450)"><rect width="270" height="100" rx="14" fill="#fff4e8" stroke="#c07a3d" stroke-width="2"/><text x="135" y="31" font-size="15" font-weight="700">TLS 与证书</text><text x="135" y="57" font-size="11" fill="#607d8b">SNI · SAN · 证书链 · 过期</text><text x="135" y="76" font-size="11" fill="#607d8b">版本 · 密码套件 · 客户端时间</text></g>
+      <g transform="translate(720 565)"><rect width="270" height="116" rx="14" fill="#fff8e6" stroke="#cc9a2e" stroke-width="2"/><text x="135" y="29" font-size="15" font-weight="700">按响应来源继续定位</text><text x="135" y="54" font-size="11" fill="#607d8b">403/429 → WAF、Bot、配额</text><text x="135" y="74" font-size="11" fill="#607d8b">CDN → Cache Key、PoP、回源</text><text x="135" y="94" font-size="11" fill="#607d8b">502/503/504 → LB、网关、后端</text></g>
+    </g>
+    <g stroke="#607d8b" stroke-width="2" fill="none" marker-end="url(#a)"><path d="M520 134V159"/><path d="M520 275V299"/><path d="M520 415V439"/><path d="M520 555V579"/><path d="M395 220H326"/><path d="M645 360H714"/><path d="M395 500H326"/><path d="M645 621H714"/></g>
+    <g font-size="11" fill="#607d8b"><text x="352" y="211">否</text><text x="535" y="292">是</text><text x="687" y="351">否</text><text x="535" y="432">是</text><text x="352" y="491">否</text><text x="535" y="572">是</text></g>
+    <text x="520" y="715" font-size="12" fill="#607d8b">只有请求进入 Java 服务后才使用应用 Trace；没有服务端日志时，应先检查代理、连接、健康和协议</text>
+  </g>
+</svg>

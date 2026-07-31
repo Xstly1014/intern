@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 720" role="img" aria-labelledby="t d">
+  <title id="t">从边缘到数据层的分层过载保护</title><desc id="d">展示攻击和突发流量经过 Anti-DDoS、CDN、WAF、网关、Java 服务和数据库逐层收敛</desc>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#607d8b"/></marker><filter id="s"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity=".12"/></filter></defs>
+  <rect width="1000" height="720" rx="22" fill="#f7faf9"/>
+  <g font-family="PingFang SC,Microsoft YaHei,sans-serif">
+    <text x="500" y="42" text-anchor="middle" font-size="24" font-weight="700" fill="#17342c">逐层收敛流量，保护最稀缺资源</text>
+    <g filter="url(#s)" text-anchor="middle">
+      <g transform="translate(100 85)"><path d="M0 0H800L740 80H60Z" fill="#fbecef" stroke="#b44c5b" stroke-width="2"/><text x="400" y="33" font-size="17" font-weight="700">Anti-DDoS</text><text x="400" y="58" font-size="12" fill="#607d8b">丢弃确定的网络攻击 · 吸收带宽与包速率洪峰</text></g>
+      <g transform="translate(150 185)"><path d="M0 0H700L650 80H50Z" fill="#e8f5f0" stroke="#3c8772" stroke-width="2"/><text x="350" y="33" font-size="17" font-weight="700">CDN</text><text x="350" y="58" font-size="12" fill="#607d8b">缓存命中 · 请求合并 · stale 内容 · 回源限速</text></g>
+      <g transform="translate(200 285)"><path d="M0 0H600L560 80H40Z" fill="#fff8e6" stroke="#cc9a2e" stroke-width="2"/><text x="300" y="33" font-size="17" font-weight="700">WAF / Bot</text><text x="300" y="58" font-size="12" fill="#607d8b">阻断恶意请求与自动化滥用</text></g>
+      <g transform="translate(250 385)"><path d="M0 0H500L465 80H35Z" fill="#edf3fa" stroke="#4f7cac" stroke-width="2"/><text x="250" y="33" font-size="17" font-weight="700">LB / API Gateway</text><text x="250" y="58" font-size="12" fill="#607d8b">连接 · 并发 · 优先级 · 租户与接口配额</text></g>
+      <g transform="translate(300 485)"><path d="M0 0H400L370 80H30Z" fill="#f3eff8" stroke="#8b6fb3" stroke-width="2"/><text x="200" y="33" font-size="17" font-weight="700">Java 业务服务</text><text x="200" y="58" font-size="12" fill="#607d8b">舱壁 · 有界线程/队列 · 降级 · 下游预算</text></g>
+      <g transform="translate(350 585)"><path d="M0 0H300L275 80H25Z" fill="#e9f7f4" stroke="#358f80" stroke-width="2"/><text x="150" y="33" font-size="17" font-weight="700">数据与中间件</text><text x="150" y="58" font-size="12" fill="#607d8b">连接 · 写入 · 消费能力上限</text></g>
+    </g>
+    <path d="M940 115V645" stroke="#607d8b" stroke-width="2" marker-end="url(#a)"/>
+    <text x="956" y="380" transform="rotate(90 956 380)" text-anchor="middle" font-size="12" fill="#607d8b">请求价值与处理成本逐层提高</text>
+    <text x="500" y="698" text-anchor="middle" font-size="12" fill="#607d8b">所有连接、队列、Body、超时和重试必须有上限；入口容量从最稀缺下游能力反推</text>
+  </g>
+</svg>

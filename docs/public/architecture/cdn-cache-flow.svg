@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 610" role="img" aria-labelledby="t d">
+  <title id="t">CDN 缓存命中、过期验证与回源流程</title><desc id="d">展示浏览器缓存、CDN PoP、Origin Shield 与源站之间的缓存命中和回源分支</desc>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#607d8b"/></marker><filter id="s"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity=".12"/></filter></defs>
+  <rect width="1000" height="610" rx="22" fill="#f7faf9"/>
+  <g font-family="PingFang SC,Microsoft YaHei,sans-serif">
+    <text x="500" y="42" text-anchor="middle" font-size="24" font-weight="700" fill="#17342c">CDN 缓存决策与回源链路</text>
+    <g filter="url(#s)" text-anchor="middle">
+      <g transform="translate(55 115)"><rect width="180" height="90" rx="14" fill="#fff" stroke="#607d8b" stroke-width="2"/><text x="90" y="34" font-size="16" font-weight="700">浏览器 / App</text><text x="90" y="61" font-size="11" fill="#607d8b">私有 HTTP Cache</text></g>
+      <g transform="translate(310 95)"><rect width="220" height="130" rx="14" fill="#e8f5f0" stroke="#3c8772" stroke-width="2"/><text x="110" y="34" font-size="17" font-weight="700">CDN 边缘 PoP</text><text x="110" y="62" font-size="12" fill="#3c8772">计算 Cache Key</text><text x="110" y="84" font-size="12" fill="#3c8772">检查 Fresh / Stale / Miss</text><text x="110" y="106" font-size="11" fill="#607d8b">Host · Path · Query · Vary</text></g>
+      <g transform="translate(675 95)"><rect width="250" height="130" rx="14" fill="#edf3fa" stroke="#4f7cac" stroke-width="2"/><text x="125" y="34" font-size="17" font-weight="700">Origin Shield</text><text x="125" y="62" font-size="12" fill="#4f7cac">跨 PoP 请求合并</text><text x="125" y="84" font-size="12" fill="#4f7cac">二级缓存与回源保护</text><text x="125" y="106" font-size="11" fill="#607d8b">降低源站连接和击穿</text></g>
+      <g transform="translate(675 390)"><rect width="250" height="105" rx="14" fill="#f3eff8" stroke="#8b6fb3" stroke-width="2"/><text x="125" y="36" font-size="17" font-weight="700">对象存储 / Origin</text><text x="125" y="65" font-size="12" fill="#8b6fb3">权威内容与条件验证</text><text x="125" y="84" font-size="11" fill="#607d8b">ETag · Last-Modified</text></g>
+      <g transform="translate(60 350)"><rect width="190" height="90" rx="14" fill="#e9f7f4" stroke="#358f80" stroke-width="2"/><text x="95" y="33" font-size="16" font-weight="700">Fresh HIT</text><text x="95" y="59" font-size="11" fill="#358f80">直接返回，不回源</text></g>
+      <g transform="translate(310 350)"><rect width="220" height="90" rx="14" fill="#fff8e6" stroke="#cc9a2e" stroke-width="2"/><text x="110" y="33" font-size="16" font-weight="700">STALE</text><text x="110" y="58" font-size="11" fill="#a77b20">返回旧内容并后台验证</text></g>
+    </g>
+    <g stroke="#607d8b" stroke-width="2" fill="none" marker-end="url(#a)"><path d="M235 160H304"/><path d="M530 160H669"/><path d="M800 225V384"/><path d="M310 185H270Q155 185 155 344"/><path d="M420 225V344"/><path d="M675 442H570Q550 442 550 422V280Q550 260 530 260H420V231"/></g>
+    <g font-size="11" fill="#607d8b"><text x="260" y="149">请求</text><text x="580" y="149">MISS / EXPIRED</text><text x="812" y="310">最终回源</text><text x="574" y="432">200 新内容或 304</text></g>
+    <rect x="70" y="535" width="860" height="42" rx="10" fill="#fff4e8" stroke="#c07a3d"/>
+    <text x="500" y="561" text-anchor="middle" font-size="12" fill="#8c5a2d">缓存正确性的核心：缓存什么 · Cache Key 如何组成 · 允许陈旧多久 · 如何失效 · 源站失败时怎么办</text>
+  </g>
+</svg>

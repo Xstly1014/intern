@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 620" role="img" aria-labelledby="t d">
+  <title id="t">L4 与 L7 负载均衡部署拓扑</title><desc id="d">公网用户经过全球 L4 入口、区域 L7 负载均衡、API 网关到跨可用区实例</desc>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#607d8b"/></marker><filter id="s"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity=".12"/></filter></defs>
+  <rect width="1040" height="620" rx="22" fill="#f7faf9"/>
+  <g font-family="PingFang SC,Microsoft YaHei,sans-serif">
+    <text x="520" y="42" text-anchor="middle" font-size="24" font-weight="700" fill="#17342c">L4 连接调度与 L7 请求调度</text>
+    <g filter="url(#s)" text-anchor="middle">
+      <g transform="translate(50 220)"><rect width="150" height="90" rx="14" fill="#fff" stroke="#607d8b" stroke-width="2"/><text x="75" y="35" font-size="16" font-weight="700">公网用户</text><text x="75" y="61" font-size="11" fill="#607d8b">TCP / QUIC / TLS</text></g>
+      <g transform="translate(250 195)"><rect width="190" height="140" rx="14" fill="#edf3fa" stroke="#4f7cac" stroke-width="2"/><text x="95" y="34" font-size="17" font-weight="700">Global / Cloud L4</text><text x="95" y="62" font-size="12" fill="#4f7cac">Anycast / VIP</text><text x="95" y="84" font-size="12" fill="#4f7cac">IP · Port · Connection</text><text x="95" y="111" font-size="11" fill="#607d8b">跨可用区网络入口</text></g>
+      <g transform="translate(490 195)"><rect width="200" height="140" rx="14" fill="#f3eff8" stroke="#8b6fb3" stroke-width="2"/><text x="100" y="34" font-size="17" font-weight="700">Regional L7 / Ingress</text><text x="100" y="62" font-size="12" fill="#8b6fb3">TLS 终止</text><text x="100" y="84" font-size="12" fill="#8b6fb3">Host · Path · Header</text><text x="100" y="111" font-size="11" fill="#607d8b">按 HTTP 请求选择路由</text></g>
+      <g transform="translate(740 195)"><rect width="180" height="140" rx="14" fill="#e8f5f0" stroke="#3c8772" stroke-width="2"/><text x="90" y="34" font-size="17" font-weight="700">API Gateway</text><text x="90" y="62" font-size="12" fill="#3c8772">认证初检 · 限流</text><text x="90" y="84" font-size="12" fill="#3c8772">路由 · 灰度</text><text x="90" y="111" font-size="11" fill="#607d8b">业务 API 治理入口</text></g>
+      <g transform="translate(170 455)"><rect width="190" height="90" rx="14" fill="#fff" stroke="#358f80" stroke-width="2"/><text x="95" y="33" font-size="16" font-weight="700">可用区 A</text><text x="95" y="59" font-size="11" fill="#358f80">Gateway Pod / VM</text></g>
+      <g transform="translate(425 455)"><rect width="190" height="90" rx="14" fill="#fff" stroke="#358f80" stroke-width="2"/><text x="95" y="33" font-size="16" font-weight="700">可用区 B</text><text x="95" y="59" font-size="11" fill="#358f80">Gateway Pod / VM</text></g>
+      <g transform="translate(680 455)"><rect width="190" height="90" rx="14" fill="#fff" stroke="#358f80" stroke-width="2"/><text x="95" y="33" font-size="16" font-weight="700">可用区 C</text><text x="95" y="59" font-size="11" fill="#358f80">Gateway Pod / VM</text></g>
+    </g>
+    <g stroke="#607d8b" stroke-width="2" fill="none" marker-end="url(#a)"><path d="M200 265H244"/><path d="M440 265H484"/><path d="M690 265H734"/><path d="M830 335V390H265V449"/><path d="M830 390H520V449"/><path d="M830 390H775V449"/></g>
+    <g font-size="11" fill="#607d8b"><text x="210" y="252">连接</text><text x="451" y="252">区域入口</text><text x="702" y="252">可信请求</text><text x="535" y="380">健康检查 · 权重 · 连接排空 · 跨区策略</text></g>
+    <rect x="110" y="85" width="820" height="58" rx="11" fill="#fff4e8" stroke="#c07a3d"/>
+    <text x="520" y="109" text-anchor="middle" font-size="13" font-weight="700" fill="#8c5a2d">连接与请求是两种调度单位</text><text x="520" y="130" text-anchor="middle" font-size="11" fill="#607d8b">HTTP/2 长连接若只经过 L4，多个 stream 可能始终固定到同一后端</text>
+  </g>
+</svg>

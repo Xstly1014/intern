@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 530" role="img" aria-labelledby="t d">
+  <title id="t">客户端一次网络请求的完整生命周期</title><desc id="d">展示从用户动作、构造请求、连接、发送、等待到响应处理和失败分类的完整流程</desc>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#607d8b"/></marker><filter id="s"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity=".12"/></filter></defs>
+  <rect width="1000" height="530" rx="22" fill="#f7faf9"/>
+  <g font-family="PingFang SC,Microsoft YaHei,sans-serif">
+    <text x="500" y="42" text-anchor="middle" font-size="24" font-weight="700" fill="#17342c">客户端请求生命周期</text>
+    <g filter="url(#s)" text-anchor="middle">
+      <g transform="translate(45 90)"><rect width="160" height="76" rx="12" fill="#fff" stroke="#607d8b" stroke-width="2"/><text x="80" y="32" font-size="15" font-weight="700">用户业务动作</text><text x="80" y="55" font-size="11" fill="#607d8b">点击 / 自动同步</text></g>
+      <g transform="translate(245 90)"><rect width="160" height="76" rx="12" fill="#edf3fa" stroke="#4f7cac" stroke-width="2"/><text x="80" y="32" font-size="15" font-weight="700">构造请求</text><text x="80" y="55" font-size="11" fill="#607d8b">Token / 幂等键 / Body</text></g>
+      <g transform="translate(445 90)"><rect width="160" height="76" rx="12" fill="#e8f5f0" stroke="#3c8772" stroke-width="2"/><text x="80" y="32" font-size="15" font-weight="700">获取连接</text><text x="80" y="55" font-size="11" fill="#607d8b">复用或 DNS / TCP / TLS</text></g>
+      <g transform="translate(645 90)"><rect width="160" height="76" rx="12" fill="#fff8e6" stroke="#cc9a2e" stroke-width="2"/><text x="80" y="32" font-size="15" font-weight="700">发送请求</text><text x="80" y="55" font-size="11" fill="#607d8b">Header / Body / 上传</text></g>
+      <g transform="translate(825 90)"><rect width="130" height="76" rx="12" fill="#fbecef" stroke="#b44c5b" stroke-width="2"/><text x="65" y="32" font-size="15" font-weight="700">等待响应</text><text x="65" y="55" font-size="11" fill="#607d8b">TTFB / 总预算</text></g>
+
+      <g transform="translate(675 248)"><rect width="220" height="82" rx="12" fill="#f3eff8" stroke="#8b6fb3" stroke-width="2"/><text x="110" y="34" font-size="15" font-weight="700">下载与解码</text><text x="110" y="58" font-size="11" fill="#607d8b">状态码 / JSON / 流式数据</text></g>
+      <g transform="translate(390 248)"><rect width="220" height="82" rx="12" fill="#e9f7f4" stroke="#358f80" stroke-width="2"/><text x="110" y="34" font-size="15" font-weight="700">业务结果处理</text><text x="110" y="58" font-size="11" fill="#607d8b">完成 / 已受理 / 结果未知</text></g>
+      <g transform="translate(105 248)"><rect width="220" height="82" rx="12" fill="#fff" stroke="#607d8b" stroke-width="2"/><text x="110" y="34" font-size="15" font-weight="700">更新 UI 与本地状态</text><text x="110" y="58" font-size="11" fill="#607d8b">缓存 / pending / 最终结果</text></g>
+
+      <g transform="translate(105 405)"><rect width="790" height="78" rx="12" fill="#fff4e8" stroke="#c07a3d" stroke-width="2"/><text x="395" y="31" font-size="15" font-weight="700">失败必须分类，不能统一成“网络错误”</text><text x="395" y="56" font-size="12" fill="#8c5a2d">用户取消 · 离线 · DNS · TLS · 连接 · 超时 · HTTP · 业务拒绝 · 结果未知</text></g>
+    </g>
+    <g stroke="#607d8b" stroke-width="2" fill="none" marker-end="url(#a)"><path d="M205 128H239"/><path d="M405 128H439"/><path d="M605 128H639"/><path d="M805 128H819"/><path d="M890 166V220Q890 240 870 240H805V242"/><path d="M675 289H616"/><path d="M390 289H331"/><path d="M215 330V399"/></g>
+    <path d="M500 330V399" stroke="#c07a3d" stroke-width="2" stroke-dasharray="5 5" marker-end="url(#a)"/>
+  </g>
+</svg>

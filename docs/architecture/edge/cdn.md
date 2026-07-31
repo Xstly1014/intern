@@ -6,18 +6,7 @@ CDN 设计的核心不是“缓存多久”，而是回答五个问题：**缓�
 
 ## 1. 请求流程
 
-```text
-用户请求 static.example.com/assets/app.a83f.js
-  ↓ DNS 调度到附近 PoP
-边缘节点查缓存
-  ├─ Fresh Hit：直接返回
-  ├─ Stale：按策略返回旧内容并后台验证
-  └─ Miss：请求上级缓存/源站
-              ↓
-          对象存储或 Origin
-              ↓
-        缓存响应并返回用户
-```
+![CDN 缓存命中、过期验证与回源流程](/architecture/cdn-cache-flow.svg)
 
 大型 CDN 可能有边缘层、区域中间层（Origin Shield）和源站多级结构。Origin Shield 将大量 PoP 的回源合并到少量中间节点，降低源站连接数和缓存击穿。
 

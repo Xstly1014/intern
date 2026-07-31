@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 590" role="img" aria-labelledby="t d">
+  <title id="t">DNS 递归解析与 GSLB 调度流程</title><desc id="d">客户端通过本地缓存、递归 DNS、根域、顶级域和权威 DNS 获得 GSLB 调度地址</desc>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#607d8b"/></marker><filter id="s"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity=".12"/></filter></defs>
+  <rect width="1000" height="590" rx="22" fill="#f7faf9"/>
+  <g font-family="PingFang SC,Microsoft YaHei,sans-serif">
+    <text x="500" y="42" text-anchor="middle" font-size="24" font-weight="700" fill="#17342c">DNS 递归解析与全局调度</text>
+    <g filter="url(#s)" text-anchor="middle">
+      <g transform="translate(60 105)"><rect width="180" height="90" rx="14" fill="#fff" stroke="#607d8b" stroke-width="2"/><text x="90" y="35" font-size="16" font-weight="700">客户端应用</text><text x="90" y="61" font-size="11" fill="#607d8b">本地 DNS 缓存</text><text x="90" y="77" font-size="11" fill="#607d8b">api.example.com</text></g>
+      <g transform="translate(310 105)"><rect width="190" height="90" rx="14" fill="#edf3fa" stroke="#4f7cac" stroke-width="2"/><text x="95" y="35" font-size="16" font-weight="700">递归 DNS</text><text x="95" y="61" font-size="11" fill="#607d8b">运营商 / 公共 / 企业</text><text x="95" y="77" font-size="11" fill="#607d8b">缓存最终答案</text></g>
+      <g transform="translate(570 82)"><rect width="150" height="70" rx="12" fill="#f3eff8" stroke="#8b6fb3" stroke-width="2"/><text x="75" y="30" font-size="15" font-weight="700">Root 根域</text><text x="75" y="51" font-size="11" fill="#607d8b">返回 .com NS</text></g>
+      <g transform="translate(790 82)"><rect width="150" height="70" rx="12" fill="#f3eff8" stroke="#8b6fb3" stroke-width="2"/><text x="75" y="30" font-size="15" font-weight="700">.com TLD</text><text x="75" y="51" font-size="11" fill="#607d8b">返回权威 NS</text></g>
+      <g transform="translate(680 225)"><rect width="220" height="96" rx="14" fill="#e8f5f0" stroke="#3c8772" stroke-width="2"/><text x="110" y="34" font-size="16" font-weight="700">权威 DNS / GSLB</text><text x="110" y="61" font-size="11" fill="#607d8b">地域 · 运营商 · 健康 · 权重</text><text x="110" y="78" font-size="11" fill="#607d8b">返回 A / AAAA / CNAME + TTL</text></g>
+      <g transform="translate(90 400)"><rect width="220" height="92" rx="14" fill="#e9f7f4" stroke="#358f80" stroke-width="2"/><text x="110" y="34" font-size="16" font-weight="700">边缘 PoP A</text><text x="110" y="62" font-size="12" fill="#358f80">低延迟 / 健康 / 有容量</text></g>
+      <g transform="translate(390 400)"><rect width="220" height="92" rx="14" fill="#fff8e6" stroke="#cc9a2e" stroke-width="2"/><text x="110" y="34" font-size="16" font-weight="700">边缘 PoP B</text><text x="110" y="62" font-size="12" fill="#a77b20">备用或加权调度</text></g>
+      <g transform="translate(690 400)"><rect width="220" height="92" rx="14" fill="#fbecef" stroke="#b44c5b" stroke-width="2"/><text x="110" y="34" font-size="16" font-weight="700">故障地域</text><text x="110" y="62" font-size="12" fill="#b44c5b">健康检查失败，停止返回</text></g>
+    </g>
+    <g stroke="#607d8b" stroke-width="2" fill="none" marker-end="url(#a)"><path d="M240 150H304"/><path d="M500 130H564"/><path d="M720 117H784"/><path d="M865 152V190Q865 215 840 215H790V219"/><path d="M680 273H540Q405 273 405 201"/><path d="M310 165H270Q260 165 260 180V345Q260 365 240 365H200V394"/><path d="M405 195V360Q405 380 425 380H500V394"/><path d="M790 321V394"/></g>
+    <g font-size="11" fill="#607d8b"><text x="260" y="140">查询</text><text x="527" y="120">迭代查询</text><text x="735" y="107">委派</text><text x="535" y="263">最终答案缓存</text><text x="275" y="350">客户端连接被选中的地址</text></g>
+    <text x="500" y="552" text-anchor="middle" font-size="12" fill="#607d8b">TTL 决定缓存建议时间；记录变更不代表所有递归 DNS 和客户端立即更新</text>
+  </g>
+</svg>

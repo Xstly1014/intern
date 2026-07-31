@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 780" role="img" aria-labelledby="title desc">
+  <title id="title">系统架构逻辑分层图</title>
+  <desc id="desc">从客户端与边缘层到基础设施与交付层的八层系统架构职责图</desc>
+  <defs>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#17342c" flood-opacity="0.12"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10Z" fill="#78909c"/>
+    </marker>
+  </defs>
+  <rect width="960" height="780" rx="24" fill="#f7faf9"/>
+  <text x="480" y="46" text-anchor="middle" font-family="PingFang SC,Microsoft YaHei,sans-serif" font-size="24" font-weight="700" fill="#17342c">系统架构逻辑分层</text>
+  <text x="480" y="72" text-anchor="middle" font-family="PingFang SC,Microsoft YaHei,sans-serif" font-size="13" fill="#607d8b">逻辑职责可以在同一进程内实现，也可以按规模拆成独立系统</text>
+
+  <g filter="url(#shadow)" font-family="PingFang SC,Microsoft YaHei,sans-serif">
+    <g transform="translate(80 98)">
+      <rect width="800" height="68" rx="12" fill="#e8f5f0" stroke="#3c8772" stroke-width="2"/>
+      <rect width="210" height="68" rx="12" fill="#3c8772"/>
+      <text x="105" y="42" text-anchor="middle" font-size="17" font-weight="700" fill="#fff">客户端与边缘层</text>
+      <text x="240" y="30" font-size="14" font-weight="600" fill="#263238">把用户流量安全、快速、稳定地送到入口</text>
+      <text x="240" y="51" font-size="12" fill="#607d8b">客户端 · DNS · CDN · DDoS · WAF · LB · TLS</text>
+    </g>
+    <g transform="translate(80 182)">
+      <rect width="800" height="68" rx="12" fill="#edf3fa" stroke="#4f7cac" stroke-width="2"/>
+      <rect width="210" height="68" rx="12" fill="#4f7cac"/>
+      <text x="105" y="42" text-anchor="middle" font-size="17" font-weight="700" fill="#fff">API 网关层</text>
+      <text x="240" y="30" font-size="14" font-weight="600" fill="#263238">执行跨业务统一的流量治理策略</text>
+      <text x="240" y="51" font-size="12" fill="#607d8b">路由 · 限流 · Token 初检 · 灰度 · 协议治理</text>
+    </g>
+    <g transform="translate(80 266)">
+      <rect width="800" height="68" rx="12" fill="#f3eff8" stroke="#8b6fb3" stroke-width="2"/>
+      <rect width="210" height="68" rx="12" fill="#8b6fb3"/>
+      <text x="105" y="42" text-anchor="middle" font-size="17" font-weight="700" fill="#fff">接入层 / BFF</text>
+      <text x="240" y="30" font-size="14" font-weight="600" fill="#263238">把终端协议翻译为明确的业务用例</text>
+      <text x="240" y="51" font-size="12" fill="#607d8b">参数校验 · DTO 转换 · 终端适配 · 接口聚合</text>
+    </g>
+    <g transform="translate(80 350)">
+      <rect width="800" height="68" rx="12" fill="#fff4e8" stroke="#c07a3d" stroke-width="2"/>
+      <rect width="210" height="68" rx="12" fill="#c07a3d"/>
+      <text x="105" y="42" text-anchor="middle" font-size="17" font-weight="700" fill="#fff">身份与安全层</text>
+      <text x="240" y="30" font-size="14" font-weight="600" fill="#263238">回答你是谁、能做什么、行为是否可信</text>
+      <text x="240" y="51" font-size="12" fill="#607d8b">认证 · 授权 · 租户隔离 · 密钥 · 审计</text>
+    </g>
+    <g transform="translate(80 434)">
+      <rect width="800" height="68" rx="12" fill="#fbecef" stroke="#b44c5b" stroke-width="2"/>
+      <rect width="210" height="68" rx="12" fill="#b44c5b"/>
+      <text x="105" y="42" text-anchor="middle" font-size="17" font-weight="700" fill="#fff">业务服务层</text>
+      <text x="240" y="30" font-size="14" font-weight="600" fill="#263238">承载业务规则、状态变化和领域能力</text>
+      <text x="240" y="51" font-size="12" fill="#607d8b">订单 · 商品 · 库存 · 支付 · 履约 · 风控</text>
+    </g>
+    <g transform="translate(80 518)">
+      <rect width="800" height="68" rx="12" fill="#e9f7f4" stroke="#358f80" stroke-width="2"/>
+      <rect width="210" height="68" rx="12" fill="#358f80"/>
+      <text x="105" y="42" text-anchor="middle" font-size="17" font-weight="700" fill="#fff">数据与存储层</text>
+      <text x="240" y="30" font-size="14" font-weight="600" fill="#263238">保存权威事实并提供匹配场景的读写能力</text>
+      <text x="240" y="51" font-size="12" fill="#607d8b">关系库 · 缓存 · 搜索 · 对象存储 · 数仓</text>
+    </g>
+    <g transform="translate(80 602)">
+      <rect width="800" height="68" rx="12" fill="#fff8e6" stroke="#cc9a2e" stroke-width="2"/>
+      <rect width="210" height="68" rx="12" fill="#cc9a2e"/>
+      <text x="105" y="42" text-anchor="middle" font-size="17" font-weight="700" fill="#fff">异步与中间件层</text>
+      <text x="240" y="30" font-size="14" font-weight="600" fill="#263238">提供解耦、削峰、调度、协调与公共能力</text>
+      <text x="240" y="51" font-size="12" fill="#607d8b">MQ · 调度 · 配置 · 注册发现 · 分布式协调</text>
+    </g>
+    <g transform="translate(80 686)">
+      <rect width="800" height="68" rx="12" fill="#eef1f3" stroke="#59636e" stroke-width="2"/>
+      <rect width="210" height="68" rx="12" fill="#59636e"/>
+      <text x="105" y="34" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">可观测、基础设施</text>
+      <text x="105" y="54" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">与交付</text>
+      <text x="240" y="30" font-size="14" font-weight="600" fill="#263238">让所有层可部署、可扩缩、可诊断、可恢复</text>
+      <text x="240" y="51" font-size="12" fill="#607d8b">日志 · 指标 · Trace · 容器 · CI/CD · 容灾</text>
+    </g>
+  </g>
+</svg>

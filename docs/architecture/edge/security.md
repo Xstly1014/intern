@@ -4,18 +4,7 @@
 
 ## 1. 攻击面分层
 
-```text
-L3/L4：UDP Flood、SYN Flood、反射放大
-  ↓ Anti-DDoS / Anycast / 清洗中心
-TLS/连接：握手洪泛、慢连接、连接耗尽
-  ↓ 边缘代理 / L4-L7 限制
-HTTP：恶意路径、超大 Body、慢速上传、请求洪泛
-  ↓ CDN / WAF / Rate Limit
-应用漏洞：SQLi、XSS、路径穿越、反序列化、SSRF
-  ↓ WAF + 安全编码 + 服务端校验
-业务滥用：撞库、刷短信、抢券、爬虫、库存占用
-  ↓ Bot/风控 + 业务规则
-```
+![从网络攻击到业务滥用的分层防护体系](/architecture/edge-security-layers.svg)
 
 WAF 不能吸收超过入口带宽的 DDoS，也不能理解全部业务欺诈；Anti-DDoS 不能发现用户每秒请求 100 次验证码的业务滥用。
 

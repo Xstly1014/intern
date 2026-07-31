@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 760" role="img" aria-labelledby="t d">
+  <title id="t">客户端到 Java 服务的完整边缘请求路径</title><desc id="d">展示客户端、DNS、边缘节点、源站入口、网关、BFF 与 Java 服务之间的请求链路</desc>
+  <defs><filter id="s"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity=".14"/></filter><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#607d8b"/></marker></defs>
+  <rect width="960" height="760" rx="22" fill="#f7faf9"/>
+  <g font-family="PingFang SC,Microsoft YaHei,sans-serif">
+    <text x="480" y="42" text-anchor="middle" font-size="24" font-weight="700" fill="#17342c">从用户设备到 Java 服务</text>
+    <g filter="url(#s)">
+      <g transform="translate(100 74)"><rect width="760" height="92" rx="14" fill="#fff" stroke="#607d8b" stroke-width="2"/><text x="32" y="36" font-size="18" font-weight="700" fill="#263238">① 用户设备与客户端</text><text x="32" y="65" font-size="13" fill="#607d8b">浏览器 / App / 小程序 / 第三方 SDK · 本地缓存 · 连接池 · 幂等与重试</text></g>
+      <g transform="translate(100 210)"><rect width="760" height="92" rx="14" fill="#edf3fa" stroke="#4f7cac" stroke-width="2"/><text x="32" y="36" font-size="18" font-weight="700" fill="#365f8d">② 公共网络与全局调度</text><text x="32" y="65" font-size="13" fill="#4f7cac">递归 DNS → 权威 DNS / GSLB · 运营商网络 · 公共互联网 · Anycast</text></g>
+      <g transform="translate(100 346)"><rect width="760" height="108" rx="14" fill="#e8f5f0" stroke="#3c8772" stroke-width="2"/><text x="32" y="35" font-size="18" font-weight="700" fill="#2d6b59">③ 边缘节点 PoP</text><text x="32" y="65" font-size="13" fill="#3c8772">Anti-DDoS → TLS 终止 → CDN 缓存 → Bot 识别 → WAF 检查</text><text x="32" y="88" font-size="12" fill="#607d8b">静态命中直接返回；动态请求通过可信链路安全回源</text></g>
+      <g transform="translate(100 498)"><rect width="760" height="92" rx="14" fill="#f3eff8" stroke="#8b6fb3" stroke-width="2"/><text x="32" y="36" font-size="18" font-weight="700" fill="#6c528f">④ 源站入口</text><text x="32" y="65" font-size="13" fill="#8b6fb3">Global / Cloud LB → Regional LB → Ingress / 反向代理 · 健康检查 · 连接排空</text></g>
+      <g transform="translate(100 634)"><rect width="760" height="88" rx="14" fill="#fbecef" stroke="#b44c5b" stroke-width="2"/><text x="32" y="34" font-size="18" font-weight="700" fill="#913744">⑤ 系统内部入口与业务</text><text x="32" y="63" font-size="13" fill="#b44c5b">API Gateway → BFF / 接入层 → Java 业务服务</text></g>
+    </g>
+    <g stroke="#607d8b" stroke-width="2" marker-end="url(#a)"><path d="M480 166V204"/><path d="M480 302V340"/><path d="M480 454V492"/><path d="M480 590V628"/></g>
+    <g font-size="11" fill="#607d8b"><text x="494" y="189">解析与连接</text><text x="494" y="325">选择边缘地址</text><text x="494" y="477">mTLS / 签名回源</text><text x="494" y="613">可信请求上下文</text></g>
+  </g>
+</svg>

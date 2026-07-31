@@ -51,10 +51,10 @@ export default defineConfig({
     ],
 
     sidebar: {
-      // ==================== Java 系统架构 ====================
+      // ==================== 系统架构 ====================
       '/architecture/': [
         {
-          text: 'Java 系统架构全景指南',
+          text: '系统架构全景指南',
           collapsed: false,
           items: [
             { text: '专题导读', link: '/architecture/' },
