@@ -1,0 +1,49 @@
+# Java 系统架构全景指南
+
+这里讨论的是一套 Java 后端系统在生产环境中的**运行时系统架构**：用户流量怎样进入系统，网关与接入层怎样分工，业务服务如何协作，数据与中间件如何支撑业务，以及系统如何部署、观测和演进。它不是 Maven 模块、Controller/Service/DAO 包结构之类的代码目录设计。
+
+> [!IMPORTANT]
+> 架构不是把所有组件堆进系统。小系统可以是一个应用加一个数据库；只有当流量、团队、可靠性或合规要求出现后，才逐步拆出网关、缓存、消息队列、微服务和多集群。**职责边界清楚，比组件数量更重要。**
+
+## 阅读路线
+
+| 顺序 | 章节 | 解决的核心问题 |
+|---|---|---|
+| 1 | [总概览](/architecture/overview) | 看懂完整蓝图、请求链路、数据链路和层间边界 |
+| 2 | [客户端与边缘层](/architecture/edge) | 流量到达机房前，DNS、CDN、WAF、LB 做什么 |
+| 3 | [API 网关层](/architecture/gateway) | 统一路由、限流、认证前置和协议治理如何实现 |
+| 4 | [接入层与 BFF](/architecture/access) | 面向不同终端组装接口、校验协议、转换模型 |
+| 5 | [身份与安全层](/architecture/security) | 认证、授权、租户隔离、密钥和审计怎样贯穿全链路 |
+| 6 | [业务服务层](/architecture/business) | 领域边界、服务拆分、事务、幂等和服务协作 |
+| 7 | [数据访问与存储层](/architecture/data) | 数据库、缓存、搜索、对象存储如何分工 |
+| 8 | [异步与中间件层](/architecture/middleware) | MQ、任务调度、配置中心、注册中心解决什么问题 |
+| 9 | [外部集成层](/architecture/integration) | 支付、短信、第三方接口怎样隔离变化与故障 |
+| 10 | [可观测与运维层](/architecture/observability) | 日志、指标、链路、告警、SLO 和应急体系 |
+| 11 | [基础设施与交付层](/architecture/infrastructure) | 容器、Kubernetes、CI/CD、发布与容灾 |
+| 12 | [端到端落地与演进](/architecture/practice) | 从单体到分布式如何按阶段建设、如何做架构评审 |
+
+## 一句话理解每一层
+
+<div class="arch-stack">
+  <div class="arch-stack-row edge"><b>客户端与边缘层</b><span>把用户流量安全、快速、稳定地送到正确的入口</span></div>
+  <div class="arch-stack-row gateway"><b>API 网关层</b><span>执行与业务无关的统一流量治理策略</span></div>
+  <div class="arch-stack-row access"><b>接入层 / BFF</b><span>把终端协议翻译为业务可理解的用例请求</span></div>
+  <div class="arch-stack-row security"><b>身份与安全层</b><span>回答“你是谁、你能做什么、行为是否可信”</span></div>
+  <div class="arch-stack-row business"><b>业务服务层</b><span>承载业务规则、状态变化和领域能力</span></div>
+  <div class="arch-stack-row data"><b>数据与存储层</b><span>可靠保存事实，并提供适合场景的读写能力</span></div>
+  <div class="arch-stack-row middleware"><b>异步与中间件层</b><span>提供解耦、削峰、调度、协调和公共技术能力</span></div>
+  <div class="arch-stack-row platform"><b>可观测、基础设施与交付</b><span>让上述各层可部署、可扩缩、可诊断、可恢复</span></div>
+</div>
+
+这些层是**逻辑职责**，不是必须一层对应一个进程。例如小型系统可以让接入层和业务层部署在同一个 Spring Boot 应用中；大型系统则可能把网关、BFF、领域服务分别扩缩容。判断是否物理拆分，要看团队边界、发布节奏、流量特征、故障隔离和合规要求。
+
+## 建议的学习方式
+
+先读总览形成地图，再带着一个具体场景阅读各层。本文贯穿使用“创建订单”作为例子：用户提交订单后，要完成身份校验、风控、库存预占、价格计算、订单落库、支付发起、消息通知和运营数据更新。每经过一层，都问四个问题：
+
+1. 这一层拥有什么职责和数据？
+2. 它允许依赖谁，禁止依赖谁？
+3. 它失败时如何止损、恢复和观测？
+4. 当前规模下，它需要独立部署，还是只需要保持逻辑边界？
+
+下一篇从[总概览](/architecture/overview)开始。

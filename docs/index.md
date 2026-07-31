@@ -10,13 +10,17 @@ hero:
     alt: intern
   actions:
     - theme: brand
-      text: 开始阅读
-      link: /mq/
+      text: 系统架构指南
+      link: /architecture/
     - theme: alt
       text: GitHub
       link: https://github.com/Xstly1014/intern
 
 features:
+  - icon: 🏗️
+    title: Java 系统架构
+    details: 从边缘、网关、接入、业务、数据和中间件，到安全、可观测、交付与容灾的完整运行时架构指南。
+    link: /architecture/
   - icon: 📨
     title: 消息队列
     details: 消息队列核心知识图解，内容持续更新中。

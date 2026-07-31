@@ -43,6 +43,7 @@ export default defineConfig({
 
     nav: [
       { text: '首页', link: '/' },
+      { text: '系统架构', link: '/architecture/', activeMatch: '/architecture/' },
       { text: '消息队列', link: '/mq/', activeMatch: '/mq/' },
       { text: 'MySQL', link: '/mysql/', activeMatch: '/mysql/' },
       { text: 'Redis', link: '/redis/', activeMatch: '/redis/' },
@@ -50,6 +51,29 @@ export default defineConfig({
     ],
 
     sidebar: {
+      // ==================== Java 系统架构 ====================
+      '/architecture/': [
+        {
+          text: 'Java 系统架构全景指南',
+          collapsed: false,
+          items: [
+            { text: '专题导读', link: '/architecture/' },
+            { text: '01 总概览', link: '/architecture/overview' },
+            { text: '02 客户端与边缘层', link: '/architecture/edge' },
+            { text: '03 API 网关层', link: '/architecture/gateway' },
+            { text: '04 接入层与 BFF', link: '/architecture/access' },
+            { text: '05 身份与安全层', link: '/architecture/security' },
+            { text: '06 业务服务层', link: '/architecture/business' },
+            { text: '07 数据访问与存储层', link: '/architecture/data' },
+            { text: '08 异步与中间件层', link: '/architecture/middleware' },
+            { text: '09 外部集成层', link: '/architecture/integration' },
+            { text: '10 可观测与运维层', link: '/architecture/observability' },
+            { text: '11 基础设施与交付层', link: '/architecture/infrastructure' },
+            { text: '12 端到端落地与演进', link: '/architecture/practice' },
+          ],
+        },
+      ],
+
       // ==================== 消息队列 ====================
       '/mq/': [
         {

@@ -66,3 +66,93 @@ img {
   box-shadow: 0 8px 30px rgba(60, 135, 114, 0.3);
   object-fit: cover;
 }
+
+/* 系统架构专题图：使用主题变量，兼容明暗主题与移动端 */
+.arch-stack,
+.arch-map {
+  display: grid;
+  gap: 10px;
+  margin: 24px 0;
+}
+
+.arch-stack-row,
+.arch-map-row,
+.arch-map-grid > div,
+.arch-map-foundation {
+  border: 1px solid var(--vp-c-divider);
+  border-left: 5px solid var(--vp-c-brand-1);
+  border-radius: 10px;
+  background: var(--vp-c-bg-soft);
+  padding: 14px 18px;
+}
+
+.arch-stack-row {
+  display: grid;
+  grid-template-columns: minmax(145px, 0.32fr) 1fr;
+  gap: 18px;
+  align-items: center;
+}
+
+.arch-stack-row span,
+.arch-map-row div {
+  color: var(--vp-c-text-2);
+}
+
+.arch-map-row {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 18px;
+  align-items: center;
+}
+
+.arch-map-label {
+  font-weight: 700;
+  color: var(--vp-c-text-1);
+}
+
+.arch-map-arrow {
+  color: var(--vp-c-brand-1);
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.arch-map-arrow.split {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.arch-map-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  text-align: center;
+  line-height: 1.8;
+}
+
+.arch-stack-row.gateway,
+.arch-map-row.gateway { border-left-color: #4f7cac; }
+.arch-stack-row.access,
+.arch-map-row.access { border-left-color: #8b6fb3; }
+.arch-stack-row.security { border-left-color: #c07a3d; }
+.arch-stack-row.business,
+.arch-map-row.business { border-left-color: #b44c5b; }
+.arch-stack-row.data,
+.arch-map-grid .data { border-left-color: #358f80; }
+.arch-stack-row.middleware,
+.arch-map-grid .middleware { border-left-color: #cc9a2e; }
+.arch-map-grid .integration { border-left-color: #7c6f64; }
+.arch-stack-row.platform,
+.arch-map-foundation.platform { border-left-color: #59636e; }
+
+@media (max-width: 640px) {
+  .arch-stack-row,
+  .arch-map-row,
+  .arch-map-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .arch-map-arrow.split {
+    display: none;
+  }
+}
