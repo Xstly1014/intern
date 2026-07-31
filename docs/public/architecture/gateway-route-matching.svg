@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 620" role="img" aria-labelledby="title desc">
+  <title id="title">API 网关路由匹配决策</title><desc id="desc">展示 Host、Method、Path、Header 条件的路由匹配顺序，以及冲突、未匹配和唯一路由结果</desc>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#607d8b"/></marker></defs><rect width="1100" height="620" rx="18" fill="#f7faf9"/>
+  <g font-family="PingFang SC,Microsoft YaHei,sans-serif"><text x="550" y="42" text-anchor="middle" font-size="24" font-weight="700" fill="#17342c">路由匹配必须产生唯一、可解释的结果</text>
+    <g text-anchor="middle"><rect x="55" y="95" width="180" height="75" rx="8" fill="#fff" stroke="#607d8b"/><text x="145" y="125" font-size="15" font-weight="700">请求</text><text x="145" y="149" font-size="11">api.example.com</text>
+      <rect x="305" y="95" width="180" height="75" rx="8" fill="#edf3fa" stroke="#4f7cac"/><text x="395" y="125" font-size="15" font-weight="700">1. Host 集合</text><text x="395" y="149" font-size="11">信任域 / API 域名</text>
+      <rect x="555" y="95" width="180" height="75" rx="8" fill="#e8f5f0" stroke="#2f7d68"/><text x="645" y="125" font-size="15" font-weight="700">2. Method</text><text x="645" y="149" font-size="11">GET / POST / DELETE</text>
+      <rect x="805" y="95" width="220" height="75" rx="8" fill="#f3eff8" stroke="#8064a2"/><text x="915" y="125" font-size="15" font-weight="700">3. Path 精确度</text><text x="915" y="149" font-size="11">静态 &gt; 参数 &gt; 通配</text></g>
+    <g stroke="#607d8b" stroke-width="2" marker-end="url(#a)"><path d="M235 132H300"/><path d="M485 132H550"/><path d="M735 132H800"/><path d="M915 170V225"/></g>
+    <rect x="730" y="225" width="370" height="165" rx="8" fill="#fff" stroke="#a5b8b2"/><text x="915" y="257" text-anchor="middle" font-size="16" font-weight="700" fill="#355c51">4. Header / Query 受控条件</text><text x="760" y="292" font-size="12" fill="#455a64">• API 版本、合作方或灰度标签</text><text x="760" y="318" font-size="12" fill="#455a64">• 外部可伪造值不能解锁内部路由</text><text x="760" y="344" font-size="12" fill="#455a64">• 条件必须有明确优先级</text><text x="760" y="370" font-size="12" fill="#455a64">• 所有匹配可在 CI 中演算</text>
+    <path d="M730 307H610" stroke="#607d8b" stroke-width="2" marker-end="url(#a)"/>
+    <g text-anchor="middle"><rect x="365" y="250" width="245" height="115" rx="8" fill="#e8f5f0" stroke="#2f7d68" stroke-width="2"/><text x="487" y="287" font-size="17" font-weight="700" fill="#1e6654">候选路由集合</text><text x="487" y="316" font-size="12">根据精确度和显式优先级排序</text><text x="487" y="341" font-size="12">检查结果数量</text></g>
+    <path d="M487 365V430" stroke="#607d8b" stroke-width="2" marker-end="url(#a)"/>
+    <g text-anchor="middle"><rect x="55" y="445" width="260" height="105" rx="8" fill="#fff8e6" stroke="#c69a32"/><text x="185" y="480" font-size="17" font-weight="700">0 条</text><text x="185" y="508" font-size="12">404 / 405，记录 unmatched</text><text x="185" y="532" font-size="11">不落入默认业务后端</text>
+      <rect x="420" y="445" width="260" height="105" rx="8" fill="#e8f5f0" stroke="#2f7d68"/><text x="550" y="480" font-size="17" font-weight="700">1 条</text><text x="550" y="508" font-size="12">得到稳定 route ID</text><text x="550" y="532" font-size="11">加载身份、配额、上游策略</text>
+      <rect x="785" y="445" width="260" height="105" rx="8" fill="#fbecef" stroke="#b44c5b"/><text x="915" y="480" font-size="17" font-weight="700">2+ 条</text><text x="915" y="508" font-size="12">配置冲突，发布前拒绝</text><text x="915" y="532" font-size="11">不依赖文件偶然顺序</text></g>
+    <g stroke="#607d8b" stroke-width="2" marker-end="url(#a)"><path d="M470 430L250 442"/><path d="M550 430V440"/><path d="M630 430L850 442"/></g>
+  </g>
+</svg>

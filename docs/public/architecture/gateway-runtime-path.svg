@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 560" role="img" aria-labelledby="title desc">
+  <title id="title">API 网关在系统请求链路中的位置</title>
+  <desc id="desc">展示客户端、边缘防护、负载均衡、API 网关、BFF、业务服务和数据层之间的请求链路与责任边界</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#55736b"/></marker></defs>
+  <rect width="1180" height="560" rx="18" fill="#f7faf9"/>
+  <g font-family="PingFang SC,Microsoft YaHei,sans-serif">
+    <text x="590" y="42" text-anchor="middle" font-size="24" font-weight="700" fill="#17342c">API 网关：外部契约与内部服务之间的流量治理边界</text>
+    <g stroke-width="2">
+      <rect x="35" y="105" width="125" height="120" rx="8" fill="#ffffff" stroke="#607d8b"/>
+      <rect x="190" y="105" width="135" height="120" rx="8" fill="#fff8e6" stroke="#c69a32"/>
+      <rect x="355" y="105" width="125" height="120" rx="8" fill="#edf3fa" stroke="#4f7cac"/>
+      <rect x="510" y="80" width="175" height="170" rx="8" fill="#e8f5f0" stroke="#2f7d68" stroke-width="3"/>
+      <rect x="715" y="105" width="125" height="120" rx="8" fill="#f3eff8" stroke="#8064a2"/>
+      <rect x="870" y="105" width="125" height="120" rx="8" fill="#fbecef" stroke="#b44c5b"/>
+      <rect x="1025" y="105" width="120" height="120" rx="8" fill="#eef4f0" stroke="#55806d"/>
+    </g>
+    <g text-anchor="middle" fill="#263238">
+      <text x="97" y="140" font-size="17" font-weight="700">客户端</text><text x="97" y="170" font-size="12">Web / App</text><text x="97" y="190" font-size="12">合作方</text>
+      <text x="257" y="140" font-size="17" font-weight="700">边缘</text><text x="257" y="170" font-size="12">CDN / WAF</text><text x="257" y="190" font-size="12">Anti-DDoS</text>
+      <text x="417" y="140" font-size="17" font-weight="700">LB</text><text x="417" y="170" font-size="12">健康调度</text><text x="417" y="190" font-size="12">连接入口</text>
+      <text x="597" y="120" font-size="19" font-weight="700" fill="#1e6654">API 网关</text><text x="597" y="152" font-size="12">路由 / 身份初检</text><text x="597" y="174" font-size="12">配额 / 灰度 / 超时</text><text x="597" y="196" font-size="12">协议 / 访问日志</text><text x="597" y="226" font-size="11" fill="#2f7d68">不执行领域规则</text>
+      <text x="777" y="140" font-size="17" font-weight="700">BFF</text><text x="777" y="170" font-size="12">终端适配</text><text x="777" y="190" font-size="12">粗粒度组装</text>
+      <text x="932" y="140" font-size="17" font-weight="700">业务服务</text><text x="932" y="170" font-size="12">资源授权</text><text x="932" y="190" font-size="12">领域规则</text>
+      <text x="1085" y="140" font-size="17" font-weight="700">数据</text><text x="1085" y="170" font-size="12">业务事实</text><text x="1085" y="190" font-size="12">缓存 / MQ</text>
+    </g>
+    <g stroke="#55736b" stroke-width="2" marker-end="url(#arrow)"><path d="M160 165H185"/><path d="M325 165H350"/><path d="M480 165H505"/><path d="M685 165H710"/><path d="M840 165H865"/><path d="M995 165H1020"/></g>
+    <path d="M35 315H1145" stroke="#d5e2de" stroke-width="2"/>
+    <g>
+      <rect x="55" y="350" width="320" height="130" rx="8" fill="#ffffff" stroke="#a5b8b2"/>
+      <text x="215" y="382" text-anchor="middle" font-size="16" font-weight="700" fill="#355c51">上一层已做什么</text>
+      <text x="80" y="415" font-size="13" fill="#455a64">• 攻击清洗与通用 WAF</text><text x="80" y="440" font-size="13" fill="#455a64">• TLS / 公网连接 / 健康调度</text><text x="80" y="465" font-size="13" fill="#455a64">• 但尚未识别 API 消费者与产品</text>
+      <rect x="430" y="350" width="320" height="130" rx="8" fill="#e8f5f0" stroke="#2f7d68"/>
+      <text x="590" y="382" text-anchor="middle" font-size="16" font-weight="700" fill="#1e6654">网关的决策依据</text>
+      <text x="455" y="415" font-size="13" fill="#355c51">• API 路由、凭证、配额与发布</text><text x="455" y="440" font-size="13" fill="#355c51">• 只依赖请求元数据和策略快照</text><text x="455" y="465" font-size="13" fill="#355c51">• 不查领域数据库</text>
+      <rect x="805" y="350" width="320" height="130" rx="8" fill="#ffffff" stroke="#a5b8b2"/>
+      <text x="965" y="382" text-anchor="middle" font-size="16" font-weight="700" fill="#355c51">下一层仍要做什么</text>
+      <text x="830" y="415" font-size="13" fill="#455a64">• 终端契约与 DTO 转换</text><text x="830" y="440" font-size="13" fill="#455a64">• 对象级授权与业务不变量</text><text x="830" y="465" font-size="13" fill="#455a64">• 事务、幂等事实与补偿</text>
+    </g>
+  </g>
+</svg>

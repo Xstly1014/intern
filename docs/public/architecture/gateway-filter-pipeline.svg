@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 590" role="img" aria-labelledby="title desc">
+  <title id="title">API 网关请求处理管线</title>
+  <desc id="desc">展示从协议检查、信任清洗、路由匹配到认证、流控、上游调用、响应处理和遥测的有序管线</desc>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#607d8b"/></marker></defs>
+  <rect width="1180" height="590" rx="18" fill="#f7faf9"/>
+  <g font-family="PingFang SC,Microsoft YaHei,sans-serif">
+    <text x="590" y="40" text-anchor="middle" font-size="24" font-weight="700" fill="#17342c">请求管线：先便宜拒绝，再执行昂贵策略</text>
+    <g stroke="#607d8b" stroke-width="2" marker-end="url(#a)" fill="none"><path d="M115 155H155"/><path d="M315 155H355"/><path d="M515 155H555"/><path d="M715 155H755"/><path d="M915 155H955"/><path d="M1035 205V270H915"/><path d="M755 335H715"/><path d="M555 335H515"/><path d="M355 335H315"/><path d="M155 335H115"/></g>
+    <g text-anchor="middle">
+      <rect x="35" y="105" width="80" height="100" rx="8" fill="#fff" stroke="#607d8b"/><text x="75" y="148" font-size="14" font-weight="700">请求</text><text x="75" y="173" font-size="11">TLS/HTTP</text>
+      <rect x="155" y="90" width="160" height="130" rx="8" fill="#fff8e6" stroke="#c69a32"/><text x="235" y="125" font-size="15" font-weight="700">边界限制</text><text x="235" y="152" font-size="11">URI / Header / Body</text><text x="235" y="174" font-size="11">速率 / 协议</text><text x="235" y="198" font-size="11" fill="#9b661c">越早拒绝成本越低</text>
+      <rect x="355" y="90" width="160" height="130" rx="8" fill="#edf3fa" stroke="#4f7cac"/><text x="435" y="125" font-size="15" font-weight="700">信任清洗</text><text x="435" y="152" font-size="11">删外部身份 Header</text><text x="435" y="174" font-size="11">重建 Forwarded</text><text x="435" y="198" font-size="11">Trace 格式验证</text>
+      <rect x="555" y="90" width="160" height="130" rx="8" fill="#e8f5f0" stroke="#2f7d68"/><text x="635" y="125" font-size="15" font-weight="700">路由匹配</text><text x="635" y="152" font-size="11">Host / Method / Path</text><text x="635" y="174" font-size="11">版本 / 优先级</text><text x="635" y="198" font-size="11">未知 API 直接拒绝</text>
+      <rect x="755" y="90" width="160" height="130" rx="8" fill="#f3eff8" stroke="#8064a2"/><text x="835" y="125" font-size="15" font-weight="700">身份与策略</text><text x="835" y="152" font-size="11">JWT / Key / mTLS</text><text x="835" y="174" font-size="11">scope / route policy</text><text x="835" y="198" font-size="11">不做资源级授权</text>
+      <rect x="955" y="90" width="160" height="130" rx="8" fill="#fbecef" stroke="#b44c5b"/><text x="1035" y="125" font-size="15" font-weight="700">流控与分流</text><text x="1035" y="152" font-size="11">配额 / 并发</text><text x="1035" y="174" font-size="11">灰度 / 熔断</text><text x="1035" y="198" font-size="11">选择上游集群</text>
+      <rect x="755" y="270" width="160" height="130" rx="8" fill="#fbecef" stroke="#b44c5b"/><text x="835" y="305" font-size="15" font-weight="700">上游调用</text><text x="835" y="332" font-size="11">连接池 / deadline</text><text x="835" y="354" font-size="11">有界重试</text><text x="835" y="378" font-size="11">记录每次尝试</text>
+      <rect x="555" y="270" width="160" height="130" rx="8" fill="#e8f5f0" stroke="#2f7d68"/><text x="635" y="305" font-size="15" font-weight="700">响应处理</text><text x="635" y="332" font-size="11">Header 清理</text><text x="635" y="354" font-size="11">错误语义保留</text><text x="635" y="378" font-size="11">CORS / 安全 Header</text>
+      <rect x="355" y="270" width="160" height="130" rx="8" fill="#edf3fa" stroke="#4f7cac"/><text x="435" y="305" font-size="15" font-weight="700">遥测落盘</text><text x="435" y="332" font-size="11">metrics / logs / trace</text><text x="435" y="354" font-size="11">路由 / 上游 / 策略</text><text x="435" y="378" font-size="11">脱敏与有界反压</text>
+      <rect x="155" y="270" width="160" height="130" rx="8" fill="#fff8e6" stroke="#c69a32"/><text x="235" y="305" font-size="15" font-weight="700">最终响应</text><text x="235" y="332" font-size="11">status + error code</text><text x="235" y="354" font-size="11">request ID</text><text x="235" y="378" font-size="11">Retry-After 等契约</text>
+      <rect x="35" y="285" width="80" height="100" rx="8" fill="#fff" stroke="#607d8b"/><text x="75" y="328" font-size="14" font-weight="700">客户端</text><text x="75" y="353" font-size="11">可操作语义</text>
+    </g>
+    <rect x="135" y="460" width="910" height="70" rx="8" fill="#ffffff" stroke="#a5b8b2"/>
+    <text x="590" y="489" text-anchor="middle" font-size="14" font-weight="700" fill="#355c51">顺序不可任意交换</text>
+    <text x="590" y="515" text-anchor="middle" font-size="12" fill="#546e7a">大 Body 限制早于远程鉴权 · Header 清洗早于身份使用 · 路由匹配早于路由级配额 · 每次尝试都要可观测</text>
+  </g>
+</svg>
