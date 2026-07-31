@@ -4,15 +4,7 @@
 
 ## 1. 基本结构
 
-```text
-业务服务 → 内部端口 PaymentGateway
-                    ↓
-          WeChatPayAdapter / StripeAdapter
-                    ↓
-           签名、限流、超时、第三方 API
-
-第三方回调 → 独立回调入口 → 验签/防重放 → Inbox → 业务处理
-```
+![外部支付集成的防腐层与回调链路](/architecture/external-integration.svg)
 
 领域层只认识 `PaymentRequest`、`PaymentResult`，不认识供应商 SDK 的 DTO 和异常。切换供应商或升级版本时，变化局限在适配器。
 

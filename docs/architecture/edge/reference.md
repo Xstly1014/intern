@@ -8,17 +8,7 @@
 
 适用：内部工具、早期产品、单地域、流量不大、团队人数少。
 
-```text
-Web/App
-  ↓ HTTPS
-云 DNS
-  ↓
-云 CDN/WAF（静态资源 + 基础防护）
-  ↓
-云 L7 Load Balancer
-  ↓
-2+ 个 Spring Boot 实例（跨两个故障域）
-```
+![小型系统的客户端与边缘部署链路](/architecture/reference-small-edge.svg)
 
 ### 必须具备
 
@@ -38,21 +28,7 @@ Web/App
 
 适用：公网业务、移动用户、多团队、峰值明显、开始有可用性要求。
 
-```text
-客户端（幂等/退避/RUM）
-  ↓
-Managed DNS + GSLB
-  ↓
-CDN + Anti-DDoS + WAF/Bot
-  ├─ 静态 → CDN / Object Storage
-  └─ 动态 → Origin Shield / 安全回源
-                  ↓
-         Regional L7 LB（多 AZ）
-                  ↓
-         API Gateway / BFF 集群
-                  ↓
-             Java 业务服务
-```
+![成长型系统的多可用区边缘架构](/architecture/reference-growing-edge.svg)
 
 ### 新增能力
 
@@ -68,20 +44,7 @@ CDN + Anti-DDoS + WAF/Bot
 
 适用：全球用户、核心交易、高 SLO、多个业务域和平台团队。
 
-```text
-全球客户端
-  ↓
-多权威 DNS / Anycast Global Edge
-  ↓
-多供应商 CDN/Anti-DDoS（按业务风险选择）
-  ↓
-地域边缘 Cell
-  ├─ WAF/Bot/Rate Limit
-  ├─ Regional LB/Gateway
-  └─ BFF/核心服务 + 地域数据能力
-  ↓
-全局控制面：流量目录、身份、配置、可观测、发布与容灾
-```
+![全球系统的多地域 Cell 边缘架构](/architecture/reference-global-edge.svg)
 
 ### 关键治理
 
@@ -96,26 +59,7 @@ CDN + Anti-DDoS + WAF/Bot
 
 ## 4. 创建订单参考链路
 
-```text
-App
-  │ POST /orders + Access Token + Idempotency-Key
-  ▼
-DNS/GSLB：选择健康、合规的最近边缘
-  ▼
-Anti-DDoS：清洗 L3/L4 攻击
-  ▼
-TLS Edge：TLS 1.3/h2，清洗 Forwarded Header
-  ▼
-Bot/WAF：设备风险、Schema、Body、速率；不判断库存业务
-  ▼
-CDN：POST bypass，受控安全回源
-  ▼
-Regional LB：健康检查、连接复用、选择 Gateway
-  ▼
-API Gateway：Token 初检、用户/租户限流、路由
-  ▼
-BFF / Order Service
-```
+![创建订单经过边缘系统的完整链路](/architecture/reference-order-edge.svg)
 
 ### 关键契约
 
@@ -128,44 +72,19 @@ BFF / Order Service
 
 ## 5. 静态站点参考链路
 
-```text
-HTML: short TTL + stale-while-revalidate
-  └─ 引用 app.[content-hash].js / style.[hash].css
-       └─ long TTL + immutable
-
-图片: /images/{id}/{version}/{size}.webp
-  └─ CDN 图片转换结果 + long TTL
-
-发布顺序：先上传新哈希资源 → 验证 → 发布 HTML
-回滚顺序：HTML 指回旧哈希；旧资源仍保留
-```
+![静态站点资源版本化、缓存、发布与回滚](/architecture/reference-static-release.svg)
 
 这避免全站 purge 和“HTML 已更新但资源未上传”的短暂白屏。
 
 ## 6. 文件上传参考链路
 
-```text
-Client → API 申请 upload session
-       ← 短期签名、对象 Key、分片规则
-Client → 隔离对象存储分片直传
-Client → API 完成上传
-       → 服务校验摘要/大小
-       → 扫描/审核/重编码
-       → 发布 Bucket/状态
-       → CDN 分发
-```
+![客户端直传对象存储并经安全处理后发布](/architecture/reference-upload.svg)
 
 Java API 只管理授权、元数据和状态，不转发大文件字节。上传凭证限制 Key 前缀、大小、类型和有效期。
 
 ## 7. 长连接参考链路
 
-```text
-Client ─ WebSocket/SSE ─ Edge/LB ─ Realtime Gateway
-  │          心跳 < 最小空闲超时
-  │          断线：指数退避 + 抖动
-  │          重连：lastEventId / cursor
-  └──────── 身份过期：安全刷新/重连
-```
+![WebSocket 与 SSE 长连接的心跳和恢复机制](/architecture/reference-realtime.svg)
 
 容量按并发连接、新建/重连速率、每连接内存、消息带宽和 fan-out 计算。部署时逐步摘流，不能让百万连接同时重连。
 

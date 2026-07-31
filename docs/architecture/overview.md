@@ -12,31 +12,19 @@
 
 ### 2.1 同步请求链路
 
-```text
-App → DNS/CDN/WAF → Load Balancer → API Gateway → BFF
-    → Order Service → Inventory Service → MySQL/Redis → Response
-```
+![同步请求从客户端到数据层再返回的链路](/architecture/synchronous-request.svg)
 
 同步链路适合用户必须立即知道结果的操作，例如查询商品、提交订单、校验优惠券。它的核心约束是**延迟预算**：若接口目标 P99 是 500 ms，不能让 8 个下游各自拥有 500 ms 超时。应为网关、BFF、业务服务、数据库分配子预算，并限制同步调用深度。
 
 ### 2.2 异步事件链路
 
-```text
-Order Service → 本地事务（订单 + Outbox）→ MQ → 多个消费者
-                                              ├─ 通知服务
-                                              ├─ 积分服务
-                                              └─ 数据分析
-```
+![订单事件通过 Outbox 和 MQ 分发给多个消费者](/architecture/asynchronous-event.svg)
 
 异步链路适合不要求当前请求立即完成、需要削峰或一对多传播的动作。它降低时间耦合，却引入最终一致性、重复消息、乱序、积压、重试和死信等问题。工程上默认消息可能重复，消费者必须幂等。
 
 ### 2.3 运维反馈链路
 
-```text
-应用/网关/中间件 → 日志 + 指标 + Trace → 可观测平台 → 告警
-      ↑                                                ↓
-      └──────── 自动扩缩容 / 降级 / 人工处置 / 复盘 ────┘
-```
+![从遥测采集、告警到处置和复盘的运维反馈闭环](/architecture/operations-feedback.svg)
 
 没有反馈链路，系统只是“能运行”，不是“可运营”。生产架构必须能回答：哪里慢、谁失败、影响多少用户、从何时开始、变更了什么、能否自动恢复。
 
@@ -97,19 +85,13 @@ Order Service → 本地事务（订单 + Outbox）→ MQ → 多个消费者
 
 ### 小型系统
 
-```text
-Nginx → Spring Boot 单体（接入 + 业务 + 数据访问）→ MySQL
-                                              └→ Redis（按需）
-```
+![小型系统运行时架构](/architecture/small-system.svg)
 
 保持代码内部边界，单进程部署通常最经济。不要因为“完整架构”就提前引入 Kubernetes、注册中心和十几个服务。
 
 ### 成长型系统
 
-```text
-CDN/WAF → Gateway → 模块化单体或少量领域服务 → MySQL/Redis/MQ
-                         └→ 统一日志、指标、Trace
-```
+![成长型系统运行时架构](/architecture/growing-system.svg)
 
 先拆具有独立伸缩、发布或故障隔离价值的边界，如搜索、通知、文件处理、结算。
 

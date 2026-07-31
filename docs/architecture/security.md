@@ -4,11 +4,7 @@
 
 ## 1. 认证、授权与审计
 
-```text
-用户 → 身份提供方登录 → Access Token
-                       ↓
-网关：验证签名/过期/受众 → 服务：验证权限与资源关系 → 审计日志
-```
+![从身份认证到资源授权与审计的安全链路](/architecture/identity-authorization.svg)
 
 - **认证 Authentication**：确认主体身份，主体可能是用户、设备、服务或自动任务。
 - **授权 Authorization**：判断主体能否对某资源执行某动作。

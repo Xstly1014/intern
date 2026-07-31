@@ -77,14 +77,7 @@ delay = random(0, min(cap, base × 2^attempt))
 
 幂等键代表一次业务意图，不是每次 HTTP 尝试都生成新值。
 
-```text
-用户第一次点击“提交订单”
-  → 生成 idempotencyKey = UUID
-  → 本地保存 pending(intent, key, payloadHash)
-  → 第一次发送失败/超时
-  → 使用同一个 key 重试或查询
-  → 收到最终结果后标记完成
-```
+![客户端幂等键从生成到完成的生命周期](/architecture/idempotency-key-lifecycle.svg)
 
 如果用户修改了商品或地址，应创建新的业务意图和新键。服务端应将用户/租户、操作类型、幂等键和请求摘要关联；同一键但载荷不同返回冲突，而不是复用错误结果。
 

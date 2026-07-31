@@ -49,11 +49,7 @@ WAF 是补充防线，不替代参数化 SQL、输出编码、对象级授权和
 
 ## 4. 规则生命周期
 
-```text
-需求/威胁 → 编写规则 → 离线回放 → Count/Log 模式
-          → 小流量阻断 → 观察误报 → 扩大范围
-          → 持续监控 → 到期复审/删除
-```
+![WAF 安全规则从需求到到期复审的生命周期](/architecture/waf-rule-lifecycle.svg)
 
 每条自定义规则应有 ID、描述、负责人、适用域名/路径、动作、创建原因、到期时间和回滚方法。紧急规则也要在事故后补充评审，避免永久白名单。
 
@@ -125,15 +121,7 @@ TLS 握手比转发已有连接更昂贵。启用会话复用、合理握手速�
 
 推荐流程：
 
-```text
-客户端申请短期上传凭证
-  → 直传隔离 Bucket
-  → 大小/摘要校验
-  → 恶意软件与内容扫描
-  → 图片解码重编码/移除元数据
-  → 审核通过后移动或标记到发布区域
-  → CDN 只分发已发布对象
-```
+![用户文件从隔离上传到安全发布的流程](/architecture/secure-upload-flow.svg)
 
 不要只检查扩展名或客户端 Content-Type。文件名不直接作为对象 Key，不在应用服务器可执行目录落盘。下载响应设置正确 Content-Type、`Content-Disposition` 和 `X-Content-Type-Options: nosniff`。
 
@@ -141,13 +129,7 @@ TLS 握手比转发已有连接更昂贵。启用会话复用、合理握手速�
 
 公网客户端可自行发送 `X-Forwarded-For`。第一层受信边缘必须删除外部同名 Header，再按约定写入：
 
-```text
-外部伪造 X-Forwarded-For: 1.2.3.4
-  ↓ CDN 删除并写入真实连接 IP
-CDN → LB：Forwarded / X-Forwarded-For + 边缘签名
-  ↓ LB 只信任已知 CDN 来源
-LB → Gateway：规范化后的 client_ip
-```
+![真实客户端 IP 与转发 Header 的可信传递链](/architecture/trusted-forwarded-headers.svg)
 
 应用根据受信代理跳数解析，而不是取列表第一个或最后一个。内部身份 Header 同样必须覆盖，并用 mTLS/网络策略保护代理到网关链路。
 

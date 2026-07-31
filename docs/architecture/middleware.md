@@ -21,14 +21,7 @@ RabbitMQ 适合灵活路由、工作队列和较低延迟；Kafka 适合高吞�
 
 ## 3. 可靠消息闭环
 
-```text
-业务事务：保存订单 + Outbox
-                   ↓ Relay 重试发布
-Broker：持久化 + 副本 + Producer Confirm
-                   ↓ Consumer 拉取
-消费者：幂等处理 + 业务提交 → ACK
-                   └ 失败 → 退避重试 → 死信 → 人工/自动修复
-```
+![基于 Outbox、Broker 和幂等消费者的可靠消息闭环](/architecture/reliable-message-loop.svg)
 
 “Exactly Once”通常只是某个技术边界内的保证。端到端仍应按至少一次设计：生产者可靠发布、Broker 正确持久化、消费者幂等、失败可重放。重试要指数退避并限制次数；永久性错误直接进入隔离队列，不能无限阻塞主队列。
 

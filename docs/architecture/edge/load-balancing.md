@@ -77,10 +77,7 @@ HTTP/2 多个请求共享一个连接。若 L4 只在连接建立时选择后端
 
 反向代理终止客户端连接后，存在两组独立连接：
 
-```text
-Client ←── frontend connection ──→ LB
-LB     ←── backend connection  ──→ Java Gateway
-```
+![反向代理前端连接与后端连接的两段模型](/architecture/proxy-two-connections.svg)
 
 两侧协议、连接池、TLS 和超时可以不同。例如客户端到 LB 使用 HTTP/2，LB 到后端使用 HTTP/1.1 Keep-Alive。后端连接池不足会在代理内排队，即使 Java 服务 CPU 很低。
 
