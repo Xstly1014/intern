@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 500" role="img" aria-labelledby="title desc">
+<title id="title">订单、库存与支付联合状态收敛</title>
+<desc id="desc">展示订单主状态及库存预占、支付未知、履约和退款等外部状态如何通过事件与对账收敛。</desc>
+<defs><style>
+text{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",Arial,sans-serif;letter-spacing:0}.heading{font-size:25px;font-weight:700;fill:#1f2d33}.caption{font-size:14px;fill:#607078}.node-title{font-size:16px;font-weight:700;fill:#1f2d33}.node-sub{font-size:13px;fill:#45565e}.edge{fill:none;stroke:#607078;stroke-width:2}.note{font-size:12px;fill:#6a777d}
+</style><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#607078"/></marker></defs>
+<rect width="960" height="500" fill="#ffffff"/>
+<text x="30" y="38" class="heading">订单、库存与支付联合状态收敛</text><text x="30" y="63" class="caption">展示订单主状态及库存预占、支付未知、履约和退款等外部状态如何通过事件与对账收敛。</text>
+<path d="M 170 146 L 205 146" class="edge" marker-end="url(#arrow)"/>
+<path d="M 345 146 L 380 146" class="edge" marker-end="url(#arrow)"/>
+<path d="M 520 146 L 555 146" class="edge" marker-end="url(#arrow)"/>
+<path d="M 695 146 L 730 146" class="edge" marker-end="url(#arrow)"/>
+<path d="M 275 187 L 275 285" class="edge" marker-end="url(#arrow)"/>
+<path d="M 450 187 L 625 285" class="edge" marker-end="url(#arrow)"/>
+<path d="M 695 326 L 730 326" class="edge" marker-end="url(#arrow)"/>
+<g aria-label="PENDING"><rect x="30" y="105" width="140" height="82" rx="8" fill="#e8f1ff" stroke="#2766b0" stroke-width="2"/><text x="100" y="133" class="node-title" text-anchor="middle">PENDING</text><text x="100" y="157" class="node-sub" text-anchor="middle">订单已创建</text><text x="100" y="176" class="node-sub" text-anchor="middle">库存已预占</text></g>
+<g aria-label="PAYING"><rect x="205" y="105" width="140" height="82" rx="8" fill="#fff3df" stroke="#b66a18" stroke-width="2"/><text x="275" y="133" class="node-title" text-anchor="middle">PAYING</text><text x="275" y="157" class="node-sub" text-anchor="middle">支付请求已发送</text><text x="275" y="176" class="node-sub" text-anchor="middle">结果可为 UNKNOWN</text></g>
+<g aria-label="PAID"><rect x="380" y="105" width="140" height="82" rx="8" fill="#e8f7ef" stroke="#2f7d57" stroke-width="2"/><text x="450" y="133" class="node-title" text-anchor="middle">PAID</text><text x="450" y="157" class="node-sub" text-anchor="middle">唯一支付确认</text><text x="450" y="176" class="node-sub" text-anchor="middle">不可重复入账</text></g>
+<g aria-label="FULFILLING"><rect x="555" y="105" width="140" height="82" rx="8" fill="#f3edff" stroke="#7651a8" stroke-width="2"/><text x="625" y="133" class="node-title" text-anchor="middle">FULFILLING</text><text x="625" y="157" class="node-sub" text-anchor="middle">履约处理中</text><text x="625" y="176" class="node-sub" text-anchor="middle">消费幂等</text></g>
+<g aria-label="COMPLETED"><rect x="730" y="105" width="140" height="82" rx="8" fill="#e8f1ff" stroke="#2766b0" stroke-width="2"/><text x="800" y="133" class="node-title" text-anchor="middle">COMPLETED</text><text x="800" y="157" class="node-sub" text-anchor="middle">交付完成</text><text x="800" y="176" class="node-sub" text-anchor="middle">终态</text></g>
+<g aria-label="CLOSED"><rect x="205" y="285" width="140" height="82" rx="8" fill="#fff0ef" stroke="#b94b45" stroke-width="2"/><text x="275" y="313" class="node-title" text-anchor="middle">CLOSED</text><text x="275" y="337" class="node-sub" text-anchor="middle">超时/取消</text><text x="275" y="356" class="node-sub" text-anchor="middle">释放库存</text></g>
+<g aria-label="REFUNDING"><rect x="555" y="285" width="140" height="82" rx="8" fill="#fff3df" stroke="#b66a18" stroke-width="2"/><text x="625" y="313" class="node-title" text-anchor="middle">REFUNDING</text><text x="625" y="337" class="node-sub" text-anchor="middle">退款请求</text><text x="625" y="356" class="node-sub" text-anchor="middle">查询与对账</text></g>
+<g aria-label="REFUNDED"><rect x="730" y="285" width="140" height="82" rx="8" fill="#e8f7ef" stroke="#2f7d57" stroke-width="2"/><text x="800" y="313" class="node-title" text-anchor="middle">REFUNDED</text><text x="800" y="337" class="node-sub" text-anchor="middle">累计退款</text><text x="800" y="356" class="node-sub" text-anchor="middle">不超过实付</text></g>
+<text x="930" y="480" class="note" text-anchor="end">系统架构 · 端到端落地与演进</text>
+</svg>

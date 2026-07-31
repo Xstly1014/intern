@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 500" role="img" aria-labelledby="title desc">
+<title id="title">从旧模块到新服务的绞杀迁移</title>
+<desc id="desc">展示稳定入口、影子验证、读流量迁移、写权威切换、全量迁移与旧能力退役。</desc>
+<defs><style>
+text{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",Arial,sans-serif;letter-spacing:0}.heading{font-size:25px;font-weight:700;fill:#1f2d33}.caption{font-size:14px;fill:#607078}.node-title{font-size:16px;font-weight:700;fill:#1f2d33}.node-sub{font-size:13px;fill:#45565e}.edge{fill:none;stroke:#607078;stroke-width:2}.note{font-size:12px;fill:#6a777d}
+</style><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#607078"/></marker></defs>
+<rect width="960" height="500" fill="#ffffff"/>
+<text x="30" y="38" class="heading">从旧模块到新服务的绞杀迁移</text><text x="30" y="63" class="caption">展示稳定入口、影子验证、读流量迁移、写权威切换、全量迁移与旧能力退役。</text>
+<path d="M 155 161 L 180 161" class="edge" marker-end="url(#arrow)"/>
+<path d="M 310 161 L 335 161" class="edge" marker-end="url(#arrow)"/>
+<path d="M 465 161 L 490 161" class="edge" marker-end="url(#arrow)"/>
+<path d="M 620 161 L 645 161" class="edge" marker-end="url(#arrow)"/>
+<path d="M 775 161 L 800 161" class="edge" marker-end="url(#arrow)"/>
+<path d="M 850 207 L 725 325" class="edge" marker-end="url(#arrow)"/>
+<g aria-label="稳定入口"><rect x="25" y="115" width="130" height="92" rx="8" fill="#e8f1ff" stroke="#2766b0" stroke-width="2"/><text x="90" y="143" class="node-title" text-anchor="middle">稳定入口</text><text x="90" y="167" class="node-sub" text-anchor="middle">契约/路由层</text><text x="90" y="186" class="node-sub" text-anchor="middle">不让客户端感知</text></g>
+<g aria-label="影子验证"><rect x="180" y="115" width="130" height="92" rx="8" fill="#e8f7ef" stroke="#2f7d57" stroke-width="2"/><text x="245" y="143" class="node-title" text-anchor="middle">影子验证</text><text x="245" y="167" class="node-sub" text-anchor="middle">复制只读流量</text><text x="245" y="186" class="node-sub" text-anchor="middle">结果与数据比对</text></g>
+<g aria-label="迁移读"><rect x="335" y="115" width="130" height="92" rx="8" fill="#fff3df" stroke="#b66a18" stroke-width="2"/><text x="400" y="143" class="node-title" text-anchor="middle">迁移读</text><text x="400" y="167" class="node-sub" text-anchor="middle">低风险 tenant</text><text x="400" y="186" class="node-sub" text-anchor="middle">稳定 hash 灰度</text></g>
+<g aria-label="切写权威"><rect x="490" y="115" width="130" height="92" rx="8" fill="#f3edff" stroke="#7651a8" stroke-width="2"/><text x="555" y="143" class="node-title" text-anchor="middle">切写权威</text><text x="555" y="167" class="node-sub" text-anchor="middle">单一写 owner</text><text x="555" y="186" class="node-sub" text-anchor="middle">CDC/Outbox 派生</text></g>
+<g aria-label="扩大流量"><rect x="645" y="115" width="130" height="92" rx="8" fill="#e8f1ff" stroke="#2766b0" stroke-width="2"/><text x="710" y="143" class="node-title" text-anchor="middle">扩大流量</text><text x="710" y="167" class="node-sub" text-anchor="middle">指标 + 数据校验</text><text x="710" y="186" class="node-sub" text-anchor="middle">处理差异队列</text></g>
+<g aria-label="退役旧能力"><rect x="800" y="115" width="135" height="92" rx="8" fill="#e8f7ef" stroke="#2f7d57" stroke-width="2"/><text x="867.5" y="143" class="node-title" text-anchor="middle">退役旧能力</text><text x="867.5" y="167" class="node-sub" text-anchor="middle">清理调用/作业</text><text x="867.5" y="186" class="node-sub" text-anchor="middle">表/权限/基础设施</text></g>
+<g aria-label="每阶段安全线"><rect x="235" y="325" width="490" height="72" rx="8" fill="#eef2f4" stroke="#34444d" stroke-width="2"/><text x="480" y="353" class="node-title" text-anchor="middle">每阶段安全线</text><text x="480" y="377" class="node-sub" text-anchor="middle">可停止 · 有 checkpoint · 差异可解释 · 回退或 forward fix · owner 明确</text></g>
+<text x="930" y="480" class="note" text-anchor="end">系统架构 · 端到端落地与演进</text>
+</svg>

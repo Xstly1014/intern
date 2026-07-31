@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 500" role="img" aria-labelledby="title desc">
+<title id="title">架构里程碑的证据门禁</title>
+<desc id="desc">展示从设计假设到可运行增量、自动验证、故障验证、生产证据和完成定义的门禁。</desc>
+<defs><style>
+text{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",Arial,sans-serif;letter-spacing:0}.heading{font-size:25px;font-weight:700;fill:#1f2d33}.caption{font-size:14px;fill:#607078}.node-title{font-size:16px;font-weight:700;fill:#1f2d33}.node-sub{font-size:13px;fill:#45565e}.edge{fill:none;stroke:#607078;stroke-width:2}.note{font-size:12px;fill:#6a777d}
+</style><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#607078"/></marker></defs>
+<rect width="960" height="500" fill="#ffffff"/>
+<text x="30" y="38" class="heading">架构里程碑的证据门禁</text><text x="30" y="63" class="caption">展示从设计假设到可运行增量、自动验证、故障验证、生产证据和完成定义的门禁。</text>
+<path d="M 155 163 L 180 163" class="edge" marker-end="url(#arrow)"/>
+<path d="M 310 163 L 335 163" class="edge" marker-end="url(#arrow)"/>
+<path d="M 465 163 L 490 163" class="edge" marker-end="url(#arrow)"/>
+<path d="M 620 163 L 645 163" class="edge" marker-end="url(#arrow)"/>
+<path d="M 775 163 L 800 163" class="edge" marker-end="url(#arrow)"/>
+<path d="M 710 206 L 660 315" class="edge" marker-end="url(#arrow)"/>
+<path d="M 300 315 L 90 206" class="edge" marker-end="url(#arrow)"/>
+<g aria-label="假设与设计"><rect x="25" y="120" width="130" height="86" rx="8" fill="#e8f1ff" stroke="#2766b0" stroke-width="2"/><text x="90" y="148" class="node-title" text-anchor="middle">假设与设计</text><text x="90" y="172" class="node-sub" text-anchor="middle">目标 · 约束</text><text x="90" y="191" class="node-sub" text-anchor="middle">备选与风险</text></g>
+<g aria-label="可运行增量"><rect x="180" y="120" width="130" height="86" rx="8" fill="#e8f7ef" stroke="#2f7d57" stroke-width="2"/><text x="245" y="148" class="node-title" text-anchor="middle">可运行增量</text><text x="245" y="172" class="node-sub" text-anchor="middle">纵向切片</text><text x="245" y="191" class="node-sub" text-anchor="middle">版本化配置</text></g>
+<g aria-label="自动验证"><rect x="335" y="120" width="130" height="86" rx="8" fill="#fff3df" stroke="#b66a18" stroke-width="2"/><text x="400" y="148" class="node-title" text-anchor="middle">自动验证</text><text x="400" y="172" class="node-sub" text-anchor="middle">功能 · 契约</text><text x="400" y="191" class="node-sub" text-anchor="middle">安全 · 策略</text></g>
+<g aria-label="故障验证"><rect x="490" y="120" width="130" height="86" rx="8" fill="#f3edff" stroke="#7651a8" stroke-width="2"/><text x="555" y="148" class="node-title" text-anchor="middle">故障验证</text><text x="555" y="172" class="node-sub" text-anchor="middle">压测 · 注入</text><text x="555" y="191" class="node-sub" text-anchor="middle">恢复与回滚</text></g>
+<g aria-label="生产证据"><rect x="645" y="120" width="130" height="86" rx="8" fill="#e8f1ff" stroke="#2766b0" stroke-width="2"/><text x="710" y="148" class="node-title" text-anchor="middle">生产证据</text><text x="710" y="172" class="node-sub" text-anchor="middle">Canary · SLI</text><text x="710" y="191" class="node-sub" text-anchor="middle">数据核对</text></g>
+<g aria-label="完成定义"><rect x="800" y="120" width="135" height="86" rx="8" fill="#e8f7ef" stroke="#2f7d57" stroke-width="2"/><text x="867.5" y="148" class="node-title" text-anchor="middle">完成定义</text><text x="867.5" y="172" class="node-sub" text-anchor="middle">owner · Runbook</text><text x="867.5" y="191" class="node-sub" text-anchor="middle">债务与复审</text></g>
+<g aria-label="不满足门禁"><rect x="255" y="315" width="450" height="72" rx="8" fill="#fff0ef" stroke="#b94b45" stroke-width="2"/><text x="480" y="343" class="node-title" text-anchor="middle">不满足门禁</text><text x="480" y="367" class="node-sub" text-anchor="middle">缩小范围、补齐证据或显式接受风险；不以文档完成代替系统完成</text></g>
+<text x="930" y="480" class="note" text-anchor="end">系统架构 · 端到端落地与演进</text>
+</svg>

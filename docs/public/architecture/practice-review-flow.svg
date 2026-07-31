@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 500" role="img" aria-labelledby="title desc">
+<title id="title">架构评审从问题到决策和行动的流程</title>
+<desc id="desc">展示评审预读、风险分析、方案权衡、决策记录、行动跟踪与生产证据复审。</desc>
+<defs><style>
+text{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",Arial,sans-serif;letter-spacing:0}.heading{font-size:25px;font-weight:700;fill:#1f2d33}.caption{font-size:14px;fill:#607078}.node-title{font-size:16px;font-weight:700;fill:#1f2d33}.node-sub{font-size:13px;fill:#45565e}.edge{fill:none;stroke:#607078;stroke-width:2}.note{font-size:12px;fill:#6a777d}
+</style><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#607078"/></marker></defs>
+<rect width="960" height="500" fill="#ffffff"/>
+<text x="30" y="38" class="heading">架构评审从问题到决策和行动的流程</text><text x="30" y="63" class="caption">展示评审预读、风险分析、方案权衡、决策记录、行动跟踪与生产证据复审。</text>
+<path d="M 160 159 L 185 159" class="edge" marker-end="url(#arrow)"/>
+<path d="M 320 159 L 345 159" class="edge" marker-end="url(#arrow)"/>
+<path d="M 480 159 L 505 159" class="edge" marker-end="url(#arrow)"/>
+<path d="M 640 159 L 665 159" class="edge" marker-end="url(#arrow)"/>
+<path d="M 800 159 L 825 159" class="edge" marker-end="url(#arrow)"/>
+<path d="M 880 203 L 725 320" class="edge" marker-end="url(#arrow)"/>
+<path d="M 235 356 L 92 203" class="edge" marker-end="url(#arrow)"/>
+<g aria-label="问题与输入"><rect x="25" y="115" width="135" height="88" rx="8" fill="#e8f1ff" stroke="#2766b0" stroke-width="2"/><text x="92.5" y="143" class="node-title" text-anchor="middle">问题与输入</text><text x="92.5" y="167" class="node-sub" text-anchor="middle">旅程 · 约束</text><text x="92.5" y="186" class="node-sub" text-anchor="middle">上下文 · 数据流</text></g>
+<g aria-label="异步预读"><rect x="185" y="115" width="135" height="88" rx="8" fill="#e8f7ef" stroke="#2f7d57" stroke-width="2"/><text x="252.5" y="143" class="node-title" text-anchor="middle">异步预读</text><text x="252.5" y="167" class="node-sub" text-anchor="middle">提前评论</text><text x="252.5" y="186" class="node-sub" text-anchor="middle">暴露缺失信息</text></g>
+<g aria-label="风险评审"><rect x="345" y="115" width="135" height="88" rx="8" fill="#fff3df" stroke="#b66a18" stroke-width="2"/><text x="412.5" y="143" class="node-title" text-anchor="middle">风险评审</text><text x="412.5" y="167" class="node-sub" text-anchor="middle">失败 · 安全</text><text x="412.5" y="186" class="node-sub" text-anchor="middle">容量 · 运维</text></g>
+<g aria-label="方案权衡"><rect x="505" y="115" width="135" height="88" rx="8" fill="#f3edff" stroke="#7651a8" stroke-width="2"/><text x="572.5" y="143" class="node-title" text-anchor="middle">方案权衡</text><text x="572.5" y="167" class="node-sub" text-anchor="middle">候选 · 成本</text><text x="572.5" y="186" class="node-sub" text-anchor="middle">收益与放弃项</text></g>
+<g aria-label="决策与 ADR"><rect x="665" y="115" width="135" height="88" rx="8" fill="#e8f1ff" stroke="#2766b0" stroke-width="2"/><text x="732.5" y="143" class="node-title" text-anchor="middle">决策与 ADR</text><text x="732.5" y="167" class="node-sub" text-anchor="middle">接受/拒绝/试点</text><text x="732.5" y="186" class="node-sub" text-anchor="middle">复审触发器</text></g>
+<g aria-label="行动闭环"><rect x="825" y="115" width="110" height="88" rx="8" fill="#e8f7ef" stroke="#2f7d57" stroke-width="2"/><text x="880" y="143" class="node-title" text-anchor="middle">行动闭环</text><text x="880" y="167" class="node-sub" text-anchor="middle">owner · 期限</text><text x="880" y="186" class="node-sub" text-anchor="middle">验证证据</text></g>
+<g aria-label="治理目标"><rect x="235" y="320" width="490" height="72" rx="8" fill="#eef2f4" stroke="#34444d" stroke-width="2"/><text x="480" y="348" class="node-title" text-anchor="middle">治理目标</text><text x="480" y="372" class="node-sub" text-anchor="middle">高风险决策可解释、例外会到期、标准可自助；会议只解决分歧</text></g>
+<text x="930" y="480" class="note" text-anchor="end">系统架构 · 端到端落地与演进</text>
+</svg>

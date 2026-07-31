@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 500" role="img" aria-labelledby="title desc">
+<title id="title">复杂度升级的证据决策树</title>
+<desc id="desc">展示是否引入拆分、平台或多地域复杂度时应经过的价值、证据、所有权和退出路径判断。</desc>
+<defs><style>
+text{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",Arial,sans-serif;letter-spacing:0}.heading{font-size:25px;font-weight:700;fill:#1f2d33}.caption{font-size:14px;fill:#607078}.node-title{font-size:16px;font-weight:700;fill:#1f2d33}.node-sub{font-size:13px;fill:#45565e}.edge{fill:none;stroke:#607078;stroke-width:2}.note{font-size:12px;fill:#6a777d}
+</style><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#607078"/></marker></defs>
+<rect width="960" height="500" fill="#ffffff"/>
+<text x="30" y="38" class="heading">复杂度升级的证据决策树</text><text x="30" y="63" class="caption">展示是否引入拆分、平台或多地域复杂度时应经过的价值、证据、所有权和退出路径判断。</text>
+<path d="M 205 107 L 260 107" class="edge" marker-end="url(#arrow)"/>
+<path d="M 440 107 L 495 107" class="edge" marker-end="url(#arrow)"/>
+<path d="M 675 107 L 730 107" class="edge" marker-end="url(#arrow)"/>
+<path d="M 120 150 L 175 275" class="edge" marker-end="url(#arrow)"/>
+<path d="M 350 150 L 440 275" class="edge" marker-end="url(#arrow)"/>
+<path d="M 590 150 L 500 275" class="edge" marker-end="url(#arrow)"/>
+<path d="M 825 150 L 760 275" class="edge" marker-end="url(#arrow)"/>
+<g aria-label="当前方案未达标？"><rect x="35" y="65" width="170" height="85" rx="8" fill="#e8f1ff" stroke="#2766b0" stroke-width="2"/><text x="120" y="93" class="node-title" text-anchor="middle">当前方案未达标？</text><text x="120" y="117" class="node-sub" text-anchor="middle">SLO/容量/交付/隔离</text><text x="120" y="136" class="node-sub" text-anchor="middle">有生产或压测证据</text></g>
+<g aria-label="新增复杂度有收益？"><rect x="260" y="65" width="180" height="85" rx="8" fill="#e8f7ef" stroke="#2f7d57" stroke-width="2"/><text x="350" y="93" class="node-title" text-anchor="middle">新增复杂度有收益？</text><text x="350" y="117" class="node-sub" text-anchor="middle">收益可量化</text><text x="350" y="136" class="node-sub" text-anchor="middle">优于优化现方案</text></g>
+<g aria-label="边界与 owner 稳定？"><rect x="495" y="65" width="180" height="85" rx="8" fill="#fff3df" stroke="#b66a18" stroke-width="2"/><text x="585" y="93" class="node-title" text-anchor="middle">边界与 owner 稳定？</text><text x="585" y="117" class="node-sub" text-anchor="middle">数据权威清楚</text><text x="585" y="136" class="node-sub" text-anchor="middle">团队可独立 on-call</text></g>
+<g aria-label="能渐进迁移和退出？"><rect x="730" y="65" width="190" height="85" rx="8" fill="#f3edff" stroke="#7651a8" stroke-width="2"/><text x="825" y="93" class="node-title" text-anchor="middle">能渐进迁移和退出？</text><text x="825" y="117" class="node-sub" text-anchor="middle">灰度 · 校验 · 回退</text><text x="825" y="136" class="node-sub" text-anchor="middle">成本与退场路径</text></g>
+<g aria-label="否：保持简单"><rect x="95" y="275" width="210" height="88" rx="8" fill="#e8f7ef" stroke="#2f7d57" stroke-width="2"/><text x="200" y="303" class="node-title" text-anchor="middle">否：保持简单</text><text x="200" y="327" class="node-sub" text-anchor="middle">优化代码/查询/容量</text><text x="200" y="346" class="node-sub" text-anchor="middle">记录复审触发器</text></g>
+<g aria-label="证据不足：试点"><rect x="375" y="275" width="210" height="88" rx="8" fill="#fff3df" stroke="#b66a18" stroke-width="2"/><text x="480" y="303" class="node-title" text-anchor="middle">证据不足：试点</text><text x="480" y="327" class="node-sub" text-anchor="middle">限制爆炸半径</text><text x="480" y="346" class="node-sub" text-anchor="middle">设指标和截止日期</text></g>
+<g aria-label="是：受控升级"><rect x="655" y="275" width="210" height="88" rx="8" fill="#eef2f4" stroke="#34444d" stroke-width="2"/><text x="760" y="303" class="node-title" text-anchor="middle">是：受控升级</text><text x="760" y="327" class="node-sub" text-anchor="middle">ADR + 迁移阶段</text><text x="760" y="346" class="node-sub" text-anchor="middle">生产门禁 + 复盘</text></g>
+<text x="930" y="480" class="note" text-anchor="end">系统架构 · 端到端落地与演进</text>
+</svg>

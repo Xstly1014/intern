@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 500" role="img" aria-labelledby="title desc">
+<title id="title">QPS、并发和下游放大的容量模型</title>
+<desc id="desc">展示用户流量经接口占比、重试和扇出后放大到线程、连接、数据库、消息与第三方配额。</desc>
+<defs><style>
+text{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",Arial,sans-serif;letter-spacing:0}.heading{font-size:25px;font-weight:700;fill:#1f2d33}.caption{font-size:14px;fill:#607078}.node-title{font-size:16px;font-weight:700;fill:#1f2d33}.node-sub{font-size:13px;fill:#45565e}.edge{fill:none;stroke:#607078;stroke-width:2}.note{font-size:12px;fill:#6a777d}
+</style><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#607078"/></marker></defs>
+<rect width="960" height="500" fill="#ffffff"/>
+<text x="30" y="38" class="heading">QPS、并发和下游放大的容量模型</text><text x="30" y="63" class="caption">展示用户流量经接口占比、重试和扇出后放大到线程、连接、数据库、消息与第三方配额。</text>
+<path d="M 210 127 L 255 127" class="edge" marker-end="url(#arrow)"/>
+<path d="M 445 110 L 500 97" class="edge" marker-end="url(#arrow)"/>
+<path d="M 445 150 L 500 257" class="edge" marker-end="url(#arrow)"/>
+<path d="M 690 97 L 745 115" class="edge" marker-end="url(#arrow)"/>
+<path d="M 690 257 L 780 180" class="edge" marker-end="url(#arrow)"/>
+<path d="M 472 310 L 472 365" class="edge" marker-end="url(#arrow)"/>
+<g aria-label="业务流量"><rect x="30" y="75" width="180" height="105" rx="8" fill="#e8f1ff" stroke="#2766b0" stroke-width="2"/><text x="120" y="103" class="node-title" text-anchor="middle">业务流量</text><text x="120" y="127" class="node-sub" text-anchor="middle">峰值在线 × 操作频率</text><text x="120" y="146" class="node-sub" text-anchor="middle">× 峰谷/突发系数</text><text x="120" y="165" class="node-sub" text-anchor="middle">得到入口 QPS</text></g>
+<g aria-label="服务并发"><rect x="255" y="75" width="190" height="105" rx="8" fill="#e8f7ef" stroke="#2f7d57" stroke-width="2"/><text x="350" y="103" class="node-title" text-anchor="middle">服务并发</text><text x="350" y="127" class="node-sub" text-anchor="middle">QPS × 停留时间</text><text x="350" y="146" class="node-sub" text-anchor="middle">尾延迟决定占用</text><text x="350" y="165" class="node-sub" text-anchor="middle">扩容有启动滞后</text></g>
+<g aria-label="同步放大"><rect x="500" y="45" width="190" height="105" rx="8" fill="#fff3df" stroke="#b66a18" stroke-width="2"/><text x="595" y="73" class="node-title" text-anchor="middle">同步放大</text><text x="595" y="97" class="node-sub" text-anchor="middle">BFF 扇出 × 重试</text><text x="595" y="116" class="node-sub" text-anchor="middle">线程 · 连接池</text><text x="595" y="135" class="node-sub" text-anchor="middle">DB/Cache QPS</text></g>
+<g aria-label="异步放大"><rect x="500" y="205" width="190" height="105" rx="8" fill="#f3edff" stroke="#7651a8" stroke-width="2"/><text x="595" y="233" class="node-title" text-anchor="middle">异步放大</text><text x="595" y="257" class="node-sub" text-anchor="middle">事件数 × 消费者组</text><text x="595" y="276" class="node-sub" text-anchor="middle">积压恢复速率</text><text x="595" y="295" class="node-sub" text-anchor="middle">MQ 分区与 IO</text></g>
+<g aria-label="外部硬上限"><rect x="745" y="75" width="185" height="105" rx="8" fill="#fff0ef" stroke="#b94b45" stroke-width="2"/><text x="837.5" y="103" class="node-title" text-anchor="middle">外部硬上限</text><text x="837.5" y="127" class="node-sub" text-anchor="middle">第三方配额</text><text x="837.5" y="146" class="node-sub" text-anchor="middle">DB 连接与 IOPS</text><text x="837.5" y="165" class="node-sub" text-anchor="middle">带宽与磁盘</text></g>
+<g aria-label="验证场景"><rect x="255" y="365" width="435" height="68" rx="8" fill="#eef2f4" stroke="#34444d" stroke-width="2"/><text x="472.5" y="393" class="node-title" text-anchor="middle">验证场景</text><text x="472.5" y="417" class="node-sub" text-anchor="middle">突发 · 热点 · 冷缓存 · 慢依赖 · 节点/AZ 损失 · 恢复追赶</text></g>
+<text x="930" y="480" class="note" text-anchor="end">系统架构 · 端到端落地与演进</text>
+</svg>

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 500" role="img" aria-labelledby="title desc">
+<title id="title">创建订单的同步事务与异步履约时序</title>
+<desc id="desc">展示客户端幂等请求、订单本地事务、Outbox 发布、支付处理、回调查询和履约通知链路。</desc>
+<defs><style>
+text{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",Arial,sans-serif;letter-spacing:0}.heading{font-size:25px;font-weight:700;fill:#1f2d33}.caption{font-size:14px;fill:#607078}.node-title{font-size:16px;font-weight:700;fill:#1f2d33}.node-sub{font-size:13px;fill:#45565e}.edge{fill:none;stroke:#607078;stroke-width:2}.note{font-size:12px;fill:#6a777d}
+</style><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#607078"/></marker></defs>
+<rect width="960" height="500" fill="#ffffff"/>
+<text x="30" y="38" class="heading">创建订单的同步事务与异步履约时序</text><text x="30" y="63" class="caption">展示客户端幂等请求、订单本地事务、Outbox 发布、支付处理、回调查询和履约通知链路。</text>
+<path d="M 85 129 L 85 350" class="edge" marker-end="url(#arrow)"/>
+<path d="M 240 129 L 240 350" class="edge" marker-end="url(#arrow)"/>
+<path d="M 395 129 L 395 350" class="edge" marker-end="url(#arrow)"/>
+<path d="M 550 129 L 550 350" class="edge" marker-end="url(#arrow)"/>
+<path d="M 705 129 L 705 350" class="edge" marker-end="url(#arrow)"/>
+<path d="M 865 129 L 865 350" class="edge" marker-end="url(#arrow)"/>
+<path d="M 85 165 L 240 165" class="edge" marker-end="url(#arrow)"/>
+<path d="M 240 205 L 395 205" class="edge" marker-end="url(#arrow)"/>
+<path d="M 395 245 L 550 245" class="edge" marker-end="url(#arrow)"/>
+<path d="M 550 285 L 705 285" class="edge" marker-end="url(#arrow)"/>
+<path d="M 705 325 L 865 325" class="edge" marker-end="url(#arrow)"/>
+<path d="M 865 345 L 395 345" class="edge" marker-end="url(#arrow)"/>
+<g aria-label="客户端"><rect x="25" y="75" width="120" height="54" rx="8" fill="#e8f1ff" stroke="#2766b0" stroke-width="2"/><text x="85" y="103" class="node-title" text-anchor="middle">客户端</text><text x="85" y="127" class="node-sub" text-anchor="middle">Idempotency-Key</text></g>
+<g aria-label="网关/BFF"><rect x="180" y="75" width="120" height="54" rx="8" fill="#e8f7ef" stroke="#2f7d57" stroke-width="2"/><text x="240" y="103" class="node-title" text-anchor="middle">网关/BFF</text><text x="240" y="127" class="node-sub" text-anchor="middle">身份 + deadline</text></g>
+<g aria-label="订单服务"><rect x="335" y="75" width="120" height="54" rx="8" fill="#fff3df" stroke="#b66a18" stroke-width="2"/><text x="395" y="103" class="node-title" text-anchor="middle">订单服务</text><text x="395" y="127" class="node-sub" text-anchor="middle">状态机与事务</text></g>
+<g aria-label="DB / Outbox"><rect x="490" y="75" width="120" height="54" rx="8" fill="#f3edff" stroke="#7651a8" stroke-width="2"/><text x="550" y="103" class="node-title" text-anchor="middle">DB / Outbox</text><text x="550" y="127" class="node-sub" text-anchor="middle">原子提交</text></g>
+<g aria-label="MQ / 消费者"><rect x="645" y="75" width="120" height="54" rx="8" fill="#e8f1ff" stroke="#2766b0" stroke-width="2"/><text x="705" y="103" class="node-title" text-anchor="middle">MQ / 消费者</text><text x="705" y="127" class="node-sub" text-anchor="middle">至少一次 + 幂等</text></g>
+<g aria-label="支付/履约"><rect x="800" y="75" width="130" height="54" rx="8" fill="#e8f7ef" stroke="#2f7d57" stroke-width="2"/><text x="865" y="103" class="node-title" text-anchor="middle">支付/履约</text><text x="865" y="127" class="node-sub" text-anchor="middle">外部副作用</text></g>
+<g aria-label="关联与收敛"><rect x="25" y="370" width="905" height="62" rx="8" fill="#eef2f4" stroke="#34444d" stroke-width="2"/><text x="477.5" y="398" class="node-title" text-anchor="middle">关联与收敛</text><text x="477.5" y="422" class="node-sub" text-anchor="middle">同步超时后按幂等键查询；支付 UNKNOWN 经查询/回调/对账收敛；事件重复不重复副作用</text></g>
+<text x="930" y="480" class="note" text-anchor="end">系统架构 · 端到端落地与演进</text>
+</svg>

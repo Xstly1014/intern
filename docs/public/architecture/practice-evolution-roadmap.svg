@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 500" role="img" aria-labelledby="title desc">
+<title id="title">从模块化单体到平台化与多地域的演进路线</title>
+<desc id="desc">展示系统按证据从生产级模块化单体逐步增加专用能力、服务拆分、平台化和多地域。</desc>
+<defs><style>
+text{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",Arial,sans-serif;letter-spacing:0}.heading{font-size:25px;font-weight:700;fill:#1f2d33}.caption{font-size:14px;fill:#607078}.node-title{font-size:16px;font-weight:700;fill:#1f2d33}.node-sub{font-size:13px;fill:#45565e}.edge{fill:none;stroke:#607078;stroke-width:2}.note{font-size:12px;fill:#6a777d}
+</style><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#607078"/></marker></defs>
+<rect width="960" height="500" fill="#ffffff"/>
+<text x="30" y="38" class="heading">从模块化单体到平台化与多地域的演进路线</text><text x="30" y="63" class="caption">展示系统按证据从生产级模块化单体逐步增加专用能力、服务拆分、平台化和多地域。</text>
+<path d="M 180 170 L 210 170" class="edge" marker-end="url(#arrow)"/>
+<path d="M 365 170 L 395 170" class="edge" marker-end="url(#arrow)"/>
+<path d="M 550 170 L 580 170" class="edge" marker-end="url(#arrow)"/>
+<path d="M 735 170 L 765 170" class="edge" marker-end="url(#arrow)"/>
+<path d="M 850 220 L 700 330" class="edge" marker-end="url(#arrow)"/>
+<g aria-label="阶段 1"><rect x="25" y="120" width="155" height="100" rx="8" fill="#e8f1ff" stroke="#2766b0" stroke-width="2"/><text x="102.5" y="148" class="node-title" text-anchor="middle">阶段 1</text><text x="102.5" y="172" class="node-sub" text-anchor="middle">模块化单体</text><text x="102.5" y="191" class="node-sub" text-anchor="middle">生产基本功</text><text x="102.5" y="210" class="node-sub" text-anchor="middle">边界先清楚</text></g>
+<g aria-label="阶段 2"><rect x="210" y="120" width="155" height="100" rx="8" fill="#e8f7ef" stroke="#2f7d57" stroke-width="2"/><text x="287.5" y="148" class="node-title" text-anchor="middle">阶段 2</text><text x="287.5" y="172" class="node-sub" text-anchor="middle">缓存/MQ/搜索</text><text x="287.5" y="191" class="node-sub" text-anchor="middle">解决真实瓶颈</text><text x="287.5" y="210" class="node-sub" text-anchor="middle">先异步旁路</text></g>
+<g aria-label="阶段 3"><rect x="395" y="120" width="155" height="100" rx="8" fill="#fff3df" stroke="#b66a18" stroke-width="2"/><text x="472.5" y="148" class="node-title" text-anchor="middle">阶段 3</text><text x="472.5" y="172" class="node-sub" text-anchor="middle">按价值拆服务</text><text x="472.5" y="191" class="node-sub" text-anchor="middle">迁移数据权威</text><text x="472.5" y="210" class="node-sub" text-anchor="middle">独立 ownership</text></g>
+<g aria-label="阶段 4"><rect x="580" y="120" width="155" height="100" rx="8" fill="#f3edff" stroke="#7651a8" stroke-width="2"/><text x="657.5" y="148" class="node-title" text-anchor="middle">阶段 4</text><text x="657.5" y="172" class="node-sub" text-anchor="middle">平台 paved road</text><text x="657.5" y="191" class="node-sub" text-anchor="middle">自助交付与策略</text><text x="657.5" y="210" class="node-sub" text-anchor="middle">降低认知负担</text></g>
+<g aria-label="阶段 5"><rect x="765" y="120" width="170" height="100" rx="8" fill="#fff0ef" stroke="#b94b45" stroke-width="2"/><text x="850" y="148" class="node-title" text-anchor="middle">阶段 5</text><text x="850" y="172" class="node-sub" text-anchor="middle">明确需求后多地域</text><text x="850" y="191" class="node-sub" text-anchor="middle">数据权威与切流</text><text x="850" y="210" class="node-sub" text-anchor="middle">持续演练</text></g>
+<g aria-label="每一步的准入条件"><rect x="195" y="330" width="570" height="72" rx="8" fill="#eef2f4" stroke="#34444d" stroke-width="2"/><text x="480" y="358" class="node-title" text-anchor="middle">每一步的准入条件</text><text x="480" y="382" class="node-sub" text-anchor="middle">量化瓶颈 + 预期收益 + 迁移/退出路径 + 可运维 owner + 验证证据</text></g>
+<text x="930" y="480" class="note" text-anchor="end">系统架构 · 端到端落地与演进</text>
+</svg>

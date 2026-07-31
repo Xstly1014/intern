@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 500" role="img" aria-labelledby="title desc">
+<title id="title">ADR 生命周期与复审触发器</title>
+<desc id="desc">展示架构决策记录从提议、接受、实施验证到被新决策取代或废弃的生命周期。</desc>
+<defs><style>
+text{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",Arial,sans-serif;letter-spacing:0}.heading{font-size:25px;font-weight:700;fill:#1f2d33}.caption{font-size:14px;fill:#607078}.node-title{font-size:16px;font-weight:700;fill:#1f2d33}.node-sub{font-size:13px;fill:#45565e}.edge{fill:none;stroke:#607078;stroke-width:2}.note{font-size:12px;fill:#6a777d}
+</style><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#607078"/></marker></defs>
+<rect width="960" height="500" fill="#ffffff"/>
+<text x="30" y="38" class="heading">ADR 生命周期与复审触发器</text><text x="30" y="63" class="caption">展示架构决策记录从提议、接受、实施验证到被新决策取代或废弃的生命周期。</text>
+<path d="M 200 159 L 245 159" class="edge" marker-end="url(#arrow)"/>
+<path d="M 400 159 L 445 159" class="edge" marker-end="url(#arrow)"/>
+<path d="M 600 140 L 645 114" class="edge" marker-end="url(#arrow)"/>
+<path d="M 600 180 L 645 274" class="edge" marker-end="url(#arrow)"/>
+<path d="M 735 318 L 650 350" class="edge" marker-end="url(#arrow)"/>
+<path d="M 310 350 L 310 203" class="edge" marker-end="url(#arrow)"/>
+<g aria-label="PROPOSED"><rect x="45" y="115" width="155" height="88" rx="8" fill="#e8f1ff" stroke="#2766b0" stroke-width="2"/><text x="122.5" y="143" class="node-title" text-anchor="middle">PROPOSED</text><text x="122.5" y="167" class="node-sub" text-anchor="middle">背景 · 约束</text><text x="122.5" y="186" class="node-sub" text-anchor="middle">候选方案与后果</text></g>
+<g aria-label="ACCEPTED"><rect x="245" y="115" width="155" height="88" rx="8" fill="#e8f7ef" stroke="#2f7d57" stroke-width="2"/><text x="322.5" y="143" class="node-title" text-anchor="middle">ACCEPTED</text><text x="322.5" y="167" class="node-sub" text-anchor="middle">选择理由</text><text x="322.5" y="186" class="node-sub" text-anchor="middle">风险与 owner</text></g>
+<g aria-label="VERIFIED"><rect x="445" y="115" width="155" height="88" rx="8" fill="#fff3df" stroke="#b66a18" stroke-width="2"/><text x="522.5" y="143" class="node-title" text-anchor="middle">VERIFIED</text><text x="522.5" y="167" class="node-sub" text-anchor="middle">实施证据</text><text x="522.5" y="186" class="node-sub" text-anchor="middle">生产指标与复盘</text></g>
+<g aria-label="SUPERSEDED"><rect x="645" y="70" width="180" height="88" rx="8" fill="#f3edff" stroke="#7651a8" stroke-width="2"/><text x="735" y="98" class="node-title" text-anchor="middle">SUPERSEDED</text><text x="735" y="122" class="node-sub" text-anchor="middle">新 ADR 链接替代</text><text x="735" y="141" class="node-sub" text-anchor="middle">保留历史原因</text></g>
+<g aria-label="DEPRECATED"><rect x="645" y="230" width="180" height="88" rx="8" fill="#fff0ef" stroke="#b94b45" stroke-width="2"/><text x="735" y="258" class="node-title" text-anchor="middle">DEPRECATED</text><text x="735" y="282" class="node-sub" text-anchor="middle">条件变化/能力退役</text><text x="735" y="301" class="node-sub" text-anchor="middle">清理引用与资产</text></g>
+<g aria-label="复审触发器"><rect x="225" y="350" width="510" height="62" rx="8" fill="#eef2f4" stroke="#34444d" stroke-width="2"/><text x="480" y="378" class="node-title" text-anchor="middle">复审触发器</text><text x="480" y="402" class="node-sub" text-anchor="middle">流量/SLO 阈值 · 事故 · 团队变化 · 成本 · 供应商/监管变化</text></g>
+<text x="930" y="480" class="note" text-anchor="end">系统架构 · 端到端落地与演进</text>
+</svg>

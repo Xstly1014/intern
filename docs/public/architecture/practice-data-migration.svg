@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 500" role="img" aria-labelledby="title desc">
+<title id="title">数据回填、CDC、切写与校验流程</title>
+<desc id="desc">展示旧数据向新存储迁移时全量快照、增量捕获、校验、切换写权威和兼容退役阶段。</desc>
+<defs><style>
+text{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",Arial,sans-serif;letter-spacing:0}.heading{font-size:25px;font-weight:700;fill:#1f2d33}.caption{font-size:14px;fill:#607078}.node-title{font-size:16px;font-weight:700;fill:#1f2d33}.node-sub{font-size:13px;fill:#45565e}.edge{fill:none;stroke:#607078;stroke-width:2}.note{font-size:12px;fill:#6a777d}
+</style><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#607078"/></marker></defs>
+<rect width="960" height="500" fill="#ffffff"/>
+<text x="30" y="38" class="heading">数据回填、CDC、切写与校验流程</text><text x="30" y="63" class="caption">展示旧数据向新存储迁移时全量快照、增量捕获、校验、切换写权威和兼容退役阶段。</text>
+<path d="M 155 150 L 180 150" class="edge" marker-end="url(#arrow)"/>
+<path d="M 310 150 L 335 150" class="edge" marker-end="url(#arrow)"/>
+<path d="M 465 150 L 490 150" class="edge" marker-end="url(#arrow)"/>
+<path d="M 620 150 L 645 150" class="edge" marker-end="url(#arrow)"/>
+<path d="M 775 150 L 800 150" class="edge" marker-end="url(#arrow)"/>
+<path d="M 555 195 L 400 305" class="edge" marker-end="url(#arrow)"/>
+<path d="M 645 305 L 710 195" class="edge" marker-end="url(#arrow)"/>
+<g aria-label="新 Schema"><rect x="25" y="105" width="130" height="90" rx="8" fill="#e8f1ff" stroke="#2766b0" stroke-width="2"/><text x="90" y="133" class="node-title" text-anchor="middle">新 Schema</text><text x="90" y="157" class="node-sub" text-anchor="middle">expand 兼容</text><text x="90" y="176" class="node-sub" text-anchor="middle">索引与容量就绪</text></g>
+<g aria-label="全量回填"><rect x="180" y="105" width="130" height="90" rx="8" fill="#e8f7ef" stroke="#2f7d57" stroke-width="2"/><text x="245" y="133" class="node-title" text-anchor="middle">全量回填</text><text x="245" y="157" class="node-sub" text-anchor="middle">按主键分片</text><text x="245" y="176" class="node-sub" text-anchor="middle">checkpoint + 限速</text></g>
+<g aria-label="CDC 追增量"><rect x="335" y="105" width="130" height="90" rx="8" fill="#fff3df" stroke="#b66a18" stroke-width="2"/><text x="400" y="133" class="node-title" text-anchor="middle">CDC 追增量</text><text x="400" y="157" class="node-sub" text-anchor="middle">顺序与 offset</text><text x="400" y="176" class="node-sub" text-anchor="middle">坏数据隔离</text></g>
+<g aria-label="一致性校验"><rect x="490" y="105" width="130" height="90" rx="8" fill="#f3edff" stroke="#7651a8" stroke-width="2"/><text x="555" y="133" class="node-title" text-anchor="middle">一致性校验</text><text x="555" y="157" class="node-sub" text-anchor="middle">行数/摘要/业务聚合</text><text x="555" y="176" class="node-sub" text-anchor="middle">抽样 + 全量</text></g>
+<g aria-label="切写权威"><rect x="645" y="105" width="130" height="90" rx="8" fill="#e8f1ff" stroke="#2766b0" stroke-width="2"/><text x="710" y="133" class="node-title" text-anchor="middle">切写权威</text><text x="710" y="157" class="node-sub" text-anchor="middle">短暂停写或屏障</text><text x="710" y="176" class="node-sub" text-anchor="middle">单一 owner</text></g>
+<g aria-label="兼容与退役"><rect x="800" y="105" width="135" height="90" rx="8" fill="#e8f7ef" stroke="#2f7d57" stroke-width="2"/><text x="867.5" y="133" class="node-title" text-anchor="middle">兼容与退役</text><text x="867.5" y="157" class="node-sub" text-anchor="middle">观察窗口</text><text x="867.5" y="176" class="node-sub" text-anchor="middle">contract + 清权限</text></g>
+<g aria-label="差异队列"><rect x="180" y="305" width="285" height="78" rx="8" fill="#fff0ef" stroke="#b94b45" stroke-width="2"/><text x="322.5" y="333" class="node-title" text-anchor="middle">差异队列</text><text x="322.5" y="357" class="node-sub" text-anchor="middle">记录主键、版本、原因；可重放修复</text><text x="322.5" y="376" class="node-sub" text-anchor="middle">不静默覆盖</text></g>
+<g aria-label="迁移证据"><rect x="535" y="305" width="285" height="78" rx="8" fill="#eef2f4" stroke="#34444d" stroke-width="2"/><text x="677.5" y="333" class="node-title" text-anchor="middle">迁移证据</text><text x="677.5" y="357" class="node-sub" text-anchor="middle">快照点 + CDC 位点 + 校验报告</text><text x="677.5" y="376" class="node-sub" text-anchor="middle">切换时间线 + 恢复点</text></g>
+<text x="930" y="480" class="note" text-anchor="end">系统架构 · 端到端落地与演进</text>
+</svg>

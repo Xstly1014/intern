@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 500" role="img" aria-labelledby="title desc">
+<title id="title">业务目标到架构决策的追踪链</title>
+<desc id="desc">展示关键旅程如何转化为质量属性、架构机制、验证方案、生产指标和责任归属。</desc>
+<defs><style>
+text{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",Arial,sans-serif;letter-spacing:0}.heading{font-size:25px;font-weight:700;fill:#1f2d33}.caption{font-size:14px;fill:#607078}.node-title{font-size:16px;font-weight:700;fill:#1f2d33}.node-sub{font-size:13px;fill:#45565e}.edge{fill:none;stroke:#607078;stroke-width:2}.note{font-size:12px;fill:#6a777d}
+</style><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#607078"/></marker></defs>
+<rect width="960" height="500" fill="#ffffff"/>
+<text x="30" y="38" class="heading">业务目标到架构决策的追踪链</text><text x="30" y="63" class="caption">展示关键旅程如何转化为质量属性、架构机制、验证方案、生产指标和责任归属。</text>
+<path d="M 170 155 L 195 155" class="edge" marker-end="url(#arrow)"/>
+<path d="M 330 155 L 355 155" class="edge" marker-end="url(#arrow)"/>
+<path d="M 490 155 L 515 155" class="edge" marker-end="url(#arrow)"/>
+<path d="M 650 155 L 675 155" class="edge" marker-end="url(#arrow)"/>
+<path d="M 810 155 L 835 155" class="edge" marker-end="url(#arrow)"/>
+<path d="M 875 200 L 810 315" class="edge" marker-end="url(#arrow)"/>
+<path d="M 195 352 L 100 200" class="edge" marker-end="url(#arrow)"/>
+<g aria-label="关键旅程"><rect x="35" y="110" width="135" height="90" rx="8" fill="#e8f1ff" stroke="#2766b0" stroke-width="2"/><text x="102.5" y="138" class="node-title" text-anchor="middle">关键旅程</text><text x="102.5" y="162" class="node-sub" text-anchor="middle">下单/支付/退款</text><text x="102.5" y="181" class="node-sub" text-anchor="middle">价值与失败影响</text></g>
+<g aria-label="质量目标"><rect x="195" y="110" width="135" height="90" rx="8" fill="#e8f7ef" stroke="#2f7d57" stroke-width="2"/><text x="262.5" y="138" class="node-title" text-anchor="middle">质量目标</text><text x="262.5" y="162" class="node-sub" text-anchor="middle">p99 · SLO</text><text x="262.5" y="181" class="node-sub" text-anchor="middle">RTO/RPO · 一致性</text></g>
+<g aria-label="架构机制"><rect x="355" y="110" width="135" height="90" rx="8" fill="#fff3df" stroke="#b66a18" stroke-width="2"/><text x="422.5" y="138" class="node-title" text-anchor="middle">架构机制</text><text x="422.5" y="162" class="node-sub" text-anchor="middle">边界 · 存储</text><text x="422.5" y="181" class="node-sub" text-anchor="middle">韧性 · 安全</text></g>
+<g aria-label="验证方法"><rect x="515" y="110" width="135" height="90" rx="8" fill="#f3edff" stroke="#7651a8" stroke-width="2"/><text x="582.5" y="138" class="node-title" text-anchor="middle">验证方法</text><text x="582.5" y="162" class="node-sub" text-anchor="middle">压测 · 契约</text><text x="582.5" y="181" class="node-sub" text-anchor="middle">故障与恢复演练</text></g>
+<g aria-label="生产信号"><rect x="675" y="110" width="135" height="90" rx="8" fill="#e8f1ff" stroke="#2766b0" stroke-width="2"/><text x="742.5" y="138" class="node-title" text-anchor="middle">生产信号</text><text x="742.5" y="162" class="node-sub" text-anchor="middle">SLI · 业务状态</text><text x="742.5" y="181" class="node-sub" text-anchor="middle">容量与成本</text></g>
+<g aria-label="Owner"><rect x="835" y="110" width="95" height="90" rx="8" fill="#e8f7ef" stroke="#2f7d57" stroke-width="2"/><text x="882.5" y="138" class="node-title" text-anchor="middle">Owner</text><text x="882.5" y="162" class="node-sub" text-anchor="middle">响应</text><text x="882.5" y="181" class="node-sub" text-anchor="middle">复审</text></g>
+<g aria-label="追踪关系"><rect x="195" y="315" width="615" height="74" rx="8" fill="#eef2f4" stroke="#34444d" stroke-width="2"/><text x="502.5" y="343" class="node-title" text-anchor="middle">追踪关系</text><text x="502.5" y="367" class="node-sub" text-anchor="middle">目标无机制、机制无验证、指标无 owner，都会成为无法证明的架构假设</text></g>
+<text x="930" y="480" class="note" text-anchor="end">系统架构 · 端到端落地与演进</text>
+</svg>

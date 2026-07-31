@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 500" role="img" aria-labelledby="title desc">
+<title id="title">订单能力穿过系统各层的责任链</title>
+<desc id="desc">展示创建订单从客户端到基础设施的跨层责任及其共同关联标识。</desc>
+<defs><style>
+text{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",Arial,sans-serif;letter-spacing:0}.heading{font-size:25px;font-weight:700;fill:#1f2d33}.caption{font-size:14px;fill:#607078}.node-title{font-size:16px;font-weight:700;fill:#1f2d33}.node-sub{font-size:13px;fill:#45565e}.edge{fill:none;stroke:#607078;stroke-width:2}.note{font-size:12px;fill:#6a777d}
+</style><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#607078"/></marker></defs>
+<rect width="960" height="500" fill="#ffffff"/>
+<text x="30" y="38" class="heading">订单能力穿过系统各层的责任链</text><text x="30" y="63" class="caption">展示创建订单从客户端到基础设施的跨层责任及其共同关联标识。</text>
+<path d="M 125 144 L 140 144" class="edge" marker-end="url(#arrow)"/>
+<path d="M 245 144 L 260 144" class="edge" marker-end="url(#arrow)"/>
+<path d="M 365 144 L 380 144" class="edge" marker-end="url(#arrow)"/>
+<path d="M 485 144 L 500 144" class="edge" marker-end="url(#arrow)"/>
+<path d="M 605 144 L 620 144" class="edge" marker-end="url(#arrow)"/>
+<path d="M 725 144 L 740 144" class="edge" marker-end="url(#arrow)"/>
+<path d="M 845 144 L 860 144" class="edge" marker-end="url(#arrow)"/>
+<path d="M 900 188 L 790 310" class="edge" marker-end="url(#arrow)"/>
+<path d="M 170 348 L 72 188" class="edge" marker-end="url(#arrow)"/>
+<g aria-label="客户端/边缘"><rect x="20" y="100" width="105" height="88" rx="8" fill="#e8f1ff" stroke="#2766b0" stroke-width="2"/><text x="72.5" y="128" class="node-title" text-anchor="middle">客户端/边缘</text><text x="72.5" y="152" class="node-sub" text-anchor="middle">幂等键</text><text x="72.5" y="171" class="node-sub" text-anchor="middle">用户意图</text></g>
+<g aria-label="网关/BFF"><rect x="140" y="100" width="105" height="88" rx="8" fill="#e8f7ef" stroke="#2f7d57" stroke-width="2"/><text x="192.5" y="128" class="node-title" text-anchor="middle">网关/BFF</text><text x="192.5" y="152" class="node-sub" text-anchor="middle">身份 · 限流</text><text x="192.5" y="171" class="node-sub" text-anchor="middle">契约 · deadline</text></g>
+<g aria-label="业务服务"><rect x="260" y="100" width="105" height="88" rx="8" fill="#fff3df" stroke="#b66a18" stroke-width="2"/><text x="312.5" y="128" class="node-title" text-anchor="middle">业务服务</text><text x="312.5" y="152" class="node-sub" text-anchor="middle">状态机</text><text x="312.5" y="171" class="node-sub" text-anchor="middle">核心不变量</text></g>
+<g aria-label="数据层"><rect x="380" y="100" width="105" height="88" rx="8" fill="#f3edff" stroke="#7651a8" stroke-width="2"/><text x="432.5" y="128" class="node-title" text-anchor="middle">数据层</text><text x="432.5" y="152" class="node-sub" text-anchor="middle">订单 + Outbox</text><text x="432.5" y="171" class="node-sub" text-anchor="middle">原子提交</text></g>
+<g aria-label="消息层"><rect x="500" y="100" width="105" height="88" rx="8" fill="#e8f1ff" stroke="#2766b0" stroke-width="2"/><text x="552.5" y="128" class="node-title" text-anchor="middle">消息层</text><text x="552.5" y="152" class="node-sub" text-anchor="middle">至少一次</text><text x="552.5" y="171" class="node-sub" text-anchor="middle">重试与 DLQ</text></g>
+<g aria-label="外部集成"><rect x="620" y="100" width="105" height="88" rx="8" fill="#e8f7ef" stroke="#2f7d57" stroke-width="2"/><text x="672.5" y="128" class="node-title" text-anchor="middle">外部集成</text><text x="672.5" y="152" class="node-sub" text-anchor="middle">支付未知</text><text x="672.5" y="171" class="node-sub" text-anchor="middle">查询与对账</text></g>
+<g aria-label="可观测"><rect x="740" y="100" width="105" height="88" rx="8" fill="#fff3df" stroke="#b66a18" stroke-width="2"/><text x="792.5" y="128" class="node-title" text-anchor="middle">可观测</text><text x="792.5" y="152" class="node-sub" text-anchor="middle">Trace + 业务状态</text><text x="792.5" y="171" class="node-sub" text-anchor="middle">告警与修复</text></g>
+<g aria-label="基础设施"><rect x="860" y="100" width="80" height="88" rx="8" fill="#f3edff" stroke="#7651a8" stroke-width="2"/><text x="900" y="128" class="node-title" text-anchor="middle">基础设施</text><text x="900" y="152" class="node-sub" text-anchor="middle">资源</text><text x="900" y="171" class="node-sub" text-anchor="middle">发布恢复</text></g>
+<g aria-label="端到端关联与不变量"><rect x="170" y="310" width="620" height="76" rx="8" fill="#eef2f4" stroke="#34444d" stroke-width="2"/><text x="480" y="338" class="node-title" text-anchor="middle">端到端关联与不变量</text><text x="480" y="362" class="node-sub" text-anchor="middle">orderId · requestId · traceId · eventId；不重复下单、不超卖、不重复扣款</text></g>
+<text x="930" y="480" class="note" text-anchor="end">系统架构 · 端到端落地与演进</text>
+</svg>

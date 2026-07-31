@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 500" role="img" aria-labelledby="title desc">
+<title id="title">架构健康信号到演进决策的反馈环</title>
+<desc id="desc">展示业务、可靠性、容量成本、交付和组织信号汇聚为演进决策并通过实验验证形成闭环。</desc>
+<defs><style>
+text{font-family:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",Arial,sans-serif;letter-spacing:0}.heading{font-size:25px;font-weight:700;fill:#1f2d33}.caption{font-size:14px;fill:#607078}.node-title{font-size:16px;font-weight:700;fill:#1f2d33}.node-sub{font-size:13px;fill:#45565e}.edge{fill:none;stroke:#607078;stroke-width:2}.note{font-size:12px;fill:#6a777d}
+</style><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#607078"/></marker></defs>
+<rect width="960" height="500" fill="#ffffff"/>
+<text x="30" y="38" class="heading">架构健康信号到演进决策的反馈环</text><text x="30" y="63" class="caption">展示业务、可靠性、容量成本、交付和组织信号汇聚为演进决策并通过实验验证形成闭环。</text>
+<path d="M 102 183 L 270 300" class="edge" marker-end="url(#arrow)"/>
+<path d="M 277 183 L 325 300" class="edge" marker-end="url(#arrow)"/>
+<path d="M 452 183 L 380 300" class="edge" marker-end="url(#arrow)"/>
+<path d="M 627 183 L 580 300" class="edge" marker-end="url(#arrow)"/>
+<path d="M 825 183 L 700 300" class="edge" marker-end="url(#arrow)"/>
+<path d="M 460 341 L 520 341" class="edge" marker-end="url(#arrow)"/>
+<path d="M 700 382 L 850 440" class="edge" marker-end="url(#arrow)"/>
+<path d="M 850 440 L 102 183" class="edge" marker-end="url(#arrow)"/>
+<g aria-label="业务信号"><rect x="30" y="95" width="145" height="88" rx="8" fill="#e8f1ff" stroke="#2766b0" stroke-width="2"/><text x="102.5" y="123" class="node-title" text-anchor="middle">业务信号</text><text x="102.5" y="147" class="node-sub" text-anchor="middle">转化/支付成功</text><text x="102.5" y="166" class="node-sub" text-anchor="middle">用户反馈与增长</text></g>
+<g aria-label="可靠性"><rect x="205" y="95" width="145" height="88" rx="8" fill="#e8f7ef" stroke="#2f7d57" stroke-width="2"/><text x="277.5" y="123" class="node-title" text-anchor="middle">可靠性</text><text x="277.5" y="147" class="node-sub" text-anchor="middle">SLO/错误预算</text><text x="277.5" y="166" class="node-sub" text-anchor="middle">事故与恢复</text></g>
+<g aria-label="容量与成本"><rect x="380" y="95" width="145" height="88" rx="8" fill="#fff3df" stroke="#b66a18" stroke-width="2"/><text x="452.5" y="123" class="node-title" text-anchor="middle">容量与成本</text><text x="452.5" y="147" class="node-sub" text-anchor="middle">余量/单位成本</text><text x="452.5" y="166" class="node-sub" text-anchor="middle">增长与配额</text></g>
+<g aria-label="交付效率"><rect x="555" y="95" width="145" height="88" rx="8" fill="#f3edff" stroke="#7651a8" stroke-width="2"/><text x="627.5" y="123" class="node-title" text-anchor="middle">交付效率</text><text x="627.5" y="147" class="node-sub" text-anchor="middle">DORA/失败率</text><text x="627.5" y="166" class="node-sub" text-anchor="middle">前置时间与 Toil</text></g>
+<g aria-label="组织与认知"><rect x="730" y="95" width="190" height="88" rx="8" fill="#fff0ef" stroke="#b94b45" stroke-width="2"/><text x="825" y="123" class="node-title" text-anchor="middle">组织与认知</text><text x="825" y="147" class="node-sub" text-anchor="middle">ownership/依赖协调</text><text x="825" y="166" class="node-sub" text-anchor="middle">平台采用与值班负担</text></g>
+<g aria-label="演进决策"><rect x="210" y="300" width="250" height="82" rx="8" fill="#eef2f4" stroke="#34444d" stroke-width="2"/><text x="335" y="328" class="node-title" text-anchor="middle">演进决策</text><text x="335" y="352" class="node-sub" text-anchor="middle">优化 · 拆分 · 合并</text><text x="335" y="371" class="node-sub" text-anchor="middle">平台化 · 退役 · 接受风险</text></g>
+<g aria-label="小步实验与验证"><rect x="520" y="300" width="250" height="82" rx="8" fill="#e8f1ff" stroke="#2766b0" stroke-width="2"/><text x="645" y="328" class="node-title" text-anchor="middle">小步实验与验证</text><text x="645" y="352" class="node-sub" text-anchor="middle">指标阈值 · 限制范围</text><text x="645" y="371" class="node-sub" text-anchor="middle">复盘后推广或撤销</text></g>
+<text x="930" y="480" class="note" text-anchor="end">系统架构 · 端到端落地与演进</text>
+</svg>
