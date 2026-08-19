@@ -25,6 +25,10 @@ features:
     title: 消息队列
     details: 消息队列核心知识图解，内容持续更新中。
     link: /mq/
+  - icon: 🚦
+    title: 限流
+    details: 四大算法、分布式限流、Sentinel 与网关限流知识图解，目录框架已就绪，内容持续更新中。
+    link: /rate-limiting/
   - icon: 🐬
     title: MySQL
     details: 索引原理、存储引擎、事务隔离、MVCC、锁机制等核心知识图解。

@@ -45,6 +45,7 @@ export default defineConfig({
       { text: '首页', link: '/' },
       { text: '系统架构', link: '/architecture/', activeMatch: '/architecture/' },
       { text: '消息队列', link: '/mq/', activeMatch: '/mq/' },
+      { text: '限流', link: '/rate-limiting/', activeMatch: '/rate-limiting/' },
       { text: 'MySQL', link: '/mysql/', activeMatch: '/mysql/' },
       { text: 'Redis', link: '/redis/', activeMatch: '/redis/' },
       { text: 'LeetCode', link: '/leetcode/', activeMatch: '/leetcode/' },
@@ -366,6 +367,24 @@ export default defineConfig({
             { text: 'Q98 Agent 事件驱动', link: '/mq/scenarios/q98' },
             { text: 'Q99 跨机房消息同步', link: '/mq/scenarios/q99' },
             { text: 'Q100 系统设计综合题', link: '/mq/scenarios/q100' },
+          ],
+        },
+      ],
+
+      // ==================== 限流 ====================
+      '/rate-limiting/': [
+        {
+          text: '限流',
+          collapsed: false,
+          items: [
+            { text: '专题导读', link: '/rate-limiting/' },
+            { text: '01 基础概念', link: '/rate-limiting/basics' },
+            { text: '02 核心算法', link: '/rate-limiting/algorithms' },
+            { text: '03 分布式限流', link: '/rate-limiting/distributed' },
+            { text: '04 框架与组件', link: '/rate-limiting/frameworks' },
+            { text: '05 工程落地', link: '/rate-limiting/engineering' },
+            { text: '06 进阶专题', link: '/rate-limiting/advanced' },
+            { text: '07 实践与代码', link: '/rate-limiting/practice' },
           ],
         },
       ],
