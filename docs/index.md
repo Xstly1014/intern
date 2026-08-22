@@ -31,9 +31,8 @@ features:
     link: /rate-limiting/
   - icon: 🐬
     title: MySQL
-    details: 索引原理、存储引擎、事务隔离、MVCC、锁机制等核心知识图解。
+    details: 索引原理、存储引擎、事务隔离、MVCC、锁机制、日志体系到高可用与分库分表的完整知识图解。
     link: /mysql/
-    linkText: 敬请期待
   - icon: 🟥
     title: Redis
     details: 数据结构、持久化、缓存淘汰、高可用架构等高频知识图解。

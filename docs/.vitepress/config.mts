@@ -390,13 +390,25 @@ export default defineConfig({
         },
       ],
 
-      // ==================== MySQL（预留） ====================
+      // ==================== MySQL ====================
       '/mysql/': [
         {
           text: 'MySQL',
           collapsed: false,
           items: [
-            { text: '敬请期待', link: '/mysql/' },
+            { text: '专题导读', link: '/mysql/' },
+            { text: '01 基础与架构', link: '/mysql/basics' },
+            { text: '02 索引原理', link: '/mysql/indexing' },
+            { text: '03 存储引擎 InnoDB', link: '/mysql/engine' },
+            { text: '04 事务与隔离级别', link: '/mysql/transaction' },
+            { text: '05 MVCC', link: '/mysql/mvcc' },
+            { text: '06 锁机制', link: '/mysql/lock' },
+            { text: '07 日志体系', link: '/mysql/log' },
+            { text: '08 SQL 优化', link: '/mysql/optimize' },
+            { text: '09 高可用架构', link: '/mysql/ha' },
+            { text: '10 分库分表', link: '/mysql/sharding' },
+            { text: '11 性能调优', link: '/mysql/tuning' },
+            { text: '12 实战场景', link: '/mysql/practice' },
           ],
         },
       ],
