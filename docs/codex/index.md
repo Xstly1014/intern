@@ -21,7 +21,7 @@ Codex 是一个运行在本地计算机上的 AI 编程代理。它以 Rust 为�
 
 ### 01. 项目总览
 
-- Codex 的产品边界：CLI、IDE、桌面端、云端 Agent 的关系
+- [Codex 的产品边界：CLI、IDE、桌面端、云端 Agent 的关系](/codex/overview)
 - Monorepo 目录结构与 Rust workspace
 - 从用户输入到最终回复的完整请求链路
 - 关键术语：thread、turn、item、tool、rollout、sandbox

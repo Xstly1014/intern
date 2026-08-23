@@ -60,6 +60,7 @@ export default defineConfig({
           collapsed: false,
           items: [
             { text: '专题导读与目录', link: '/codex/' },
+            { text: '01 项目总览', link: '/codex/overview' },
           ],
         },
       ],

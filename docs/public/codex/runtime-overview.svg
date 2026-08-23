@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#3c8772"/></marker>
+    <style>
+      .title{font:700 26px sans-serif;fill:#173b32}.label{font:600 16px sans-serif;fill:#173b32}.small{font:13px sans-serif;fill:#31584e}.box{stroke:#3c8772;stroke-width:2;rx:12}.arrow{stroke:#3c8772;stroke-width:2.5;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1200" height="650" fill="#f7fbf9"/>
+  <text x="600" y="42" text-anchor="middle" class="title">Codex 本地 Agent 运行时全景</text>
+  <rect x="55" y="78" width="1090" height="88" class="box" fill="#dff2eb"/>
+  <text x="600" y="108" text-anchor="middle" class="label">接入层：CLI / TUI / App Server / Python SDK / TypeScript SDK / IDE</text>
+  <text x="600" y="137" text-anchor="middle" class="small">负责输入输出、进程生命周期、协议适配和用户可见交互</text>
+  <path d="M600 166 L600 204" class="arrow"/>
+  <rect x="55" y="205" width="1090" height="116" class="box" fill="#e8f4ef"/>
+  <text x="600" y="238" text-anchor="middle" class="label">codex-core：Agent 编排与业务核心</text>
+  <text x="600" y="267" text-anchor="middle" class="small">Thread / Turn、上下文、模型流、工具调用、AGENTS.md、Skills、事件映射</text>
+  <text x="600" y="290" text-anchor="middle" class="small">把“自然语言任务”转换为可审批、可执行、可恢复的工作流</text>
+  <path d="M360 321 L260 370 M600 321 L600 370 M840 321 L940 370" class="arrow"/>
+  <rect x="55" y="370" width="320" height="116" class="box" fill="#fff4d6"/>
+  <text x="215" y="403" text-anchor="middle" class="label">模型与协议</text>
+  <text x="215" y="430" text-anchor="middle" class="small">Responses API / Provider</text>
+  <text x="215" y="453" text-anchor="middle" class="small">流式事件 / 重试 / 结构化输出</text>
+  <rect x="440" y="370" width="320" height="116" class="box" fill="#ffe6df"/>
+  <text x="600" y="403" text-anchor="middle" class="label">工具与扩展</text>
+  <text x="600" y="430" text-anchor="middle" class="small">Shell / apply_patch / MCP</text>
+  <text x="600" y="453" text-anchor="middle" class="small">Plugins / Skills / Connectors</text>
+  <rect x="825" y="370" width="320" height="116" class="box" fill="#e8e5f8"/>
+  <text x="985" y="403" text-anchor="middle" class="label">审批与沙箱</text>
+  <text x="985" y="430" text-anchor="middle" class="small">权限策略 / 网络策略 / 资源隔离</text>
+  <text x="985" y="453" text-anchor="middle" class="small">Linux / macOS / Windows</text>
+  <path d="M215 486 L215 530 M600 486 L600 530 M985 486 L985 530" class="arrow"/>
+  <rect x="55" y="530" width="320" height="76" class="box" fill="#eef4f3"/>
+  <text x="215" y="560" text-anchor="middle" class="label">会话与状态</text>
+  <text x="215" y="583" text-anchor="middle" class="small">thread store / rollout / history / SQLite</text>
+  <rect x="440" y="530" width="320" height="76" class="box" fill="#eef4f3"/>
+  <text x="600" y="560" text-anchor="middle" class="label">本地工作区</text>
+  <text x="600" y="583" text-anchor="middle" class="small">源码 / Git / 进程 / 文件系统</text>
+  <rect x="825" y="530" width="320" height="76" class="box" fill="#eef4f3"/>
+  <text x="985" y="560" text-anchor="middle" class="label">可观测性</text>
+  <text x="985" y="583" text-anchor="middle" class="small">日志 / Trace / Metrics / Feedback</text>
+</svg>

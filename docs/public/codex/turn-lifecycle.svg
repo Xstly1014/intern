@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420">
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#3c8772"/></marker><style>.title{font:700 24px sans-serif;fill:#173b32}.label{font:600 15px sans-serif;fill:#173b32}.small{font:13px sans-serif;fill:#31584e}.box{stroke:#3c8772;stroke-width:2;rx:10}.arrow{stroke:#3c8772;stroke-width:2.2;fill:none;marker-end:url(#arrow)}</style></defs>
+  <rect width="1200" height="420" fill="#f7fbf9"/><text x="600" y="38" text-anchor="middle" class="title">一次 Codex Turn 的执行闭环</text>
+  <g transform="translate(40,90)">
+    <rect width="170" height="100" class="box" fill="#dff2eb"/><text x="85" y="38" text-anchor="middle" class="label">1. 接收任务</text><text x="85" y="64" text-anchor="middle" class="small">Prompt / 图片 / 配置</text>
+    <path d="M170 50 L215 50" class="arrow"/>
+    <rect x="215" width="170" height="100" class="box" fill="#e8f4ef"/><text x="300" y="38" text-anchor="middle" class="label">2. 准备上下文</text><text x="300" y="64" text-anchor="middle" class="small">Thread / AGENTS.md</text>
+    <path d="M385 50 L430 50" class="arrow"/>
+    <rect x="430" width="170" height="100" class="box" fill="#fff4d6"/><text x="515" y="38" text-anchor="middle" class="label">3. 调用模型</text><text x="515" y="64" text-anchor="middle" class="small">流式响应 / Tool call</text>
+    <path d="M600 50 L645 50" class="arrow"/>
+    <rect x="645" width="170" height="100" class="box" fill="#ffe6df"/><text x="730" y="38" text-anchor="middle" class="label">4. 检查权限</text><text x="730" y="64" text-anchor="middle" class="small">审批 / 沙箱 / 网络</text>
+    <path d="M815 50 L860 50" class="arrow"/>
+    <rect x="860" width="170" height="100" class="box" fill="#e8e5f8"/><text x="945" y="38" text-anchor="middle" class="label">5. 执行工具</text><text x="945" y="64" text-anchor="middle" class="small">Shell / Patch / MCP</text>
+    <path d="M1030 50 L1070 50" class="arrow"/>
+    <rect x="1070" width="90" height="100" class="box" fill="#dff2eb"/><text x="1115" y="38" text-anchor="middle" class="label">6.</text><text x="1115" y="64" text-anchor="middle" class="small">回复</text>
+  </g>
+  <path d="M945 210 C945 330 515 350 515 210" class="arrow"/><text x="735" y="350" text-anchor="middle" class="small">工具结果回到上下文，模型可继续决策；完成后保存 rollout 与状态</text>
+</svg>
