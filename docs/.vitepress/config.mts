@@ -49,9 +49,21 @@ export default defineConfig({
       { text: 'MySQL', link: '/mysql/', activeMatch: '/mysql/' },
       { text: 'Redis', link: '/redis/', activeMatch: '/redis/' },
       { text: 'LeetCode', link: '/leetcode/', activeMatch: '/leetcode/' },
+      { text: 'Codex', link: '/codex/', activeMatch: '/codex/' },
     ],
 
     sidebar: {
+      // ==================== Codex ====================
+      '/codex/': [
+        {
+          text: 'Codex 源码与架构',
+          collapsed: false,
+          items: [
+            { text: '专题导读与目录', link: '/codex/' },
+          ],
+        },
+      ],
+
       // ==================== 系统架构 ====================
       '/architecture/': [
         {
