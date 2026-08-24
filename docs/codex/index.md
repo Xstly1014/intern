@@ -37,6 +37,8 @@ Codex 是一个运行在本地计算机上的 AI 编程代理。它以 Rust 为�
 
 ### 03. codex-core Agent 运行时
 
+- [codex-core Agent 运行时](/codex/core)
+
 - `codex-core` 的职责边界
 - Thread、Turn 与 Agent 循环
 - 上下文构建、压缩和 token 预算
@@ -44,6 +46,8 @@ Codex 是一个运行在本地计算机上的 AI 编程代理。它以 Rust 为�
 - 事件映射、错误处理和任务收尾
 
 ### 04. 模型与通信协议
+
+- [模型与通信协议](/codex/model-protocol)
 
 - ChatGPT 登录、API Key 与认证管理
 - Model Provider 抽象与模型能力信息
@@ -53,6 +57,8 @@ Codex 是一个运行在本地计算机上的 AI 编程代理。它以 Rust 为�
 
 ### 05. 工具系统与文件修改
 
+- [工具系统与文件修改](/codex/tools)
+
 - Shell、统一执行和 PTY
 - `apply_patch` 的补丁模型与安全边界
 - 文件搜索、文件系统访问和 Git 工具
@@ -60,6 +66,8 @@ Codex 是一个运行在本地计算机上的 AI 编程代理。它以 Rust 为�
 - 工具结果截断、超时和失败恢复
 
 ### 06. 审批与跨平台沙箱
+
+- [审批与跨平台沙箱](/codex/sandbox)
 
 - 沙箱策略：只读、工作区可写和细粒度文件系统权限
 - Linux Landlock、Bubblewrap 与 WSL
@@ -69,6 +77,8 @@ Codex 是一个运行在本地计算机上的 AI 编程代理。它以 Rust 为�
 
 ### 07. 会话、历史与状态
 
+- [会话、历史与状态](/codex/state)
+
 - `thread`、session 和 rollout 的关系
 - 本地会话存储与恢复
 - 历史记录、压缩后的上下文和 replay
@@ -76,6 +86,8 @@ Codex 是一个运行在本地计算机上的 AI 编程代理。它以 Rust 为�
 - 日志、反馈、诊断和遥测
 
 ### 08. App Server 与多端接入
+
+- [App Server 与多端接入](/codex/app-server)
 
 - App Server 的定位和进程模型
 - `app-server-protocol` 与 transport
@@ -85,6 +97,8 @@ Codex 是一个运行在本地计算机上的 AI 编程代理。它以 Rust 为�
 
 ### 09. MCP、插件与 Skills
 
+- [MCP、插件与 Skills](/codex/extensions)
+
 - MCP client/server 的连接模型
 - 外部工具发现、调用和用户确认
 - Plugin API、扩展点和内置 extension
@@ -92,6 +106,8 @@ Codex 是一个运行在本地计算机上的 AI 编程代理。它以 Rust 为�
 - Web search、memory、image generation 等扩展能力
 
 ### 10. Python 与 TypeScript SDK
+
+- [Python 与 TypeScript SDK](/codex/sdk)
 
 - SDK 如何启动和控制 Codex thread
 - `run` 与 `runStreamed`
@@ -101,6 +117,8 @@ Codex 是一个运行在本地计算机上的 AI 编程代理。它以 Rust 为�
 
 ### 11. 构建、测试与发布
 
+- [构建、测试与发布](/codex/build-release)
+
 - Cargo workspace 与 Bazel 目标
 - 单元测试、集成测试、跨平台 exec 测试
 - npm、Homebrew、安装脚本和 release artifact
@@ -108,6 +126,8 @@ Codex 是一个运行在本地计算机上的 AI 编程代理。它以 Rust 为�
 - GitHub Actions、供应链和发布验证
 
 ### 12. 源码阅读实践
+
+- [源码阅读实践](/codex/reading)
 
 - 推荐阅读顺序和关键入口文件
 - 如何跟踪一次完整 turn
