@@ -394,9 +394,36 @@
     .interviewer, .interviewee { gap: 6px; }
     .interviewer .avatar, .interviewee .avatar { width: 22px; height: 22px; font-size: 10px; }
   }
+  .back-btn {
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    z-index: 9999;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    background: #4479a1;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    transition: all 0.2s ease;
+    font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+  }
+  .back-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    opacity: 0.9;
+  }
 </style>
 </head>
 <body>
+<a href="/intern/interview/" class="back-btn">&larr; 返回面试专题</a>
 <div class="container">
 
   <!-- ===== Cover ===== -->

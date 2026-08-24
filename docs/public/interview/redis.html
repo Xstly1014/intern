@@ -282,9 +282,36 @@
     .chapter-header { background: var(--accent) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   }
   @page { size: A4; margin: 15mm; }
+  .back-btn {
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    z-index: 9999;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    background: #dc382d;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    transition: all 0.2s ease;
+    font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+  }
+  .back-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    opacity: 0.9;
+  }
 </style>
 </head>
 <body>
+<a href="/intern/interview/" class="back-btn">&larr; 返回面试专题</a>
 <div class="container">
 
   <!-- ===== Cover ===== -->
