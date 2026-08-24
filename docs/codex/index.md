@@ -28,6 +28,8 @@ Codex 是一个运行在本地计算机上的 AI 编程代理。它以 Rust 为�
 
 ### 02. CLI 与终端界面
 
+- [CLI 与终端界面专题](/codex/cli)
+
 - `codex-rs/cli` 的命令分发与生命周期
 - 交互模式、`codex exec` 和 `codex review`
 - `codex-rs/tui` 的事件循环、渲染和用户输入

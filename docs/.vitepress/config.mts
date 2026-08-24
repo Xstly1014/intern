@@ -65,6 +65,7 @@ export default defineConfig({
           items: [
             { text: '专题导读与目录', link: '/codex/' },
             { text: '01 项目总览', link: '/codex/overview' },
+            { text: '02 CLI 与终端界面', link: '/codex/cli' },
           ],
         },
       ],

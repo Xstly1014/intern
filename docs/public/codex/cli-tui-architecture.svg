@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650">
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0L0 6L9 3z" fill="#3c8772"/></marker><style>.t{font:700 25px sans-serif;fill:#173b32}.h{font:600 16px sans-serif;fill:#173b32}.s{font:13px sans-serif;fill:#31584e}.b{stroke:#3c8772;stroke-width:2;rx:12}.a{stroke:#3c8772;stroke-width:2.5;fill:none;marker-end:url(#a)}</style></defs>
+<rect width="1200" height="650" fill="#f7fbf9"/><text x="600" y="42" text-anchor="middle" class="t">Codex CLI 与 TUI 的分层关系</text>
+<rect x="45" y="78" width="1110" height="88" class="b" fill="#dff2eb"/><text x="600" y="110" text-anchor="middle" class="h">用户入口：codex、codex exec、codex review、codex resume</text><text x="600" y="137" text-anchor="middle" class="s">Shell 参数、环境变量、标准输入和终端能力共同决定启动模式</text>
+<path d="M600 166v35" class="a"/>
+<rect x="45" y="202" width="1110" height="110" class="b" fill="#e8f4ef"/><text x="600" y="236" text-anchor="middle" class="h">CLI 分发层：MultitoolCli + Subcommand</text><text x="600" y="264" text-anchor="middle" class="s">解析全局配置、认证、工作目录和子命令；决定进入交互 TUI、非交互 Exec 或服务模式</text><text x="600" y="287" text-anchor="middle" class="s">源码：codex-rs/cli/src/main.rs</text>
+<path d="M375 312v38M825 312v38" class="a"/>
+<rect x="45" y="351" width="500" height="126" class="b" fill="#fff4d6"/><text x="295" y="385" text-anchor="middle" class="h">交互路径：codex-tui</text><text x="295" y="413" text-anchor="middle" class="s">终端事件、编辑器、快捷键、审批、流式输出</text><text x="295" y="437" text-anchor="middle" class="s">ratatui/crossterm 渲染；App 维护 UI 状态</text><text x="295" y="460" text-anchor="middle" class="s">源码：codex-rs/tui/src</text>
+<rect x="655" y="351" width="500" height="126" class="b" fill="#ffe6df"/><text x="905" y="385" text-anchor="middle" class="h">非交互路径：codex-exec</text><text x="905" y="413" text-anchor="middle" class="s">一次性 prompt、JSON/文本输出、退出码</text><text x="905" y="437" text-anchor="middle" class="s">适合 CI、脚本、代码审查和自动化任务</text><text x="905" y="460" text-anchor="middle" class="s">源码：codex-rs/exec/src</text>
+<path d="M295 477v42M905 477v42" class="a"/>
+<rect x="45" y="520" width="1110" height="82" class="b" fill="#e8e5f8"/><text x="600" y="551" text-anchor="middle" class="h">共享运行时：codex-core + protocol + exec-server + sandboxing</text><text x="600" y="578" text-anchor="middle" class="s">两条路径都复用模型会话、工具调用、审批策略、文件修改、状态和 rollout</text>
+</svg>
