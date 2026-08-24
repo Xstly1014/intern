@@ -47,13 +47,18 @@ export default defineConfig({
     nav: [
       { text: '首页', link: '/' },
       { text: '系统架构', link: '/architecture/', activeMatch: '/architecture/' },
-      { text: '消息队列', link: '/mq/', activeMatch: '/mq/' },
       { text: '限流', link: '/rate-limiting/', activeMatch: '/rate-limiting/' },
-      { text: 'MySQL', link: '/mysql/', activeMatch: '/mysql/' },
-      { text: 'Redis', link: '/redis/', activeMatch: '/redis/' },
-      { text: 'LeetCode', link: '/leetcode/', activeMatch: '/leetcode/' },
       { text: 'Codex', link: '/codex/', activeMatch: '/codex/' },
       { text: '面试专题', link: '/interview/', activeMatch: '/interview/' },
+      {
+        text: '后端八股',
+        activeMatch: '/(mq|mysql|redis)/',
+        items: [
+          { text: '消息队列', link: '/mq/' },
+          { text: 'MySQL', link: '/mysql/' },
+          { text: 'Redis', link: '/redis/' },
+        ],
+      },
     ],
 
     sidebar: {
