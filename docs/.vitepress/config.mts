@@ -1,4 +1,4 @@
-import { defineConfig } from 'vitepress'
+﻿import { defineConfig } from 'vitepress'
 
 export default defineConfig({
   lang: 'zh-CN',
@@ -50,6 +50,7 @@ export default defineConfig({
       { text: 'Redis', link: '/redis/', activeMatch: '/redis/' },
       { text: 'LeetCode', link: '/leetcode/', activeMatch: '/leetcode/' },
       { text: 'Codex', link: '/codex/', activeMatch: '/codex/' },
+      { text: '面试专题', link: '/interview/', activeMatch: '/interview/' },
     ],
 
     sidebar: {
@@ -629,6 +630,21 @@ export default defineConfig({
       ],
     },
 
+      // ==================== 面试专题 ====================
+      '/interview/': [
+        {
+          text: '面试高频 100 题',
+          collapsed: false,
+          items: [
+            { text: '专题导读', link: '/interview/' },
+            { text: 'Redis 面试高频 100 题', link: '/interview/redis.html' },
+            { text: 'MySQL 面试高频 100 题', link: '/interview/mysql.html' },
+            { text: 'JVM 热门面试题 100 道', link: '/interview/jvm.html' },
+            { text: '分布式系统热门面试题 100 道', link: '/interview/distributed.html' },
+            { text: '消息队列面试高频 100 题', link: '/interview/mq.html' },
+          ],
+        },
+      ],
     socialLinks: [
       { icon: 'github', link: 'https://github.com/Xstly1014/intern' },
     ],
