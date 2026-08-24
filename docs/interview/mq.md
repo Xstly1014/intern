@@ -7,35 +7,35 @@ import { ref, onMounted, onUnmounted } from 'vue'
 
 const iframeRef = ref(null)
 
-function adjustHeight() {{
+function adjustHeight() {
   const iframe = iframeRef.value
   if (!iframe) return
-  try {{
+  try {
     const doc = iframe.contentDocument || iframe.contentWindow?.document
-    if (doc && doc.body) {{
+    if (doc && doc.body) {
       const h = Math.max(doc.body.scrollHeight, doc.documentElement.scrollHeight)
       iframe.style.height = h + 'px'
-    }}
-  }} catch (e) {{
+    }
+  } catch (e) {
     iframe.style.height = 'calc(100vh - 4rem)'
-  }}
-}}
+  }
+}
 
 let timer = null
 
-onMounted(() => {{
+onMounted(() => {
   const iframe = iframeRef.value
-  if (iframe) {{
+  if (iframe) {
     iframe.addEventListener('load', adjustHeight)
     timer = setInterval(adjustHeight, 2000)
-  }}
-}})
+  }
+})
 
-onUnmounted(() => {{
+onUnmounted(() => {
   if (timer) clearInterval(timer)
   const iframe = iframeRef.value
   if (iframe) iframe.removeEventListener('load', adjustHeight)
-}})
+})
 </script>
 
 <div style="width: 100%;">
