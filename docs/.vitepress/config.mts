@@ -640,11 +640,6 @@ export default defineConfig({
           collapsed: false,
           items: [
             { text: '专题导读', link: '/interview/' },
-            { text: 'Redis 面试高频 100 题', link: '/interview/redis' },
-            { text: 'MySQL 面试高频 100 题', link: '/interview/mysql' },
-            { text: 'JVM 热门面试题 100 道', link: '/interview/jvm' },
-            { text: '分布式系统热门面试题 100 道', link: '/interview/distributed' },
-            { text: '消息队列面试高频 100 题', link: '/interview/mq' },
           ],
         },
       ],

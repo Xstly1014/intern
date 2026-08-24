@@ -20,31 +20,31 @@ title: 面试专题
 
 <div class="interview-cards">
 
-<a href="./redis" class="interview-card interview-card-redis">
+<a href="/intern/interview/redis.html" onclick="window.location.href=this.href;return false;" class="interview-card interview-card-redis">
   <div class="interview-card-icon">Redis</div>
   <div class="interview-card-title">Redis 面试高频 100 题</div>
   <div class="interview-card-desc">基础数据结构、持久化、内存管理、高可用集群、缓存问题、分布式锁、性能调优与场景实战</div>
 </a>
 
-<a href="./mysql" class="interview-card interview-card-mysql">
+<a href="/intern/interview/mysql.html" onclick="window.location.href=this.href;return false;" class="interview-card interview-card-mysql">
   <div class="interview-card-icon">MySQL</div>
   <div class="interview-card-title">MySQL 面试高频 100 题</div>
   <div class="interview-card-desc">索引原理、存储引擎、事务隔离、MVCC、锁机制、日志体系、高可用与分库分表</div>
 </a>
 
-<a href="./jvm" class="interview-card interview-card-jvm">
+<a href="/intern/interview/jvm.html" onclick="window.location.href=this.href;return false;" class="interview-card interview-card-jvm">
   <div class="interview-card-icon">JVM</div>
   <div class="interview-card-title">JVM 热门面试题 100 道</div>
   <div class="interview-card-desc">内存模型、垃圾回收、类加载机制、调优实战、并发与线程安全</div>
 </a>
 
-<a href="./distributed" class="interview-card interview-card-distributed">
+<a href="/intern/interview/distributed.html" onclick="window.location.href=this.href;return false;" class="interview-card interview-card-distributed">
   <div class="interview-card-icon">分布式</div>
   <div class="interview-card-title">分布式系统热门面试题 100 道</div>
   <div class="interview-card-desc">CAP/BASE、分布式锁、一致性算法、分布式事务、服务治理、限流熔断</div>
 </a>
 
-<a href="./mq" class="interview-card interview-card-mq">
+<a href="/intern/interview/mq.html" onclick="window.location.href=this.href;return false;" class="interview-card interview-card-mq">
   <div class="interview-card-icon">MQ</div>
   <div class="interview-card-title">消息队列面试高频 100 题</div>
   <div class="interview-card-desc">消息可靠性、顺序性、幂等性、堆积处理、选型对比、Kafka/RocketMQ/RabbitMQ 原理</div>
@@ -68,6 +68,7 @@ title: 面试专题
   text-decoration: none;
   color: inherit;
   transition: all 0.25s ease;
+  cursor: pointer;
 }
 
 .interview-card:hover {
@@ -88,25 +89,11 @@ title: 面试专题
   color: #fff;
 }
 
-.interview-card-redis .interview-card-icon {
-  background: #dc382d;
-}
-
-.interview-card-mysql .interview-card-icon {
-  background: #4479a1;
-}
-
-.interview-card-jvm .interview-card-icon {
-  background: #5d8aa8;
-}
-
-.interview-card-distributed .interview-card-icon {
-  background: #6f42c1;
-}
-
-.interview-card-mq .interview-card-icon {
-  background: #f5a623;
-}
+.interview-card-redis .interview-card-icon { background: #dc382d; }
+.interview-card-mysql .interview-card-icon { background: #4479a1; }
+.interview-card-jvm .interview-card-icon { background: #5d8aa8; }
+.interview-card-distributed .interview-card-icon { background: #6f42c1; }
+.interview-card-mq .interview-card-icon { background: #f5a623; }
 
 .interview-card-title {
   font-size: 20px;
