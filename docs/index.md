@@ -22,6 +22,14 @@ features:
     title: 消息队列
     details: 消息队列核心知识图解，内容持续更新中。
     link: /mq/
+  - icon: 🐬
+    title: MySQL
+    details: 索引原理、存储引擎、事务隔离、MVCC、锁机制、日志体系到高可用与分库分表的完整知识图解。
+    link: /mysql/
+  - icon: 🟥
+    title: Redis
+    details: 数据结构、持久化、缓存淘汰、高可用架构和分布式场景等高频知识图解。
+    link: /redis/
   - icon: 🚦
     title: 限流
     details: 四大算法、分布式限流、Sentinel 与网关限流知识图解，目录框架已就绪，内容持续更新中。
@@ -34,4 +42,8 @@ features:
     title: LeetCode
     details: 按题型整理高频算法题，配套思路、复杂度分析、Java 实现与图解。
     link: /leetcode/
+  - icon: 🎯
+    title: 面试专题
+    details: 汇总后端面试高频主题，覆盖系统设计、消息队列、数据库、缓存与工程实践。
+    link: /interview/
 ---
