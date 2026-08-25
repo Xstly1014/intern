@@ -656,6 +656,10 @@ export default defineConfig({
           collapsed: false,
           items: [
             { text: '专题导读', link: '/interview/' },
+            { text: 'JUC 并发编程 100 题', link: '/interview/juc.html' },
+            { text: 'Java 基础 100 题', link: '/interview/java-basics.html' },
+            { text: 'Java 集合 100 题', link: '/interview/java-collections.html' },
+            { text: '线上问题排查 100 题', link: '/interview/production-troubleshooting.html' },
           ],
         },
       ],

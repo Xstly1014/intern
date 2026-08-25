@@ -22,7 +22,7 @@ function goTo(url) {
 - **场景实战**：涵盖缓存设计、分布式锁、秒杀系统等真实场景
 - **A4 打印友好**：CSS 适配打印格式，便于纸质复习
 
-## 五大模块
+## 现有专题
 
 <div class="interview-cards">
 
@@ -30,6 +30,36 @@ function goTo(url) {
   <div class="interview-card-icon">Redis</div>
   <div class="interview-card-title">Redis 面试高频 100 题</div>
   <div class="interview-card-desc">基础数据结构、持久化、内存管理、高可用集群、缓存问题、分布式锁、性能调优与场景实战</div>
+</div>
+
+## 新增 Java 高频专题
+
+<div class="interview-cards">
+
+<a class="interview-card" href="/intern/interview/juc.html">
+  <div class="interview-card-icon" style="background:#3c8772">JUC</div>
+  <div class="interview-card-title">JUC 并发编程面试高频 100 题</div>
+  <div class="interview-card-desc">线程、JMM、锁、AQS、CAS、并发容器、线程池、CompletableFuture 与并发实战</div>
+</a>
+
+<a class="interview-card" href="/intern/interview/java-basics.html">
+  <div class="interview-card-icon" style="background:#b56b35">Java</div>
+  <div class="interview-card-title">Java 基础面试高频 100 题</div>
+  <div class="interview-card-desc">面向对象、String、异常、泛型、反射、IO、时间日期、函数式编程与编码规范</div>
+</a>
+
+<a class="interview-card" href="/intern/interview/java-collections.html">
+  <div class="interview-card-icon" style="background:#5576a8">集合</div>
+  <div class="interview-card-title">Java 集合面试高频 100 题</div>
+  <div class="interview-card-desc">ArrayList、HashMap、红黑树、Set、并发集合、迭代器、排序和集合选型</div>
+</a>
+
+<a class="interview-card" href="/intern/interview/production-troubleshooting.html">
+  <div class="interview-card-icon" style="background:#a34c55">线上</div>
+  <div class="interview-card-title">线上问题排查面试高频 100 题</div>
+  <div class="interview-card-desc">CPU、内存、GC、线程、网络、数据库、缓存、消息、容器发布与故障复盘</div>
+</a>
+
 </div>
 
 <div class="interview-card interview-card-mysql" @click.prevent.stop="goTo('/intern/interview/mysql.html')">
