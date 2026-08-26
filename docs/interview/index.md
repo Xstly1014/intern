@@ -1,4 +1,4 @@
-﻿---
+---
 title: 面试专题
 ---
 
@@ -36,25 +36,25 @@ function goTo(url) {
 
 <div class="interview-cards">
 
-<a class="interview-card" href="/intern/interview/juc.html">
+<a class="interview-card" href="/intern/interview/juc/">
   <div class="interview-card-icon" style="background:#3c8772">JUC</div>
   <div class="interview-card-title">JUC 并发编程面试高频 100 题</div>
   <div class="interview-card-desc">线程、JMM、锁、AQS、CAS、并发容器、线程池、CompletableFuture 与并发实战</div>
 </a>
 
-<a class="interview-card" href="/intern/interview/java-basics.html">
+<a class="interview-card" href="/intern/interview/java-basics/">
   <div class="interview-card-icon" style="background:#b56b35">Java</div>
   <div class="interview-card-title">Java 基础面试高频 100 题</div>
   <div class="interview-card-desc">面向对象、String、异常、泛型、反射、IO、时间日期、函数式编程与编码规范</div>
 </a>
 
-<a class="interview-card" href="/intern/interview/java-collections.html">
+<a class="interview-card" href="/intern/interview/java-collections/">
   <div class="interview-card-icon" style="background:#5576a8">集合</div>
   <div class="interview-card-title">Java 集合面试高频 100 题</div>
   <div class="interview-card-desc">ArrayList、HashMap、红黑树、Set、并发集合、迭代器、排序和集合选型</div>
 </a>
 
-<a class="interview-card" href="/intern/interview/production-troubleshooting.html">
+<a class="interview-card" href="/intern/interview/production-troubleshooting/">
   <div class="interview-card-icon" style="background:#a34c55">线上</div>
   <div class="interview-card-title">线上问题排查面试高频 100 题</div>
   <div class="interview-card-desc">CPU、内存、GC、线程、网络、数据库、缓存、消息、容器发布与故障复盘</div>
@@ -144,3 +144,4 @@ function goTo(url) {
   color: var(--vp-c-text-2);
 }
 </style>
+
